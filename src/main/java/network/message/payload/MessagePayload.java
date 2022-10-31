@@ -17,8 +17,9 @@ public class MessagePayload implements Cloneable, Serializable {
         return type;
     }
 
+    @Override
     public String toString() {
-        return "type " + type;
+        return "type: " + type;
     }
 
     @Override

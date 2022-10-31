@@ -26,13 +26,9 @@ public class Simulator {
 
         // build ips
         for (int id = 0; id < Config.num_servers; id++) {
-            Address address = new Address(id);
-            addresses.add(address);
-        }
-
-        for (Address ip: addresses) {
+            Address ip = new Address(id);
+            addresses.add(ip);
             Server server = new Server(ip);
-
             servers.put(ip, server);
         }
 
@@ -64,8 +60,15 @@ public class Simulator {
         timer.cancel();
     }
 
+    private static void conclude() {
+        for (Map.Entry<Address, Server> entry: servers.entrySet()) {
+            LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
+        }
+    }
+
     public static void main(String[] args) {
         initialize(args);
         run();
+        conclude();
     }
 }

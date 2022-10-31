@@ -12,8 +12,9 @@ public class AddressComparator<T extends Comparable<T>> implements Comparator<Ad
     }
 
     public static Address getMin(Address a, Address b) {
-        if (a == null) return b;
-        if (b == null) return a;
+        if (a == null && b == null) throw new RuntimeException("Both addresses are null!");
+        else if (a == null) return b;
+        else if (b == null) return a;
         return a.getId() < b.getId() ? a : b;
     }
 }

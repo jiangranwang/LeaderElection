@@ -25,6 +25,7 @@ public class Membership {
     private final List<Address> all_nodes;
     private final List<Address> active_nodes;
     private final Lock address_lock;
+    private final Random random = new Random();
 
     public Membership(String membership_path, int num_servers, Address id) {
         this.id = id;
@@ -120,6 +121,7 @@ public class Membership {
         } else {
             active_nodes.sort(new AddressComparator<>());
             result = active_nodes.get(0);
+            // if (random.nextDouble() < 0.5) result = active_nodes.get(1);
         }
         address_lock.unlock();
         return result;

@@ -7,6 +7,10 @@ public class Address {
         this.id = id;
     }
 
+    public Address(Address other) {
+        this.id = other.id;
+    }
+
     public int getId() {
         return id;
     }
@@ -26,6 +30,10 @@ public class Address {
             return false;
         final Address other = (Address) obj;
         return id == other.id;
+    }
+
+    public boolean lessThan(Address other) {
+        return other == null || this.id < other.id;
     }
 
     public String toString() {

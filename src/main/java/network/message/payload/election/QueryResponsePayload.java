@@ -14,6 +14,11 @@ public class QueryResponsePayload extends MessagePayload {
         this.lowest_id = lowest_id;
     }
 
+    @Override
+    public String toString() {
+        return "type: " + MessageType.QUERY_RESPONSE + ", value: " + lowest_id;
+    }
+
     public Address getLowestId() {
         return lowest_id;
     }

@@ -10,6 +10,7 @@ import simulator.event.*;
 import utils.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -82,6 +83,11 @@ public class Server {
             return;
         }
 
+        if (Config.algorithm == 2) {
+            // we must have notified the temp_id previously
+            return;
+        }
+
         MessagePayload payload = new NotifyLeaderPayload();
         Message msg = new Message(id, seqNo.incrementAndGet(), temp_id, payload);
         Network.unicast(msg);
@@ -103,11 +109,29 @@ public class Server {
             queryReceivedIds.add(msg.getSrc());
             Address new_id = ((QueryResponsePayload) payload).getLowestId();
             temp_id_lock.lock();
+            // algorithm 2 related
+            if (Config.algorithm == 2 && new_id.lessThan(temp_id)) {
+                temp_id = new_id;
+                Address curr_id = new Address(temp_id);
+                temp_id_lock.unlock();
+                MessagePayload new_payload = new NotifyLeaderPayload();
+                Message new_msg = new Message(id, seqNo.incrementAndGet(), curr_id, new_payload);
+                Network.unicast(new_msg);
+
+                Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout, id);
+                EventService.addEvent(next_event);
+                return;
+            }
             temp_id = AddressComparator.getMin(temp_id, new_id);
             temp_id_lock.unlock();
+
         } else if (payload.getType() == MessageType.NOTIFY_LEADER) {
             leader_id_lock.lock();
-            leader_id = new Address(id.getId());
+            if (!id.lessThan(leader_id)) {
+                leader_id_lock.unlock();
+                return;
+            }
+            leader_id = AddressComparator.getMin(leader_id, new Address(id));
             leader_id_lock.unlock();
             Logging.log(Level.INFO, id, "Leader gets notified");
             MessagePayload response_payload = new LeaderPayload();
@@ -115,7 +139,11 @@ public class Server {
             Network.multicast(response_msg, membership.getAllNodes(), true);
         } else if (payload.getType() == MessageType.LEADER) {
             leader_id_lock.lock();
-            leader_id = msg.getSrc();
+            if (!msg.getSrc().lessThan(leader_id)) {
+                leader_id_lock.unlock();
+                return;
+            }
+            leader_id = AddressComparator.getMin(leader_id, msg.getSrc());
             leader_id_lock.unlock();
             Logging.log(Level.INFO, id, "Leader " + leader_id + " gets recognized");
             MessagePayload response_payload = new LeaderAckPayload();
@@ -148,5 +176,13 @@ public class Server {
 
     public void updateMembership() {
         membership.update();
+    }
+
+    public Address getId() {
+        return id;
+    }
+
+    public Address getLeaderId() {
+        return leader_id;
     }
 }
