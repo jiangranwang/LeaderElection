@@ -4,8 +4,15 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import enums.EventType;
 import network.Address;
 import network.Network;
+import network.message.Message;
+import network.message.payload.MessagePayload;
+import network.message.payload.election.QueryPayload;
+import network.message.payload.election.QueryResponsePayload;
+import simulator.event.Event;
+import simulator.event.ReceiveMsgEvent;
 import utils.Config;
 
 public class Simulator {
@@ -14,7 +21,6 @@ public class Simulator {
 
     private static final List<Address> addresses = new ArrayList<>();
     private static final HashMap<Address, Server> servers = new HashMap<>();
-    private final static HashMap<Address, EventService> eventServices = new HashMap<>();
 
     private static void initialize(String[] args) {
         if (args.length != 1) {
@@ -33,13 +39,12 @@ public class Simulator {
 
         for (Address ip: addresses) {
             Server server = new Server(ip);
-            EventService eventService = server.getEventService();
 
             servers.put(ip, server);
-            eventServices.put(ip, eventService);
         }
 
-        Network.initialize(eventServices, addresses);
+        Network.initialize(addresses);
+        EventService.initialize(servers);
     }
 
     private static void run() {
@@ -49,17 +54,20 @@ public class Simulator {
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.num_servers, Config.f + Config.k + 1);
         servers.get(coordinator).sendQuery(num_nodes, null);
-        while (LogicalTime.time < Config.end_time) {
-            // process existing buffered events
-            for (Map.Entry<Address, EventService> entry: eventServices.entrySet()) {
-                entry.getValue().processAll(LogicalTime.time);
-            }
 
-            LogicalTime.time += Config.granularity;
-            for (Map.Entry<Address, Server> entry: servers.entrySet()) {
-                entry.getValue().updateMembership();
-            }
-        }
+        EventService.processAll();
+
+//        while (LogicalTime.time < Config.end_time) {
+//            // process existing buffered events
+//            for (Map.Entry<Address, EventService> entry: eventServices.entrySet()) {
+//                entry.getValue().processAll(LogicalTime.time);
+//            }
+//
+//            LogicalTime.time += Config.granularity; // = EventService.getNextTimestamp();
+//            for (Map.Entry<Address, Server> entry: servers.entrySet()) {
+//                entry.getValue().updateMembership();
+//            }
+//        }
     }
 
     public static void main(String[] args) {

@@ -2,28 +2,32 @@ package simulator;
 
 import network.Address;
 import simulator.event.Event;
+import utils.Config;
+import utils.EventComparator;
 
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 public class EventService {
-    private final LinkedBlockingQueue<Event> events;
-    private final Address ip;
-    private final Server server;
+    private static final ConcurrentSkipListSet<Event> events = new ConcurrentSkipListSet<>(new EventComparator<>());
+    private static HashMap<Address, Server> servers;
 
-    public EventService(Address ip, Server server) {
-        this.events = new LinkedBlockingQueue<>();
-        this.ip = ip;
-        this.server = server;
+    public static void addEvent(Event event) {
+        if (event.getTime() > Config.end_time) return;
+        events.add(event);
     }
 
-    public void addEvent(Event event) {
-        events.offer(event);
+    public static void initialize(HashMap<Address, Server> servers) {
+        EventService.servers = servers;
     }
 
-    public void processAll(long time) {
-        while (!events.isEmpty() && events.peek().getTime() <= time) {
-            Event event = events.remove();
-            server.processEvent(event);
+    public static void processAll() {
+        while (!events.isEmpty()) {
+            Event event = events.pollFirst();
+            if (event != null) {
+                LogicalTime.time = event.getTime();
+                servers.get(event.getId()).processEvent(event);
+            }
         }
     }
 }

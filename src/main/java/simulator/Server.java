@@ -13,6 +13,7 @@ import simulator.event.ReceiveMsgEvent;
 import simulator.event.ResponseCheckEvent;
 import utils.AddressComparator;
 import utils.Config;
+import utils.Logging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,20 +29,19 @@ public class Server {
 
     private final Address id;
     private final Membership membership;
-    private final EventService eventService;
     private final AtomicInteger seqNo;
 
     // algorithm related variables
-    private ConcurrentLinkedQueue<Address> queryReceivedIds;
+    private final ConcurrentLinkedQueue<Address> queryReceivedIds;
     private Address temp_id; // temporary minimum id
     private Address leader_id;
-    private Lock temp_id_lock;
-    private Lock leader_id_lock;
+    private final Lock temp_id_lock;
+    private final Lock leader_id_lock;
+    private int leader_notify_count = 3; // resend notify leader at most 3 times
 
     public Server(Address id) {
         this.id = id;
         this.membership = new Membership(Config.membership_file, Config.num_servers, id);
-        this.eventService = new EventService(id, this);
         this.seqNo = new AtomicInteger(0);
 
         this.queryReceivedIds = new ConcurrentLinkedQueue<>();
@@ -52,6 +52,7 @@ public class Server {
     }
 
     public void processEvent(Event event) {
+        Logging.log(Level.FINER, id, "Processing event: " + event.toString());
         if (event.getType() == EventType.RECEIVE_MSG) {
             processMsg(((ReceiveMsgEvent) event).getMsg());
         } else if (event.getType() == EventType.RESPONSE_CHECK) {
@@ -65,13 +66,18 @@ public class Server {
 
     private void checkLeader(LeaderCheckEvent event) {
         if (leader_id == null) {
-            LOG.log(Level.INFO, "Leader id not set, resending notify leader message.");
+            if (leader_notify_count == 0) {
+                Logging.log(Level.WARNING, id, "Resending notify leader too many times, leader might be dead.");
+                return;
+            }
+            leader_notify_count--;
+            Logging.log(Level.INFO, id, "Leader id not set, resending notify leader message.");
             MessagePayload payload = new NotifyLeaderPayload();
             Message msg = new Message(id, seqNo.incrementAndGet(), temp_id, payload);
             Network.unicast(msg);
 
-            Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout);
-            eventService.addEvent(next_event);
+            Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout, id);
+            EventService.addEvent(next_event);
         }
     }
 
@@ -79,7 +85,8 @@ public class Server {
         List<Address> target_nodes = event.getTargetNodes();
         if (queryReceivedIds.size() < target_nodes.size()) {
             // missing some query response message
-            LOG.log(Level.INFO, "Resending query message to unresponsive nodes.");
+            Logging.log(Level.INFO, id, "Resending query message to unresponsive nodes.");
+            Logging.log(Level.FINE, id, "Received ids are: " + queryReceivedIds.toString());
             sendQuery(target_nodes.size() - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
             return;
         }
@@ -88,11 +95,12 @@ public class Server {
         Message msg = new Message(id, seqNo.incrementAndGet(), temp_id, payload);
         Network.unicast(msg);
 
-        Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout);
-        eventService.addEvent(next_event);
+        Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout, id);
+        EventService.addEvent(next_event);
     }
 
     private void processMsg(Message msg) {
+        Logging.log(Level.FINE, id, "Receiving message " + msg);
         MessagePayload payload = msg.getPayload();
         if (payload.getType() == MessageType.QUERY) {
             // send back with the lowest hash id
@@ -110,7 +118,7 @@ public class Server {
             leader_id_lock.lock();
             leader_id = new Address(id.getId());
             leader_id_lock.unlock();
-            LOG.log(Level.INFO, "Leader " + leader_id + " gets notified at time " + LogicalTime.time);
+            Logging.log(Level.INFO, id, "Leader gets notified");
             MessagePayload response_payload = new LeaderPayload();
             Message response_msg = new Message(id, seqNo.incrementAndGet(), null, response_payload);
             Network.multicast(response_msg, membership.getAllNodes(), true);
@@ -118,7 +126,7 @@ public class Server {
             leader_id_lock.lock();
             leader_id = msg.getSrc();
             leader_id_lock.unlock();
-            LOG.log(Level.INFO, "Leader " + leader_id + " gets recognized by " + id + " at time " + LogicalTime.time);
+            Logging.log(Level.INFO, id, "Leader " + leader_id + " gets recognized");
             MessagePayload response_payload = new LeaderAckPayload();
             Message response_msg = new Message(id, seqNo.incrementAndGet(), msg.getSrc(), response_payload);
             Network.unicast(response_msg);
@@ -133,7 +141,7 @@ public class Server {
         queryReceivedIds.clear();
 
         List<Address> target_nodes = membership.getRandomNodes(num_nodes, excludedNodes);
-        LOG.log(Level.INFO, id + ": sending query message to " + target_nodes);
+        Logging.log(Level.INFO, id, "Node sending query message to " + target_nodes);
         MessagePayload payload = new QueryPayload();
 
         for (Address ip: target_nodes) {
@@ -143,15 +151,11 @@ public class Server {
 
         // check response after certain time
         // TODO: instead of passing target_nodes, we can just pass in the size to reduce overhead
-        Event event = new ResponseCheckEvent(LogicalTime.time + Config.event_check_timeout, target_nodes);
-        eventService.addEvent(event);
+        Event event = new ResponseCheckEvent(LogicalTime.time + Config.event_check_timeout, id, target_nodes);
+        EventService.addEvent(event);
     }
 
     public void updateMembership() {
         membership.update();
-    }
-
-    public EventService getEventService() {
-        return eventService;
     }
 }

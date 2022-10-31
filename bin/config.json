@@ -3,7 +3,7 @@
   "num_servers": "49",
   "one_hop_delay": "50",
   "end_time": "10000",
-  "granularity": "100",
+  "granularity": "10",
   "k": "3",
   "f": "1",
   "event_check_timeout": "1000"
