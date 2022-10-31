@@ -55,19 +55,20 @@ public class Simulator {
         int num_nodes = Math.min(Config.num_servers, Config.f + Config.k + 1);
         servers.get(coordinator).sendQuery(num_nodes, null);
 
+        TimerTask updateMembership = new TimerTask() {
+            public void run() {
+                for (Map.Entry<Address, Server> entry : servers.entrySet()) {
+                    entry.getValue().updateMembership();
+                }
+            }
+        };
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(updateMembership, 0, Config.granularity);
+
         EventService.processAll();
 
-//        while (LogicalTime.time < Config.end_time) {
-//            // process existing buffered events
-//            for (Map.Entry<Address, EventService> entry: eventServices.entrySet()) {
-//                entry.getValue().processAll(LogicalTime.time);
-//            }
-//
-//            LogicalTime.time += Config.granularity; // = EventService.getNextTimestamp();
-//            for (Map.Entry<Address, Server> entry: servers.entrySet()) {
-//                entry.getValue().updateMembership();
-//            }
-//        }
+        timer.cancel();
     }
 
     public static void main(String[] args) {

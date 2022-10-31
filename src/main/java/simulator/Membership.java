@@ -112,15 +112,23 @@ public class Membership {
     }
 
     public Address getLowestActiveId() {
+        Address result;
+        address_lock.lock();
         if (active_nodes.size() == 0) {
             all_nodes.sort(new AddressComparator<>());
-            return all_nodes.get(0);
+            result = all_nodes.get(0);
+        } else {
+            active_nodes.sort(new AddressComparator<>());
+            result = active_nodes.get(0);
         }
-        active_nodes.sort(new AddressComparator<>());
-        return active_nodes.get(0);
+        address_lock.unlock();
+        return result;
     }
 
     public List<Address> getAllNodes() {
-        return all_nodes;
+        address_lock.lock();
+        List<Address> copy = new ArrayList<>(all_nodes);
+        address_lock.unlock();
+        return copy;
     }
 }

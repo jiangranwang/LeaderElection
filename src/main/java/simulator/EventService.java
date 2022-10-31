@@ -17,6 +17,10 @@ public class EventService {
         events.add(event);
     }
 
+    public static boolean hasEvent() {
+        return !events.isEmpty();
+    }
+
     public static void initialize(HashMap<Address, Server> servers) {
         EventService.servers = servers;
     }
