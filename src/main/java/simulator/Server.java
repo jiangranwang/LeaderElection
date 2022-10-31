@@ -1,19 +1,13 @@
 package simulator;
 
-import enums.EventType;
-import enums.MessageType;
+import enums.*;
 import network.Address;
 import network.Network;
 import network.message.Message;
 import network.message.payload.MessagePayload;
 import network.message.payload.election.*;
-import simulator.event.Event;
-import simulator.event.LeaderCheckEvent;
-import simulator.event.ReceiveMsgEvent;
-import simulator.event.ResponseCheckEvent;
-import utils.AddressComparator;
-import utils.Config;
-import utils.Logging;
+import simulator.event.*;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +16,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Server {
-    private static final Logger LOG = Logger.getLogger(Server.class.getName());
-
     private final Address id;
     private final Membership membership;
     private final AtomicInteger seqNo;
@@ -58,13 +49,13 @@ public class Server {
         } else if (event.getType() == EventType.RESPONSE_CHECK) {
             checkQueryResponse((ResponseCheckEvent) event);
         } else if (event.getType() == EventType.LEADER_CHECK) {
-            checkLeader((LeaderCheckEvent) event);
+            checkLeader();
         } else {
             throw new RuntimeException("Event type " + event.getType() + " not found!!!");
         }
     }
 
-    private void checkLeader(LeaderCheckEvent event) {
+    private void checkLeader() {
         if (leader_id == null) {
             if (leader_notify_count == 0) {
                 Logging.log(Level.WARNING, id, "Resending notify leader too many times, leader might be dead.");
@@ -86,7 +77,7 @@ public class Server {
         if (queryReceivedIds.size() < target_nodes.size()) {
             // missing some query response message
             Logging.log(Level.INFO, id, "Resending query message to unresponsive nodes.");
-            Logging.log(Level.FINE, id, "Received ids are: " + queryReceivedIds.toString());
+            Logging.log(Level.FINE, id, "Received ids are: " + queryReceivedIds);
             sendQuery(target_nodes.size() - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
             return;
         }

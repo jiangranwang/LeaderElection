@@ -4,15 +4,8 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import enums.EventType;
 import network.Address;
 import network.Network;
-import network.message.Message;
-import network.message.payload.MessagePayload;
-import network.message.payload.election.QueryPayload;
-import network.message.payload.election.QueryResponsePayload;
-import simulator.event.Event;
-import simulator.event.ReceiveMsgEvent;
 import utils.Config;
 
 public class Simulator {

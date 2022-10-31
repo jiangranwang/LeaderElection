@@ -24,8 +24,6 @@ public class Network {
 
     // TODO: route message using hops & message drop (exclude multicast, which need resend mechanism)
     public static void unicast(Message msg) {
-        Address dst = msg.getDst();
-
         Logging.log(Level.FINE, msg.getSrc(), "Sending message " + msg);
         Event event = new ReceiveMsgEvent(LogicalTime.time + random.nextInt(Config.one_hop_delay), msg.getDst(), msg);
         EventService.addEvent(event);
