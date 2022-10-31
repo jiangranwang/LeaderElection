@@ -5,4 +5,4 @@ LOGGING="-Djava.util.logging.config.file=./logging.properties"
 USER_HOME="-Duser.home=$(pwd)"
 DEBUG=""
 
-java ${DEBUG} -cp ${CLASSPATH} ${LOGGING} ${USER_HOME} election.Simulator $@
+java ${DEBUG} -cp ${CLASSPATH} ${LOGGING} ${USER_HOME} simulator.Simulator $@
