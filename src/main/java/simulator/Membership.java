@@ -23,9 +23,9 @@ public class Membership {
 
     private final ConcurrentHashMap<Address, String> status = new ConcurrentHashMap<>();; // node status
     private final ConcurrentHashMap<Address, Integer> suspects = new ConcurrentHashMap<>();; // suspect count
-    private final List<Address> all_nodes = new ArrayList<>();
-    private final List<Address> active_nodes = new ArrayList<>();
-    private final Lock address_lock = new ReentrantLock();
+    private final List<Address> allNodes = new ArrayList<>();
+    private final List<Address> activeNodes = new ArrayList<>();
+    private final Lock addressLock = new ReentrantLock();
     private final Random random = new Random();
 
     public Membership(Address id) {
@@ -37,23 +37,23 @@ public class Membership {
         JSONParser jsonParser = new JSONParser();
         boolean success = false;
         while (!success) {
-            try (FileReader reader = new FileReader(Config.membership_file + id.getId() + ".json")) {
+            try (FileReader reader = new FileReader(Config.membershipFile + id.getId() + ".json")) {
                 Object obj = jsonParser.parse(reader);
                 reader.close();
                 JSONObject config = (JSONObject) obj;
 
-                JSONObject status_obj = (JSONObject) config.get("status");
-                JSONObject suspects_obj = (JSONObject) config.get("suspects");
+                JSONObject statusObj = (JSONObject) config.get("status");
+                JSONObject suspectsObj = (JSONObject) config.get("suspects");
 
-                for (int node_id = 0; node_id < Config.num_servers; node_id++) {
-                    String node_id_str = String.valueOf(node_id);
-                    if (status_obj.containsKey(node_id_str)) {
-                        status.put(new Address(node_id), (String) status_obj.get(node_id_str));
+                for (int nodeId = 0; nodeId < Config.numServers; nodeId++) {
+                    String nodeIdStr = String.valueOf(nodeId);
+                    if (statusObj.containsKey(nodeIdStr)) {
+                        status.put(new Address(nodeId), (String) statusObj.get(nodeIdStr));
                     } else {
-                        status.put(new Address(node_id), "failed");
+                        status.put(new Address(nodeId), "failed");
                     }
-                    if (suspects_obj.containsKey(node_id_str)) {
-                        suspects.put(new Address(node_id), Integer.parseInt((String) suspects_obj.get(node_id_str)));
+                    if (suspectsObj.containsKey(nodeIdStr)) {
+                        suspects.put(new Address(nodeId), Integer.parseInt((String) suspectsObj.get(nodeIdStr)));
                     }
                 }
                 success = true;
@@ -66,39 +66,39 @@ public class Membership {
             }
         }
 
-        address_lock.lock();
-        all_nodes.clear();
-        active_nodes.clear();
+        addressLock.lock();
+        allNodes.clear();
+        activeNodes.clear();
         for (Map.Entry<Address, String> entry: status.entrySet()) {
-            all_nodes.add(entry.getKey());
+            allNodes.add(entry.getKey());
             if (Objects.equals(entry.getValue(), "active")) {
-                active_nodes.add(entry.getKey());
+                activeNodes.add(entry.getKey());
             }
         }
-        address_lock.unlock();
+        addressLock.unlock();
     }
 
-    public List<Address> getRandomNodes(int num_nodes, List<Address> excludedNodes, boolean activeOnly) {
-        if (num_nodes > all_nodes.size()) {
-            throw new RuntimeException("Cannot get " + num_nodes + " nodes from list!!!");
+    public List<Address> getRandomNodes(int numNodes, List<Address> excludedNodes, boolean activeOnly) {
+        if (numNodes > allNodes.size()) {
+            throw new RuntimeException("Cannot get " + numNodes + " nodes from list!!!");
         }
 
-        address_lock.lock();
-        List<Address> candidates = new ArrayList<>(activeOnly ? active_nodes : all_nodes);
-        address_lock.unlock();
+        addressLock.lock();
+        List<Address> candidates = new ArrayList<>(activeOnly ? activeNodes : allNodes);
+        addressLock.unlock();
         if (excludedNodes != null) {
             for (Address ip: excludedNodes) {
                 candidates.remove(ip);
             }
-            if (candidates.size() < num_nodes) {
+            if (candidates.size() < numNodes) {
                 LOG.log(Level.WARNING, "candidate size is less than required nodes!");
-                address_lock.lock();
-                candidates = new ArrayList<>(all_nodes);
-                address_lock.unlock();
+                addressLock.lock();
+                candidates = new ArrayList<>(allNodes);
+                addressLock.unlock();
             }
         }
         Collections.shuffle(candidates);
-        return candidates.subList(0, num_nodes);
+        return candidates.subList(0, numNodes);
     }
 
     public ConcurrentHashMap<Address, String> getStatus() {
@@ -111,52 +111,52 @@ public class Membership {
 
     public Address getLowestActiveId() {
         Address result;
-        address_lock.lock();
-        if (active_nodes.size() == 0) {
-            all_nodes.sort(new AddressComparator<>());
-            result = all_nodes.get(0);
+        addressLock.lock();
+        if (activeNodes.size() == 0) {
+            allNodes.sort(new AddressComparator<>());
+            result = allNodes.get(0);
         } else {
-            active_nodes.sort(new AddressComparator<>());
-            result = active_nodes.get(0);
-            // if (random.nextDouble() < 0.5) result = active_nodes.get(1);
+            activeNodes.sort(new AddressComparator<>());
+            result = activeNodes.get(0);
+            // if (random.nextDouble() < 0.5) result = activeNodes.get(1);
         }
-        address_lock.unlock();
+        addressLock.unlock();
         return result;
     }
 
     public List<Address> getAllNodes() {
-        address_lock.lock();
-        List<Address> copy = new ArrayList<>(all_nodes);
-        address_lock.unlock();
+        addressLock.lock();
+        List<Address> copy = new ArrayList<>(allNodes);
+        addressLock.unlock();
         return copy;
     }
 
     public Pair<List<Address>, List<Pair<Address, Integer>>> getPairIds(
-            int num_low_nodes, int num_suspect_counts, boolean activeOnly) {
-        List<Pair<Address, Integer>> highest_suspect_ids = getHighestSuspectNodes(num_suspect_counts, activeOnly);
-        address_lock.lock();
-        List<Address> lowest_ids = new ArrayList<>(activeOnly ? active_nodes : all_nodes)
-                .stream().filter(key -> !highest_suspect_ids.stream().map(Pair::getKey).collect(Collectors.toList())
+            int numLowNodes, int numSuspectCounts, boolean activeOnly) {
+        List<Pair<Address, Integer>> highestSuspectNodes = getHighestSuspectNodes(numSuspectCounts, activeOnly);
+        addressLock.lock();
+        List<Address> lowestIds = new ArrayList<>(activeOnly ? activeNodes : allNodes)
+                .stream().filter(key -> !highestSuspectNodes.stream().map(Pair::getKey).collect(Collectors.toList())
                         .contains(key)).collect(Collectors.toList());
-        address_lock.unlock();
-        if (lowest_ids.size() < num_low_nodes && activeOnly) {
-            return getPairIds(num_low_nodes, num_suspect_counts, false);
+        addressLock.unlock();
+        if (lowestIds.size() < numLowNodes && activeOnly) {
+            return getPairIds(numLowNodes, numSuspectCounts, false);
         }
-        lowest_ids.sort(new AddressComparator<>());
-        return new Pair<>(lowest_ids.subList(0, Math.min(num_low_nodes, lowest_ids.size())), highest_suspect_ids);
+        lowestIds.sort(new AddressComparator<>());
+        return new Pair<>(lowestIds.subList(0, Math.min(numLowNodes, lowestIds.size())), highestSuspectNodes);
     }
 
-    public List<Pair<Address, Integer>> getHighestSuspectNodes(int num_nodes, boolean activeOnly) {
-        Map<Address, Integer> suspect_candidates = new HashMap<>();
-        address_lock.lock();
-        (activeOnly ? active_nodes : all_nodes).stream().filter(suspects::containsKey).collect(Collectors.toList())
-                .forEach(key -> suspect_candidates.put(key, suspects.get(key)));
-        address_lock.unlock();
-        List<Map.Entry<Address, Integer>> list = suspect_candidates.entrySet().stream()
+    public List<Pair<Address, Integer>> getHighestSuspectNodes(int numNodes, boolean activeOnly) {
+        Map<Address, Integer> suspectCandidates = new HashMap<>();
+        addressLock.lock();
+        (activeOnly ? activeNodes : allNodes).stream().filter(suspects::containsKey).collect(Collectors.toList())
+                .forEach(key -> suspectCandidates.put(key, suspects.get(key)));
+        addressLock.unlock();
+        List<Map.Entry<Address, Integer>> list = suspectCandidates.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
-        List<Map.Entry<Address, Integer>> list_filtered = list.stream()
-                .filter(entry -> entry.getValue() >= Config.suspect_count_threshold).collect(Collectors.toList());
-        return list_filtered.subList(0, Math.min(num_nodes, list_filtered.size())).stream()
+        List<Map.Entry<Address, Integer>> listFiltered = list.stream()
+                .filter(entry -> entry.getValue() >= Config.suspectCountThreshold).collect(Collectors.toList());
+        return listFiltered.subList(0, Math.min(numNodes, listFiltered.size())).stream()
                 .map(entry -> new Pair<>(entry.getKey(), entry.getValue())).collect(Collectors.toList());
     }
 }

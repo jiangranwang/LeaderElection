@@ -4,13 +4,13 @@ import enums.EventType;
 import network.Address;
 
 public class ResponseCheckEvent extends Event {
-    private final int num_nodes;
-    public ResponseCheckEvent(long time, Address id, int num_nodes) {
+    private final int numNodes;
+    public ResponseCheckEvent(long time, Address id, int numNodes) {
         super(EventType.RESPONSE_CHECK, time, id);
-        this.num_nodes = num_nodes;
+        this.numNodes = numNodes;
     }
 
     public int getNumNodes() {
-        return num_nodes;
+        return numNodes;
     }
 }

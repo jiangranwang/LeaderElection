@@ -13,7 +13,7 @@ public class EventService {
     private static HashMap<Address, Server> servers;
 
     public static void addEvent(Event event) {
-        if (event.getTime() > Config.end_time) return;
+        if (event.getTime() > Config.endTime) return;
         events.add(event);
     }
 

@@ -27,13 +27,13 @@ public class Network {
     private static final HashMap<Address, HashMap<Address, Double>> hopDistMap = new HashMap<>();
     private static final HashMap<Address, HashMap<Address, Double>> hopNumMap = new HashMap<>();
     private static final HashMap<Address, HashMap<Address, Address>> routingTable = new HashMap<>();
-    private static final ReadWriteLock topology_lock = new ReentrantReadWriteLock();
+    private static final ReadWriteLock topologyLock = new ReentrantReadWriteLock();
     private static final Random random = new Random();
 
     public static void initialize(List<Address> addresses) {
         // parse topology file
         try {
-            List<String> content = Files.readAllLines(Paths.get(Config.topology_file));
+            List<String> content = Files.readAllLines(Paths.get(Config.topologyFile));
             if (addresses.size() != content.size()) {
                 LOG.log(Level.SEVERE, "Number of servers (" + addresses.size() + ") and topology file ("
                         + content.size() + ") doesn't match!");
@@ -50,18 +50,18 @@ public class Network {
             System.exit(1);
         }
 
-        build_topology();
+        buildTopology();
     }
 
     // return value indicates whether there is a partition
-    private static boolean build_topology() {
-        topology_lock.writeLock().lock();
+    private static boolean buildTopology() {
+        topologyLock.writeLock().lock();
 
         // generate physical distance
         for (Address from : coordinates.keySet()) {
             for (Address to : coordinates.keySet()) {
                 if (from.equals(to)) continue;
-                double physical_dist = getPhysicalDist(
+                double physicalDist = getPhysicalDist(
                         coordinates.get(from).getKey(), coordinates.get(from).getValue(),
                         coordinates.get(to).getKey(), coordinates.get(to).getValue());
                 if (!distanceMap.containsKey(from)) {
@@ -70,8 +70,8 @@ public class Network {
                 if (!distanceMap.containsKey(to)) {
                     distanceMap.put(to, new HashMap<>());
                 }
-                distanceMap.get(from).put(to, physical_dist);
-                distanceMap.get(to).put(from, physical_dist);
+                distanceMap.get(from).put(to, physicalDist);
+                distanceMap.get(to).put(from, physicalDist);
             }
         }
 
@@ -84,7 +84,7 @@ public class Network {
         for (Address from : coordinates.keySet()) {
             for (Address to : coordinates.keySet()) {
                 double distance = distanceMap.get(from).getOrDefault(to, 0.0);
-                if (distance > Config.one_hop_radius) {
+                if (distance > Config.oneHopRadius) {
                     hopDistMap.get(from).put(to, Double.MAX_VALUE);
                     hopDistMap.get(to).put(from, Double.MAX_VALUE);
                 } else {
@@ -113,7 +113,7 @@ public class Network {
         for (Address from : coordinates.keySet()) {
             for (Address to : coordinates.keySet()) {
                 if (!routingTable.get(from).containsKey(to)) {
-                    topology_lock.writeLock().unlock();
+                    topologyLock.writeLock().unlock();
                     Logging.log(Level.WARNING, null, "Network partition detected.");
                     return false;
                 }
@@ -137,7 +137,7 @@ public class Network {
             }
         }
 
-        topology_lock.writeLock().unlock();
+        topologyLock.writeLock().unlock();
         return true;
     }
 
@@ -147,35 +147,35 @@ public class Network {
 
     private static Address getNextHop(Address src, Address dst) {
         if (src.equals(dst)) return dst;
-        topology_lock.readLock().lock();
-        Address next_hop = routingTable.get(src).get(dst);
-        topology_lock.readLock().unlock();
-        return next_hop;
+        topologyLock.readLock().lock();
+        Address nextHop = routingTable.get(src).get(dst);
+        topologyLock.readLock().unlock();
+        return nextHop;
     }
 
     public static void unicast(Message msg) {
         if (msg.getSrc() == msg.getCurr()) {
             Logging.log(Level.FINE, msg.getSrc(), "Sending message " + msg);
         }
-        Address next_hop = getNextHop(msg.getCurr(), msg.getDst());
-        msg.setCurr(next_hop);
-        LOG.log(Level.FINER, "Routing message " + msg + " through node " + next_hop);
+        Address nextHop = getNextHop(msg.getCurr(), msg.getDst());
+        msg.setCurr(nextHop);
+        LOG.log(Level.FINER, "Routing message " + msg + " through node " + nextHop);
         Event event;
-        if (msg.getDst() == next_hop)
-            event = new ReceiveMsgEvent(LogicalTime.time + random.nextInt(Config.one_hop_delay), next_hop, msg);
+        if (msg.getDst() == nextHop)
+            event = new ReceiveMsgEvent(LogicalTime.time + random.nextInt(Config.oneHopDelay), nextHop, msg);
         else
-            event = new RouteMsgEvent(LogicalTime.time + random.nextInt(Config.one_hop_delay), next_hop, msg);
+            event = new RouteMsgEvent(LogicalTime.time + random.nextInt(Config.oneHopDelay), nextHop, msg);
         EventService.addEvent(event);
     }
 
-    public static void multicast(Message msg, List<Address> target_nodes, boolean excludeSelf) {
+    public static void multicast(Message msg, List<Address> targetNodes, boolean excludeSelf) {
         Logging.log(Level.FINE, msg.getSrc(), "Multicasting message " + msg);
-        for (Address ip: target_nodes) {
+        for (Address ip: targetNodes) {
             if (excludeSelf && ip.equals(msg.getSrc())) {
                 continue;
             }
-            Message curr_msg = new Message(msg, ip);
-            unicast(curr_msg);
+            Message currMsg = new Message(msg, ip);
+            unicast(currMsg);
         }
     }
 }

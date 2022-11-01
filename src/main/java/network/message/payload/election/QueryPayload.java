@@ -7,28 +7,28 @@ import utils.Config;
 public class QueryPayload extends MessagePayload {
     private static final long serialVersionUID = 2874891435243124L;
 
-    private final int num_low_node; // number of low hash nodes
-    private final int num_suspect_count; // number of high suspect count nodes
+    private final int numLowNode; // number of low hash nodes
+    private final int numSuspectCount; // number of high suspect count nodes
 
     public QueryPayload() {
         super(MessageType.QUERY);
         assert Config.algorithm != 3;
-        this.num_low_node = -1;
-        this.num_suspect_count = -1;
+        this.numLowNode = -1;
+        this.numSuspectCount = -1;
     }
 
-    public QueryPayload(int num_low_node, int num_suspect_count) {
+    public QueryPayload(int numLowNode, int numSuspectCount) {
         super(MessageType.QUERY);
         assert Config.algorithm == 3;
-        this.num_low_node = num_low_node;
-        this.num_suspect_count = num_suspect_count;
+        this.numLowNode = numLowNode;
+        this.numSuspectCount = numSuspectCount;
     }
 
     public int getNumNodes() {
-        return num_low_node;
+        return numLowNode;
     }
 
     public int getNumSuspects() {
-        return num_suspect_count;
+        return numSuspectCount;
     }
 }

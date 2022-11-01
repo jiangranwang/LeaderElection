@@ -10,11 +10,11 @@ import java.util.logging.Logger;
 public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
-    public static String membership_file, topology_file;
-    public static int num_servers, one_hop_delay, granularity, k, f, event_check_timeout, algorithm, num_low_node,
-            num_suspect_count, suspect_count_threshold;
-    public static long end_time;
-    public static double one_hop_radius;
+    public static String membershipFile, topologyFile;
+    public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
+            numSuspectCount, suspectCountThreshold;
+    public static long endTime;
+    public static double oneHopRadius;
 
     public static void parse(String config_path) {
         JSONParser jsonParser = new JSONParser();
@@ -24,24 +24,24 @@ public class Config {
             reader.close();
             JSONObject config = (JSONObject) obj;
 
-            membership_file = (String) config.get("membership_file");
-            topology_file = (String) config.get("topology_file");
+            membershipFile = (String) config.get("membership_file");
+            topologyFile = (String) config.get("topology_file");
 
-            num_servers = Integer.parseInt((String) config.get("num_servers"));
-            one_hop_delay = Integer.parseInt((String) config.get("one_hop_delay"));
+            numServers = Integer.parseInt((String) config.get("num_servers"));
+            oneHopDelay = Integer.parseInt((String) config.get("one_hop_delay"));
             granularity = Integer.parseInt((String) config.get("granularity"));
             k = Integer.parseInt((String) config.get("k"));
             f = Integer.parseInt((String) config.get("f"));
-            event_check_timeout = Integer.parseInt((String) config.get("event_check_timeout"));
+            eventCheckTimeout = Integer.parseInt((String) config.get("event_check_timeout"));
             algorithm = Integer.parseInt((String) config.get("algorithm"));
             if (algorithm < 1 || algorithm > 3) throw new RuntimeException("Algorithm should be 1, 2, or 3!");
-            num_low_node = Integer.parseInt((String) config.get("num_low_node"));
-            num_suspect_count = Integer.parseInt((String) config.get("num_suspect_count"));
-            suspect_count_threshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
+            numLowNode = Integer.parseInt((String) config.get("num_low_node"));
+            numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
+            suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
 
-            end_time = Long.parseLong((String) config.get("end_time"));
+            endTime = Long.parseLong((String) config.get("end_time"));
 
-            one_hop_radius = Double.parseDouble((String) config.get("one_hop_radius"));
+            oneHopRadius = Double.parseDouble((String) config.get("one_hop_radius"));
         } catch (Exception e) {
             e.printStackTrace();
             LOG.log(Level.SEVERE, "Failed to parse configuration file");

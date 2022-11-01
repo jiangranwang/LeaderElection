@@ -25,7 +25,7 @@ public class Simulator {
         Config.parse(args[0]); // this must be called before anything else
 
         // build ips
-        for (int id = 0; id < Config.num_servers; id++) {
+        for (int id = 0; id < Config.numServers; id++) {
             Address ip = new Address(id);
             addresses.add(ip);
             Server server = new Server(ip);
@@ -39,9 +39,9 @@ public class Simulator {
     private static void run() {
         LogicalTime.time = 0;
         // pick a server as the coordinator
-        Address coordinator = addresses.get(random.nextInt(Config.num_servers));
+        Address coordinator = addresses.get(random.nextInt(Config.numServers));
         // get k + f + 1 random servers to send query message
-        int num_nodes = Math.min(Config.num_servers, Config.f + Config.k + 1);
+        int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
         servers.get(coordinator).sendQuery(num_nodes, null);
 
         TimerTask updateMembership = new TimerTask() {
