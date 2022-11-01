@@ -14,7 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Level;
@@ -28,7 +27,6 @@ public class Network {
     private static final HashMap<Address, HashMap<Address, Double>> hopNumMap = new HashMap<>();
     private static final HashMap<Address, HashMap<Address, Address>> routingTable = new HashMap<>();
     private static final ReadWriteLock topologyLock = new ReentrantReadWriteLock();
-    private static final Random random = new Random();
 
     public static void initialize(List<Address> addresses) {
         // parse topology file
@@ -54,7 +52,7 @@ public class Network {
     }
 
     // return value indicates whether there is a partition
-    private static boolean buildTopology() {
+    private static void buildTopology() {
         topologyLock.writeLock().lock();
 
         // generate physical distance
@@ -115,7 +113,7 @@ public class Network {
                 if (!routingTable.get(from).containsKey(to)) {
                     topologyLock.writeLock().unlock();
                     Logging.log(Level.WARNING, null, "Network partition detected.");
-                    return false;
+                    return;
                 }
             }
         }
@@ -138,7 +136,6 @@ public class Network {
         }
 
         topologyLock.writeLock().unlock();
-        return true;
     }
 
     private static double getPhysicalDist(Double x1, Double y1, Double x2, Double y2) {
@@ -160,20 +157,21 @@ public class Network {
         Address nextHop = getNextHop(msg.getCurr(), msg.getDst());
         msg.setCurr(nextHop);
         LOG.log(Level.FINER, "Routing message " + msg + " through node " + nextHop);
+        if (Config.random.nextDouble() < Config.msgDropRate) {
+            LOG.log(Level.FINE, "Message " + msg + " dropped.");
+            return;
+        }
         Event event;
         if (msg.getDst() == nextHop)
-            event = new ReceiveMsgEvent(LogicalTime.time + random.nextInt(Config.oneHopDelay), nextHop, msg);
+            event = new ReceiveMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
         else
-            event = new RouteMsgEvent(LogicalTime.time + random.nextInt(Config.oneHopDelay), nextHop, msg);
+            event = new RouteMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
         EventService.addEvent(event);
     }
 
-    public static void multicast(Message msg, List<Address> targetNodes, boolean excludeSelf) {
+    public static void multicast(Message msg, List<Address> targetNodes) {
         Logging.log(Level.FINE, msg.getSrc(), "Multicasting message " + msg);
         for (Address ip: targetNodes) {
-            if (excludeSelf && ip.equals(msg.getSrc())) {
-                continue;
-            }
             Message currMsg = new Message(msg, ip);
             unicast(currMsg);
         }

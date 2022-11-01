@@ -8,7 +8,7 @@ public enum EventType {
     LEADER_CHECK(LeaderCheckEvent.class),
     ACK_CHECK(AckCheckEvent.class),
     ROUTE_MSG(RouteMsgEvent.class),
-    RESEND_EVENT(ResendEvent.class);
+    RESEND(ResendEvent.class);
 
     private final Class<? extends Event> eventClass;
     EventType(Class<? extends Event> eventClass) {

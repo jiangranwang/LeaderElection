@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,9 +15,13 @@ public class Config {
     public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
             numSuspectCount, suspectCountThreshold;
     public static long endTime;
-    public static double oneHopRadius;
+    public static double oneHopRadius, msgDropRate;
+
+    public static Random random = new Random();
+    private static final long seed = System.currentTimeMillis();
 
     public static void parse(String config_path) {
+        random.setSeed(seed);
         JSONParser jsonParser = new JSONParser();
 
         try (FileReader reader = new FileReader(config_path)) {
@@ -42,6 +47,7 @@ public class Config {
             endTime = Long.parseLong((String) config.get("end_time"));
 
             oneHopRadius = Double.parseDouble((String) config.get("one_hop_radius"));
+            msgDropRate = Double.parseDouble((String) config.get("msg_drop_rate"));
         } catch (Exception e) {
             e.printStackTrace();
             LOG.log(Level.SEVERE, "Failed to parse configuration file");

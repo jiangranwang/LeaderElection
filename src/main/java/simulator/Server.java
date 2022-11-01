@@ -100,7 +100,9 @@ public class Server {
             EventService.addEvent(nextEvent);
 
         } else if (event.getType() == EventType.LEADER_CHECK) {
+            leaderIdLock.lock();
             if (leaderId == null) {
+                leaderIdLock.unlock();
                 if (leaderNotifyCount == 0) {
                     Logging.log(Level.WARNING, id, "Resending notify leader too many times, leader might be dead.");
                     return;
@@ -113,19 +115,28 @@ public class Server {
 
                 Event nextEvent = new LeaderCheckEvent(LogicalTime.time + Config.eventCheckTimeout, id);
                 EventService.addEvent(nextEvent);
+                return;
             }
+            leaderIdLock.unlock();
 
         } else if (event.getType() == EventType.ROUTE_MSG) {
             Network.unicast(((RouteMsgEvent) event).getMsg());
 
-        } else if (event.getType() == EventType.RESEND_EVENT) {
+        } else if (event.getType() == EventType.RESEND) {
             Message msg = ((ResendEvent) event).getMsg();
+            leaderIdLock.lock();
+            if (msg.getPayload().getType() == MessageType.LEADER && leaderId.lessThan(id)) {
+                // a new leader has been elected, no need to wait for other leader ack
+                leaderIdLock.unlock();
+                return;
+            }
+            leaderIdLock.unlock();
             List<Address> targetNodes = ((ResendEvent) event).getTargetNodes();
             List<Address> newTargetNodes = targetNodes.stream()
-                    .filter(key -> ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
+                    .filter(key -> !ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
             if (newTargetNodes.size() == 0) return;
             Logging.log(Level.FINE, id, "Resending msg (" + msg + ") to nodes: " + newTargetNodes);
-            Network.multicast(msg, newTargetNodes, false);
+            Network.multicast(msg, newTargetNodes);
 
             Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes);
             EventService.addEvent(nextEvent);
@@ -196,26 +207,26 @@ public class Server {
             Logging.log(Level.INFO, id, "Leader gets notified");
             MessagePayload responsePayload = new LeaderPayload();
             Message responseMsg = new Message(id, seqNo.incrementAndGet(), null, responsePayload, messageNo.incrementAndGet());
-            Network.multicast(responseMsg, membership.getAllNodes(), true);
+            ackedIds.put(responseMsg.getMessageNo(), new HashSet<>());
+            Network.multicast(responseMsg, membership.getAllNodes(true));
 
-            Event event = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, responseMsg, membership.getAllNodes());
+            Event event = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, responseMsg, membership.getAllNodes(true));
             EventService.addEvent(event);
 
         } else if (payload.getType() == MessageType.LEADER) {
             leaderIdLock.lock();
-            if (!msg.getSrc().lessThan(leaderId)) {
+            if (msg.getSrc().greaterThan(leaderId)) {
                 leaderIdLock.unlock();
                 return;
             }
             leaderId = AddressComparator.getMin(leaderId, msg.getSrc());
+            if (msg.getSrc().lessThan(leaderId)) Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             leaderIdLock.unlock();
-            Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             MessagePayload responsePayload = new LeaderAckPayload();
             Message responseMsg = new Message(id, seqNo.incrementAndGet(), msg.getSrc(), responsePayload, msg.getMessageNo());
             Network.unicast(responseMsg);
 
         } else if (payload.getType() == MessageType.LEADER_ACK) {
-            if (!ackedIds.containsKey(msg.getMessageNo())) ackedIds.put(msg.getMessageNo(), new HashSet<>());
             ackedIds.get(msg.getMessageNo()).add(msg.getSrc());
 
         } else {
@@ -225,8 +236,6 @@ public class Server {
 
     public void sendQuery(int numNodes, List<Address> excludes) {
         queryReceivedIds.clear();
-        tempId = null;
-        leaderId = null;
         leaderNodes.clear();
         excludedNodes.clear();
         leaderNotifyCount = 3;

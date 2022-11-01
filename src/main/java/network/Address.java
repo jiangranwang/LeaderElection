@@ -36,6 +36,11 @@ public class Address {
         return other == null || this.id < other.id;
     }
 
+    public boolean greaterThan(Address other) {
+        if (other == null) return false;
+        return this.id > other.id;
+    }
+
     public String toString() {
         return String.valueOf(id);
     }

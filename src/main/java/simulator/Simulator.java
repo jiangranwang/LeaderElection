@@ -10,7 +10,6 @@ import utils.Config;
 
 public class Simulator {
     private static final Logger LOG = Logger.getLogger(Simulator.class.getName());
-    private static final Random random = new Random();
 
     private static final List<Address> addresses = new ArrayList<>();
     private static final HashMap<Address, Server> servers = new HashMap<>();
@@ -39,7 +38,8 @@ public class Simulator {
     private static void run() {
         LogicalTime.time = 0;
         // pick a server as the coordinator
-        Address coordinator = addresses.get(random.nextInt(Config.numServers));
+        Address coordinator = addresses.get(Config.random.nextInt(Config.numServers));
+        LOG.log(Level.INFO, "Coordinator is: " + coordinator);
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
         servers.get(coordinator).sendQuery(num_nodes, null);
@@ -63,10 +63,9 @@ public class Simulator {
     private static void conclude() {
         for (Map.Entry<Address, Server> entry: servers.entrySet()) {
             LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
-            if (entry.getValue().getLeaderId().getId() != 0) {
+            if (entry.getValue().getLeaderId() == null || entry.getValue().getLeaderId().getId() != 0) {
                 String msg = "Node " + entry.getKey() + " does not have correct leader! It has "
                         + entry.getValue().getLeaderId() + " instead";
-                System.out.println(msg);
                 LOG.log(Level.SEVERE, msg);
             }
         }

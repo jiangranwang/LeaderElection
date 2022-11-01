@@ -11,7 +11,7 @@ public class ResendEvent extends Event {
     private final List<Address> target_nodes;
 
     public ResendEvent(long time, Address id, Message msg, List<Address> target_nodes) {
-        super(EventType.RESEND_EVENT, time, id);
+        super(EventType.RESEND, time, id);
 
         this.msg = msg;
         this.target_nodes = target_nodes;

@@ -26,7 +26,6 @@ public class Membership {
     private final List<Address> allNodes = new ArrayList<>();
     private final List<Address> activeNodes = new ArrayList<>();
     private final Lock addressLock = new ReentrantLock();
-    private final Random random = new Random();
 
     public Membership(Address id) {
         this.id = id;
@@ -124,9 +123,9 @@ public class Membership {
         return result;
     }
 
-    public List<Address> getAllNodes() {
+    public List<Address> getAllNodes(boolean excludeSelf) {
         addressLock.lock();
-        List<Address> copy = new ArrayList<>(allNodes);
+        List<Address> copy = allNodes.stream().filter(key -> !(excludeSelf && key.equals(id))).collect(Collectors.toList());
         addressLock.unlock();
         return copy;
     }
