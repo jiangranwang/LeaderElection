@@ -39,7 +39,7 @@ public class Simulator {
     private static void run() {
         LogicalTime.time = 0;
         // pick a server as the coordinator
-        Address coordinator = addresses.get(0);
+        Address coordinator = addresses.get(random.nextInt(Config.num_servers));
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.num_servers, Config.f + Config.k + 1);
         servers.get(coordinator).sendQuery(num_nodes, null);
@@ -63,6 +63,12 @@ public class Simulator {
     private static void conclude() {
         for (Map.Entry<Address, Server> entry: servers.entrySet()) {
             LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
+            if (entry.getValue().getLeaderId().getId() != 0) {
+                String msg = "Node " + entry.getKey() + " does not have correct leader! It has "
+                        + entry.getValue().getLeaderId() + " instead";
+                System.out.println(msg);
+                LOG.log(Level.SEVERE, msg);
+            }
         }
     }
 

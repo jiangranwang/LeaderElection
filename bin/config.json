@@ -7,5 +7,8 @@
   "k": "3",
   "f": "1",
   "event_check_timeout": "1000",
-  "algorithm": "1"
+  "algorithm": "3",
+  "num_low_node": "5",
+  "num_suspect_count": "5",
+  "suspect_count_threshold": "5"
 }

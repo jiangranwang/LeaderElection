@@ -3,16 +3,14 @@ package simulator.event;
 import enums.EventType;
 import network.Address;
 
-import java.util.List;
-
 public class ResponseCheckEvent extends Event {
-    private final List<Address> target_nodes;
-    public ResponseCheckEvent(long time, Address id, List<Address> target_nodes) {
+    private final int num_nodes;
+    public ResponseCheckEvent(long time, Address id, int num_nodes) {
         super(EventType.RESPONSE_CHECK, time, id);
-        this.target_nodes = target_nodes;
+        this.num_nodes = num_nodes;
     }
 
-    public List<Address> getTargetNodes() {
-        return target_nodes;
+    public int getNumNodes() {
+        return num_nodes;
     }
 }

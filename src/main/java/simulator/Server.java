@@ -8,39 +8,35 @@ import network.message.payload.MessagePayload;
 import network.message.payload.election.*;
 import simulator.event.*;
 import utils.*;
+import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 public class Server {
     private final Address id;
     private final Membership membership;
-    private final AtomicInteger seqNo;
+    private final AtomicInteger seqNo = new AtomicInteger(0);
 
     // algorithm related variables
-    private final ConcurrentLinkedQueue<Address> queryReceivedIds;
-    private Address temp_id; // temporary minimum id
-    private Address leader_id;
-    private final Lock temp_id_lock;
-    private final Lock leader_id_lock;
+    private final ConcurrentLinkedQueue<Address> queryReceivedIds = new ConcurrentLinkedQueue<>();
+    private Address temp_id = null; // temporary minimum id
+    private Address leader_id = null;
+    private final Lock temp_id_lock = new ReentrantLock();
+    private final Lock leader_id_lock = new ReentrantLock();
     private int leader_notify_count = 3; // resend notify leader at most 3 times
+    private final Set<Address> leaderNodes = ConcurrentHashMap.newKeySet();
+    private final ConcurrentHashMap<Address, Integer> excludedNodes = new ConcurrentHashMap<>();
 
     public Server(Address id) {
         this.id = id;
         this.membership = new Membership(Config.membership_file, Config.num_servers, id);
-        this.seqNo = new AtomicInteger(0);
-
-        this.queryReceivedIds = new ConcurrentLinkedQueue<>();
-        this.temp_id = null;
-        this.leader_id = null;
-        this.temp_id_lock = new ReentrantLock();
-        this.leader_id_lock = new ReentrantLock();
     }
 
     public void processEvent(Event event) {
@@ -74,12 +70,12 @@ public class Server {
     }
 
     private void checkQueryResponse(ResponseCheckEvent event) {
-        List<Address> target_nodes = event.getTargetNodes();
-        if (queryReceivedIds.size() < target_nodes.size()) {
+        int num_nodes = event.getNumNodes();
+        if (queryReceivedIds.size() < num_nodes) {
             // missing some query response message
             Logging.log(Level.INFO, id, "Resending query message to unresponsive nodes.");
             Logging.log(Level.FINE, id, "Received ids are: " + queryReceivedIds);
-            sendQuery(target_nodes.size() - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
+            sendQuery(num_nodes - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
             return;
         }
 
@@ -87,6 +83,37 @@ public class Server {
             // we must have notified the temp_id previously
             return;
         }
+
+        if (Config.algorithm == 3) {
+            // find the top num_suspect_count nodes and exclude them
+            List<Map.Entry<Address, Integer>> list = excludedNodes.entrySet().stream()
+                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
+            List<Map.Entry<Address, Integer>> list_filtered = list.stream()
+                    .filter(entry -> entry.getValue() >= Config.suspect_count_threshold).collect(Collectors.toList());
+            List<Address> final_excluded_nodes = list_filtered
+                    .subList(0, Math.min(Config.num_suspect_count, list_filtered.size())).stream()
+                    .map(Map.Entry::getKey).collect(Collectors.toList());
+            List<Address> potentialLeaders = leaderNodes.stream().filter(key -> !final_excluded_nodes.contains(key))
+                    .collect(Collectors.toList());
+
+            if (potentialLeaders.size() == 0) {
+                Logging.log(Level.INFO, id, "Algorithm 3 resulting potential leaders set is empty. Restarting...");
+                Config.num_low_node = Math.min(Config.num_low_node + 1, Config.num_servers);
+                Config.num_suspect_count = Math.max(Config.num_suspect_count - 1, 0);
+                sendQuery(Config.f + Config.k + 1, null);
+                return;
+            }
+
+            Logging.log(Level.FINE, id, "Received leader ids: " + leaderNodes);
+            Logging.log(Level.FINE, id, "Top suspect count nodes to be excluded: " + final_excluded_nodes);
+            Logging.log(Level.FINE, id, "Potential leaders: " + potentialLeaders);
+
+            temp_id_lock.lock();
+            temp_id = potentialLeaders.stream().min(new AddressComparator<>()).get();
+            temp_id_lock.unlock();
+        }
+
+        Logging.log(Level.INFO, id, "Node " + temp_id + " is chosen as the leader. Sending notify leader...");
 
         MessagePayload payload = new NotifyLeaderPayload();
         Message msg = new Message(id, seqNo.incrementAndGet(), temp_id, payload);
@@ -100,6 +127,18 @@ public class Server {
         Logging.log(Level.FINE, id, "Receiving message " + msg);
         MessagePayload payload = msg.getPayload();
         if (payload.getType() == MessageType.QUERY) {
+            if (Config.algorithm == 3) {
+                Pair<List<Address>, List<Pair<Address, Integer>>> id_pair = membership.getPairIds(
+                        ((QueryPayload) payload).getNumNodes(),
+                        ((QueryPayload) payload).getNumSuspects(),
+                        true);
+                Logging.log(Level.FINER, id, "lows: " + id_pair.getKey() + ", suspects: " + id_pair.getValue());
+                MessagePayload response_payload = new QueryResponsePayload(id_pair.getKey(), id_pair.getValue());
+                Message response_msg = new Message(id, seqNo.incrementAndGet(), msg.getSrc(), response_payload);
+                Network.unicast(response_msg);
+                return;
+            }
+
             // send back with the lowest hash id
             Address lowest_id = membership.getLowestActiveId();
             MessagePayload response_payload = new QueryResponsePayload(lowest_id);
@@ -120,6 +159,14 @@ public class Server {
 
                 Event next_event = new LeaderCheckEvent(LogicalTime.time + Config.event_check_timeout, id);
                 EventService.addEvent(next_event);
+                return;
+            }
+            // algorithm 3 related
+            if (Config.algorithm == 3) {
+                leaderNodes.addAll(((QueryResponsePayload) payload).getLowestIds());
+                ((QueryResponsePayload) payload).getHighestSuspectIds()
+                        .forEach(entry -> excludedNodes.put(entry.getKey(), entry.getValue()
+                                + excludedNodes.getOrDefault(entry.getKey(), 0)));
                 return;
             }
             temp_id = AddressComparator.getMin(temp_id, new_id);
@@ -156,12 +203,20 @@ public class Server {
         }
     }
 
-    public void sendQuery(int num_nodes, List<Address> excludedNodes) {
+    public void sendQuery(int num_nodes, List<Address> excludes) {
         queryReceivedIds.clear();
+        temp_id = null;
+        leader_id = null;
+        leaderNodes.clear();
+        excludedNodes.clear();
+        leader_notify_count = 3;
 
-        List<Address> target_nodes = membership.getRandomNodes(num_nodes, excludedNodes);
+        List<Address> target_nodes = membership.getRandomNodes(num_nodes, excludes);
         Logging.log(Level.INFO, id, "Node sending query message to " + target_nodes);
         MessagePayload payload = new QueryPayload();
+        if (Config.algorithm == 3) {
+            payload = new QueryPayload(Config.num_low_node, Config.num_suspect_count);
+        }
 
         for (Address ip: target_nodes) {
             Message msg = new Message(id, seqNo.incrementAndGet(), ip, payload);
@@ -169,17 +224,12 @@ public class Server {
         }
 
         // check response after certain time
-        // TODO: instead of passing target_nodes, we can just pass in the size to reduce overhead
-        Event event = new ResponseCheckEvent(LogicalTime.time + Config.event_check_timeout, id, target_nodes);
+        Event event = new ResponseCheckEvent(LogicalTime.time + Config.event_check_timeout, id, target_nodes.size());
         EventService.addEvent(event);
     }
 
     public void updateMembership() {
         membership.update();
-    }
-
-    public Address getId() {
-        return id;
     }
 
     public Address getLeaderId() {

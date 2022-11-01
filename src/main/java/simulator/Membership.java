@@ -1,9 +1,11 @@
 package simulator;
 
+import javafx.util.Pair;
 import network.Address;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import utils.AddressComparator;
+import utils.Config;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,6 +15,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class Membership {
     private static final Logger LOG = Logger.getLogger(Membership.class.getName());
@@ -132,5 +135,34 @@ public class Membership {
         List<Address> copy = new ArrayList<>(all_nodes);
         address_lock.unlock();
         return copy;
+    }
+
+    public Pair<List<Address>, List<Pair<Address, Integer>>> getPairIds(
+            int num_low_nodes, int num_suspect_counts, boolean activeOnly) {
+        List<Pair<Address, Integer>> highest_suspect_ids = getHighestSuspectNodes(num_suspect_counts, activeOnly);
+        address_lock.lock();
+        List<Address> lowest_ids = new ArrayList<>(activeOnly ? active_nodes : all_nodes)
+                .stream().filter(key -> !highest_suspect_ids.stream().map(Pair::getKey).collect(Collectors.toList())
+                        .contains(key)).collect(Collectors.toList());
+        address_lock.unlock();
+        if (lowest_ids.size() < num_low_nodes && activeOnly) {
+            return getPairIds(num_low_nodes, num_suspect_counts, false);
+        }
+        lowest_ids.sort(new AddressComparator<>());
+        return new Pair<>(lowest_ids.subList(0, Math.min(num_low_nodes, lowest_ids.size())), highest_suspect_ids);
+    }
+
+    public List<Pair<Address, Integer>> getHighestSuspectNodes(int num_nodes, boolean activeOnly) {
+        Map<Address, Integer> suspect_candidates = new HashMap<>();
+        address_lock.lock();
+        (activeOnly ? active_nodes : all_nodes).stream().filter(suspects::containsKey).collect(Collectors.toList())
+                .forEach(key -> suspect_candidates.put(key, suspects.get(key)));
+        address_lock.unlock();
+        List<Map.Entry<Address, Integer>> list = suspect_candidates.entrySet().stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
+        List<Map.Entry<Address, Integer>> list_filtered = list.stream()
+                .filter(entry -> entry.getValue() >= Config.suspect_count_threshold).collect(Collectors.toList());
+        return list_filtered.subList(0, Math.min(num_nodes, list_filtered.size())).stream()
+                .map(entry -> new Pair<>(entry.getKey(), entry.getValue())).collect(Collectors.toList());
     }
 }

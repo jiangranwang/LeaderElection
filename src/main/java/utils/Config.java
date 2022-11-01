@@ -11,7 +11,8 @@ public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
     public static String membership_file;
-    public static int num_servers, one_hop_delay, granularity, k, f, event_check_timeout, algorithm;
+    public static int num_servers, one_hop_delay, granularity, k, f, event_check_timeout, algorithm, num_low_node,
+            num_suspect_count, suspect_count_threshold;
     public static long end_time;
 
     public static void parse(String config_path) {
@@ -32,6 +33,9 @@ public class Config {
             event_check_timeout = Integer.parseInt((String) config.get("event_check_timeout"));
             algorithm = Integer.parseInt((String) config.get("algorithm"));
             if (algorithm < 1 || algorithm > 3) throw new RuntimeException("Algorithm should be 1, 2, or 3!");
+            num_low_node = Integer.parseInt((String) config.get("num_low_node"));
+            num_suspect_count = Integer.parseInt((String) config.get("num_suspect_count"));
+            suspect_count_threshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
 
             end_time = Long.parseLong((String) config.get("end_time"));
         } catch (Exception e) {
