@@ -1,7 +1,9 @@
 {
   "membership_file": "../../Inconsistency-on-Medley/bin/membership/",
+  "topology_file": "topo/random49.txt",
   "num_servers": "49",
   "one_hop_delay": "50",
+  "one_hop_radius": "4.0",
   "end_time": "10000",
   "granularity": "10",
   "k": "3",

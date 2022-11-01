@@ -10,10 +10,11 @@ import java.util.logging.Logger;
 public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
-    public static String membership_file;
+    public static String membership_file, topology_file;
     public static int num_servers, one_hop_delay, granularity, k, f, event_check_timeout, algorithm, num_low_node,
             num_suspect_count, suspect_count_threshold;
     public static long end_time;
+    public static double one_hop_radius;
 
     public static void parse(String config_path) {
         JSONParser jsonParser = new JSONParser();
@@ -24,6 +25,7 @@ public class Config {
             JSONObject config = (JSONObject) obj;
 
             membership_file = (String) config.get("membership_file");
+            topology_file = (String) config.get("topology_file");
 
             num_servers = Integer.parseInt((String) config.get("num_servers"));
             one_hop_delay = Integer.parseInt((String) config.get("one_hop_delay"));
@@ -38,6 +40,8 @@ public class Config {
             suspect_count_threshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
 
             end_time = Long.parseLong((String) config.get("end_time"));
+
+            one_hop_radius = Double.parseDouble((String) config.get("one_hop_radius"));
         } catch (Exception e) {
             e.printStackTrace();
             LOG.log(Level.SEVERE, "Failed to parse configuration file");

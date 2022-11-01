@@ -20,8 +20,6 @@ import java.util.stream.Collectors;
 public class Membership {
     private static final Logger LOG = Logger.getLogger(Membership.class.getName());
     private final Address id;
-    private final String membership_path;
-    private final int num_servers; // node ids are 0 to num_servers-1 (inclusive)
 
     private final ConcurrentHashMap<Address, String> status = new ConcurrentHashMap<>();; // node status
     private final ConcurrentHashMap<Address, Integer> suspects = new ConcurrentHashMap<>();; // suspect count
@@ -30,10 +28,8 @@ public class Membership {
     private final Lock address_lock = new ReentrantLock();
     private final Random random = new Random();
 
-    public Membership(String membership_path, int num_servers, Address id) {
+    public Membership(Address id) {
         this.id = id;
-        this.membership_path = membership_path;
-        this.num_servers = num_servers;
         update();
     }
 
@@ -41,7 +37,7 @@ public class Membership {
         JSONParser jsonParser = new JSONParser();
         boolean success = false;
         while (!success) {
-            try (FileReader reader = new FileReader(membership_path + id.getId() + ".json")) {
+            try (FileReader reader = new FileReader(Config.membership_file + id.getId() + ".json")) {
                 Object obj = jsonParser.parse(reader);
                 reader.close();
                 JSONObject config = (JSONObject) obj;
@@ -49,7 +45,7 @@ public class Membership {
                 JSONObject status_obj = (JSONObject) config.get("status");
                 JSONObject suspects_obj = (JSONObject) config.get("suspects");
 
-                for (int node_id = 0; node_id < num_servers; node_id++) {
+                for (int node_id = 0; node_id < Config.num_servers; node_id++) {
                     String node_id_str = String.valueOf(node_id);
                     if (status_obj.containsKey(node_id_str)) {
                         status.put(new Address(node_id), (String) status_obj.get(node_id_str));
@@ -82,20 +78,23 @@ public class Membership {
         address_lock.unlock();
     }
 
-    // TODO: only get nodes that are active
-    public List<Address> getRandomNodes(int num_nodes, List<Address> excludedNodes) {
+    public List<Address> getRandomNodes(int num_nodes, List<Address> excludedNodes, boolean activeOnly) {
         if (num_nodes > all_nodes.size()) {
             throw new RuntimeException("Cannot get " + num_nodes + " nodes from list!!!");
         }
 
-        List<Address> candidates = new ArrayList<>(all_nodes);
+        address_lock.lock();
+        List<Address> candidates = new ArrayList<>(activeOnly ? active_nodes : all_nodes);
+        address_lock.unlock();
         if (excludedNodes != null) {
             for (Address ip: excludedNodes) {
                 candidates.remove(ip);
             }
             if (candidates.size() < num_nodes) {
                 LOG.log(Level.WARNING, "candidate size is less than required nodes!");
+                address_lock.lock();
                 candidates = new ArrayList<>(all_nodes);
+                address_lock.unlock();
             }
         }
         Collections.shuffle(candidates);
