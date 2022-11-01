@@ -23,22 +23,17 @@ public class Membership {
     private final String membership_path;
     private final int num_servers; // node ids are 0 to num_servers-1 (inclusive)
 
-    private final ConcurrentHashMap<Address, String> status; // node status
-    private final ConcurrentHashMap<Address, Integer> suspects; // suspect count
-    private final List<Address> all_nodes;
-    private final List<Address> active_nodes;
-    private final Lock address_lock;
+    private final ConcurrentHashMap<Address, String> status = new ConcurrentHashMap<>();; // node status
+    private final ConcurrentHashMap<Address, Integer> suspects = new ConcurrentHashMap<>();; // suspect count
+    private final List<Address> all_nodes = new ArrayList<>();
+    private final List<Address> active_nodes = new ArrayList<>();
+    private final Lock address_lock = new ReentrantLock();
     private final Random random = new Random();
 
     public Membership(String membership_path, int num_servers, Address id) {
         this.id = id;
         this.membership_path = membership_path;
-        this.status = new ConcurrentHashMap<>();
-        this.suspects = new ConcurrentHashMap<>();
         this.num_servers = num_servers;
-        this.all_nodes = new ArrayList<>();
-        this.active_nodes = new ArrayList<>();
-        this.address_lock = new ReentrantLock();
         update();
     }
 

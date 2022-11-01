@@ -22,7 +22,7 @@ public class Simulator {
         }
 
         LOG.log(Level.INFO, "Initializing...");
-        Config.parse(args[0]);
+        Config.parse(args[0]); // this must be called before anything else
 
         // build ips
         for (int id = 0; id < Config.num_servers; id++) {
