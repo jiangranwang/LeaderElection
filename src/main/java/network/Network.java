@@ -9,6 +9,7 @@ import simulator.event.ReceiveMsgEvent;
 import simulator.event.RouteMsgEvent;
 import utils.Config;
 import utils.Logging;
+import utils.metric.NetworkMetric;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -152,10 +153,12 @@ public class Network {
 
     public static void unicast(Message msg) {
         if (msg.getSrc() == msg.getCurr()) {
+            NetworkMetric.e2eRecord(msg.getSrc(), msg.getDst());
             Logging.log(Level.FINE, msg.getSrc(), "Sending message " + msg);
         }
         Address nextHop = getNextHop(msg.getCurr(), msg.getDst());
         msg.setCurr(nextHop);
+        NetworkMetric.h2hRecord(msg.getCurr(), nextHop);
         LOG.log(Level.FINER, "Routing message " + msg + " through node " + nextHop);
         if (Config.random.nextDouble() < Config.msgDropRate) {
             LOG.log(Level.FINE, "Message " + msg + " dropped.");

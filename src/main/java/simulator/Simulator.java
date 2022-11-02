@@ -1,12 +1,21 @@
 package simulator;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import network.Address;
 import network.Network;
+import org.json.simple.JSONObject;
 import utils.Config;
+import utils.metric.LatencyMetric;
+import utils.metric.NetworkMetric;
 
 public class Simulator {
     private static final Logger LOG = Logger.getLogger(Simulator.class.getName());
@@ -33,6 +42,7 @@ public class Simulator {
 
         Network.initialize(addresses);
         EventService.initialize(servers);
+        NetworkMetric.initialize(addresses);
     }
 
     private static void run() {
@@ -42,6 +52,7 @@ public class Simulator {
         LOG.log(Level.INFO, "Coordinator is: " + coordinator);
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
+        LatencyMetric.setQueryStartTime(LogicalTime.time);
         servers.get(coordinator).sendQuery(num_nodes, null);
 
         TimerTask updateMembership = new TimerTask() {
@@ -60,6 +71,7 @@ public class Simulator {
         timer.cancel();
     }
 
+    @SuppressWarnings("unchecked")
     private static void conclude() {
         for (Map.Entry<Address, Server> entry: servers.entrySet()) {
             LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
@@ -69,6 +81,23 @@ public class Simulator {
                 LOG.log(Level.SEVERE, msg);
             }
         }
+
+        JSONObject obj = new JSONObject();
+        obj.put("networkMetric", NetworkMetric.getStat());
+        obj.put("latencyMetric", LatencyMetric.getStat());
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonElement je = JsonParser.parseString(obj.toJSONString());
+        String prettyJson = gson.toJson(je);
+        try {
+            FileWriter file = new FileWriter(Config.statsFile);
+            file.write(prettyJson);
+            file.flush();
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        LOG.log(Level.INFO, "Saved stats to config file: " + Config.statsFile);
     }
 
     public static void main(String[] args) {

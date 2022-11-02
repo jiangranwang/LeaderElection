@@ -11,9 +11,9 @@ import java.util.logging.Logger;
 public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
-    public static String membershipFile, topologyFile;
+    public static String membershipFile, topologyFile, statsFile;
     public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
-            numSuspectCount, suspectCountThreshold;
+            numSuspectCount, suspectCountThreshold, verbose;
     public static long endTime;
     public static double oneHopRadius, msgDropRate;
 
@@ -31,6 +31,7 @@ public class Config {
 
             membershipFile = (String) config.get("membership_file");
             topologyFile = (String) config.get("topology_file");
+            statsFile = (String) config.get("stats_file");
 
             numServers = Integer.parseInt((String) config.get("num_servers"));
             oneHopDelay = Integer.parseInt((String) config.get("one_hop_delay"));
@@ -39,10 +40,12 @@ public class Config {
             f = Integer.parseInt((String) config.get("f"));
             eventCheckTimeout = Integer.parseInt((String) config.get("event_check_timeout"));
             algorithm = Integer.parseInt((String) config.get("algorithm"));
-            if (algorithm < 1 || algorithm > 3) throw new RuntimeException("Algorithm should be 1, 2, or 3!");
+            if (algorithm > 3) throw new RuntimeException("Algorithm should be 0, 1, 2, or 3!");
             numLowNode = Integer.parseInt((String) config.get("num_low_node"));
             numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
             suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
+            verbose = Integer.parseInt((String) config.get("verbose"));
+            if (verbose > 2) throw new RuntimeException("Verbose should be 0, 1, or 2!");
 
             endTime = Long.parseLong((String) config.get("end_time"));
 

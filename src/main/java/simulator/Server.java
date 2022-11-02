@@ -9,6 +9,7 @@ import network.message.payload.election.*;
 import simulator.event.*;
 import utils.*;
 import javafx.util.Pair;
+import utils.metric.LatencyMetric;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -55,6 +56,7 @@ public class Server {
                 sendQuery(numNodes - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
                 return;
             }
+            LatencyMetric.setQueryEndTime(LogicalTime.time);
 
             if (Config.algorithm == 2) {
                 // we must have notified the tempId previously
@@ -96,6 +98,7 @@ public class Server {
             Message msg = new Message(id, seqNo.incrementAndGet(), tempId, payload);
             Network.unicast(msg);
 
+            LatencyMetric.setLeaderStartTime(LogicalTime.time);
             Event nextEvent = new LeaderCheckEvent(LogicalTime.time + Config.eventCheckTimeout, id);
             EventService.addEvent(nextEvent);
 
@@ -134,7 +137,10 @@ public class Server {
             List<Address> targetNodes = ((ResendEvent) event).getTargetNodes();
             List<Address> newTargetNodes = targetNodes.stream()
                     .filter(key -> !ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
-            if (newTargetNodes.size() == 0) return;
+            if (newTargetNodes.size() == 0) {
+                if (msg.getPayload().getType() == MessageType.LEADER) LatencyMetric.setLeaderEndTime(LogicalTime.time);
+                return;
+            }
             Logging.log(Level.FINE, id, "Resending msg (" + msg + ") to nodes: " + newTargetNodes);
             Network.multicast(msg, newTargetNodes);
 
