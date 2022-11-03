@@ -32,7 +32,7 @@ public class Address {
         return id == other.id;
     }
 
-    public boolean lessThan(Address other) {
+    public boolean lt(Address other) {
         return other == null || this.id < other.id;
     }
 

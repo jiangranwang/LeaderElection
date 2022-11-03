@@ -56,7 +56,6 @@ public class Server {
                 sendQuery(numNodes - queryReceivedIds.size(), new ArrayList<>(queryReceivedIds));
                 return;
             }
-            LatencyMetric.setQueryEndTime(LogicalTime.time);
 
             if (Config.algorithm == 2) {
                 // we must have notified the tempId previously
@@ -98,7 +97,6 @@ public class Server {
             Message msg = new Message(id, seqNo.incrementAndGet(), tempId, payload);
             Network.unicast(msg);
 
-            LatencyMetric.setLeaderStartTime(LogicalTime.time);
             Event nextEvent = new LeaderCheckEvent(LogicalTime.time + Config.eventCheckTimeout, id);
             EventService.addEvent(nextEvent);
 
@@ -128,7 +126,7 @@ public class Server {
         } else if (event.getType() == EventType.RESEND) {
             Message msg = ((ResendEvent) event).getMsg();
             leaderIdLock.lock();
-            if (msg.getPayload().getType() == MessageType.LEADER && leaderId.lessThan(id)) {
+            if (msg.getPayload().getType() == MessageType.LEADER && leaderId.lt(id)) {
                 // a new leader has been elected, no need to wait for other leader ack
                 leaderIdLock.unlock();
                 return;
@@ -138,7 +136,6 @@ public class Server {
             List<Address> newTargetNodes = targetNodes.stream()
                     .filter(key -> !ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
             if (newTargetNodes.size() == 0) {
-                if (msg.getPayload().getType() == MessageType.LEADER) LatencyMetric.setLeaderEndTime(LogicalTime.time);
                 return;
             }
             Logging.log(Level.FINE, id, "Resending msg (" + msg + ") to nodes: " + newTargetNodes);
@@ -179,7 +176,7 @@ public class Server {
             Address newId = ((QueryResponsePayload) payload).getLowestId();
             tempIdLock.lock();
             // algorithm 2 related
-            if (Config.algorithm == 2 && newId.lessThan(tempId)) {
+            if (Config.algorithm == 2 && newId.lt(tempId)) {
                 tempId = newId;
                 Address currId = new Address(tempId);
                 tempIdLock.unlock();
@@ -193,6 +190,7 @@ public class Server {
             }
             // algorithm 3 related
             if (Config.algorithm == 3) {
+                tempIdLock.unlock();
                 leaderNodes.addAll(((QueryResponsePayload) payload).getLowestIds());
                 ((QueryResponsePayload) payload).getHighestSuspectIds()
                         .forEach(entry -> excludedNodes.put(entry.getKey(), entry.getValue()
@@ -204,11 +202,12 @@ public class Server {
 
         } else if (payload.getType() == MessageType.NOTIFY_LEADER) {
             leaderIdLock.lock();
-            if (!id.lessThan(leaderId)) {
+            if (!id.lt(leaderId)) {
                 leaderIdLock.unlock();
                 return;
             }
-            leaderId = AddressComparator.getMin(leaderId, new Address(id));
+            leaderId = new Address(id);
+            LatencyMetric.setCorrectLeader(id, leaderId);
             leaderIdLock.unlock();
             Logging.log(Level.INFO, id, "Leader gets notified");
             MessagePayload responsePayload = new LeaderPayload();
@@ -225,8 +224,9 @@ public class Server {
                 leaderIdLock.unlock();
                 return;
             }
-            leaderId = AddressComparator.getMin(leaderId, msg.getSrc());
-            if (msg.getSrc().lessThan(leaderId)) Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
+            leaderId = msg.getSrc();
+            LatencyMetric.setCorrectLeader(id, leaderId);
+            if (msg.getSrc().lt(leaderId)) Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             leaderIdLock.unlock();
             MessagePayload responsePayload = new LeaderAckPayload();
             Message responseMsg = new Message(id, seqNo.incrementAndGet(), msg.getSrc(), responsePayload, msg.getMessageNo());

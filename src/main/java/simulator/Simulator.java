@@ -52,7 +52,7 @@ public class Simulator {
         LOG.log(Level.INFO, "Coordinator is: " + coordinator);
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
-        LatencyMetric.setQueryStartTime(LogicalTime.time);
+        LatencyMetric.setElectionStartTime(LogicalTime.time);
         servers.get(coordinator).sendQuery(num_nodes, null);
 
         TimerTask updateMembership = new TimerTask() {
