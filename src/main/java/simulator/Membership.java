@@ -61,7 +61,7 @@ public class Membership {
                 LOG.log(Level.SEVERE, "Membership file does not exist!");
                 System.exit(1);
             } catch (Exception e) {
-                e.printStackTrace();
+                LOG.log(Level.FINE, "Membership file is being written right now...");
             }
         }
 

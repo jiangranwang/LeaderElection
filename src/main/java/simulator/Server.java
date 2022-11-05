@@ -33,7 +33,7 @@ public class Server {
     private Address leaderId = null;
     private final Lock tempIdLock = new ReentrantLock();
     private final Lock leaderIdLock = new ReentrantLock();
-    private int leaderNotifyCount = 3; // resend notify leader at most 3 times
+    private int leaderNotifyCount = 100; // resend notify leader at most x times
     private final Set<Address> leaderNodes = ConcurrentHashMap.newKeySet();
     private final ConcurrentHashMap<Address, Integer> excludedNodes = new ConcurrentHashMap<>();
 
