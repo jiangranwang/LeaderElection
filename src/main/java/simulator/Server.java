@@ -9,7 +9,7 @@ import network.message.payload.election.*;
 import simulator.event.*;
 import utils.*;
 import javafx.util.Pair;
-import utils.metric.LatencyMetric;
+import utils.metric.AlgorithmMetric;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -85,6 +85,10 @@ public class Server {
                 Logging.log(Level.FINE, id, "Received leader ids: " + leaderNodes);
                 Logging.log(Level.FINE, id, "Top suspect count nodes to be excluded: " + finalExcludedNodes);
                 Logging.log(Level.FINE, id, "Potential leaders: " + potentialLeaders);
+                AlgorithmMetric.setExcludedSuspects(finalExcludedNodes);
+                for (Address ip: Network.getAddresses()) {
+                    EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
+                }
 
                 tempIdLock.lock();
                 tempId = potentialLeaders.stream().min(new AddressComparator<>()).get();
@@ -144,6 +148,8 @@ public class Server {
             Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes);
             EventService.addEvent(nextEvent);
 
+        } else if (event.getType() == EventType.SET_SUSPECT) {
+            AlgorithmMetric.setTrueSuspects(membership.getSuspects());
         } else {
             throw new RuntimeException("Event type " + event.getType() + " not found!!!");
         }
@@ -207,7 +213,7 @@ public class Server {
                 return;
             }
             leaderId = new Address(id);
-            LatencyMetric.setCorrectLeader(id, leaderId);
+            AlgorithmMetric.setCorrectLeader(id, leaderId);
             leaderIdLock.unlock();
             Logging.log(Level.INFO, id, "Leader gets notified");
             MessagePayload responsePayload = new LeaderPayload();
@@ -225,7 +231,7 @@ public class Server {
                 return;
             }
             leaderId = msg.getSrc();
-            LatencyMetric.setCorrectLeader(id, leaderId);
+            AlgorithmMetric.setCorrectLeader(id, leaderId);
             if (msg.getSrc().lt(leaderId)) Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             leaderIdLock.unlock();
             MessagePayload responsePayload = new LeaderAckPayload();

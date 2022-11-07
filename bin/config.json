@@ -5,15 +5,15 @@
   "num_servers": "49",
   "one_hop_delay": "50",
   "one_hop_radius": "4.0",
-  "msg_drop_rate": "0.25",
+  "msg_drop_rate": "0.2",
   "granularity": "200",
   "end_time": "100000",
   "event_check_timeout": "500",
-  "algorithm": "1",
+  "algorithm": "3",
   "k": "3",
   "f": "1",
   "num_low_node": "5",
   "num_suspect_count": "5",
-  "suspect_count_threshold": "5",
+  "suspect_count_threshold": "1",
   "verbose": "0"
 }

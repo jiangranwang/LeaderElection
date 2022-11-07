@@ -100,12 +100,12 @@ public class Membership {
         return candidates.subList(0, numNodes);
     }
 
-    public ConcurrentHashMap<Address, String> getStatus() {
-        return status;
+    public HashMap<Address, String> getStatus() {
+        return new HashMap<>(status);
     }
 
-    public ConcurrentHashMap<Address, Integer> getSuspects() {
-        return suspects;
+    public HashMap<Address, Integer> getSuspects() {
+        return new HashMap<>(suspects);
     }
 
     public Address getLowestActiveId() {

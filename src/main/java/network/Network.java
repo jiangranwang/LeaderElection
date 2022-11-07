@@ -28,8 +28,10 @@ public class Network {
     private static final HashMap<Address, HashMap<Address, Double>> hopNumMap = new HashMap<>();
     private static final HashMap<Address, HashMap<Address, Address>> routingTable = new HashMap<>();
     private static final ReadWriteLock topologyLock = new ReentrantReadWriteLock();
+    private static List<Address> addresses;
 
     public static void initialize(List<Address> addresses) {
+        Network.addresses = addresses;
         // parse topology file
         try {
             List<String> content = Files.readAllLines(Paths.get(Config.topologyFile));
@@ -178,5 +180,9 @@ public class Network {
             Message currMsg = new Message(msg, ip);
             unicast(currMsg);
         }
+    }
+
+    public static List<Address> getAddresses() {
+        return addresses;
     }
 }

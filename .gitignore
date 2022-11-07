@@ -8,6 +8,7 @@ hs_err_pid*
 
 # log/result file
 *.log
+*.json
 analyze/results/
 analyze/plots/
 

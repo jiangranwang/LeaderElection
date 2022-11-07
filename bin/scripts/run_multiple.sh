@@ -3,10 +3,10 @@ if [ ! -f 'run.sh' ]; then
   exit
 fi
 
-algos=(1 2 3)
+algos=(3)
 num_run=100
 config_name="config.json"
-drop_rates=(0.05 0.1 0.15 0.2 0.25)
+drop_rates=(0.05 0.1 0.15 0.2)
 
 for drop_rate in ${drop_rates[@]}; do
   echo "$(cat $config_name | jq --arg drop_rate "$drop_rate" '.msg_drop_rate = $drop_rate')" > $config_name

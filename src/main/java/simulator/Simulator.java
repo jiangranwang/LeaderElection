@@ -14,7 +14,7 @@ import network.Address;
 import network.Network;
 import org.json.simple.JSONObject;
 import utils.Config;
-import utils.metric.LatencyMetric;
+import utils.metric.AlgorithmMetric;
 import utils.metric.NetworkMetric;
 
 public class Simulator {
@@ -52,7 +52,7 @@ public class Simulator {
         LOG.log(Level.INFO, "Coordinator is: " + coordinator);
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
-        LatencyMetric.setElectionStartTime(LogicalTime.time);
+        AlgorithmMetric.setElectionStartTime(LogicalTime.time);
         servers.get(coordinator).sendQuery(num_nodes, null);
 
         TimerTask updateMembership = new TimerTask() {
@@ -84,7 +84,7 @@ public class Simulator {
 
         JSONObject obj = new JSONObject();
         obj.put("networkMetric", NetworkMetric.getStat());
-        obj.put("latencyMetric", LatencyMetric.getStat());
+        obj.put("latencyMetric", AlgorithmMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonElement je = JsonParser.parseString(obj.toJSONString());
