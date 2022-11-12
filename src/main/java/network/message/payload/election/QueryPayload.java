@@ -19,7 +19,7 @@ public class QueryPayload extends MessagePayload {
 
     public QueryPayload(int numLowNode, int numSuspectCount) {
         super(MessageType.QUERY);
-        assert Config.algorithm == 3;
+        assert Config.algorithm == 3 || Config.algorithm == 4;
         this.numLowNode = numLowNode;
         this.numSuspectCount = numSuspectCount;
     }

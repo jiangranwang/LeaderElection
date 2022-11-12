@@ -40,7 +40,7 @@ public class Config {
             f = Integer.parseInt((String) config.get("f"));
             eventCheckTimeout = Integer.parseInt((String) config.get("event_check_timeout"));
             algorithm = Integer.parseInt((String) config.get("algorithm"));
-            if (algorithm > 3) throw new RuntimeException("Algorithm should be 0, 1, 2, or 3!");
+            if (algorithm > 4) throw new RuntimeException("Algorithm should be 1, 2, 3, or 4!");
             numLowNode = Integer.parseInt((String) config.get("num_low_node"));
             numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
             suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));

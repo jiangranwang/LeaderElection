@@ -4,7 +4,15 @@ import enums.MessageType;
 import network.message.payload.MessagePayload;
 
 public class LeaderPayload extends MessagePayload {
-    public LeaderPayload() {
+    private final int leaderNo;
+
+    public LeaderPayload(int leaderNo) {
         super(MessageType.LEADER);
+
+        this.leaderNo = leaderNo;
+    }
+
+    public int getLeaderNo() {
+        return leaderNo;
     }
 }

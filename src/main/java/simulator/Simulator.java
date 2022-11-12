@@ -74,7 +74,7 @@ public class Simulator {
     private static void conclude() {
         for (Map.Entry<Address, Server> entry: servers.entrySet()) {
             LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
-            if (entry.getValue().getLeaderId() == null || entry.getValue().getLeaderId().getId() != 0) {
+            if (entry.getValue().getLeaderId() == null) {
                 String msg = "Node " + entry.getKey() + " does not have correct leader! It has "
                         + entry.getValue().getLeaderId() + " instead";
                 LOG.log(Level.SEVERE, msg);

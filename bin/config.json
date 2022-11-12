@@ -9,7 +9,7 @@
   "granularity": "200",
   "end_time": "100000",
   "event_check_timeout": "500",
-  "algorithm": "3",
+  "algorithm": "4",
   "k": "4",
   "f": "0",
   "num_low_node": "5",

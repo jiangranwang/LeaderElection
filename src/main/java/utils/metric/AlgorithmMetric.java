@@ -44,10 +44,8 @@ public class AlgorithmMetric {
     public static JSONObject getStat() {
         JSONObject obj = new JSONObject();
         obj.put("totalLatency", electionEndTime - electionStartTime);
-        if (Config.algorithm == 3) {
-            obj.put("trueSuspects", trueSuspects);
-            obj.put("excludedSuspects", excludedSuspects);
-        }
+        obj.put("trueSuspects", trueSuspects);
+        obj.put("excludedSuspects", excludedSuspects);
         return obj;
     }
 }

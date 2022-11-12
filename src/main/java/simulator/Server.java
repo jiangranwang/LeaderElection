@@ -34,13 +34,35 @@ public class Server {
     private Address leaderId = null;
     private final Lock tempIdLock = new ReentrantLock();
     private final Lock leaderIdLock = new ReentrantLock();
-    private int leaderNotifyCount = 100; // resend notify leader at most x times
+    private final AtomicInteger leaderNo = new AtomicInteger(0);
+    private int receivedLeaderNo = -1;
+    private int leaderNotifyCount = 10; // resend notify leader at most x times
     private final Set<Address> leaderNodes = ConcurrentHashMap.newKeySet();
     private final ConcurrentHashMap<Address, Integer> excludedNodes = new ConcurrentHashMap<>();
 
     public Server(Address id) {
         this.id = id;
         this.membership = new Membership(id);
+    }
+
+    private synchronized List<Address> getPotentialLeaders() {
+        // find the top numSuspectCount nodes and exclude them
+        List<Map.Entry<Address, Integer>> list = excludedNodes.entrySet().stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
+        List<Map.Entry<Address, Integer>> listFiltered = list.stream()
+                .filter(entry -> entry.getValue() >= Config.suspectCountThreshold).collect(Collectors.toList());
+        List<Address> finalExcludedNodes = listFiltered
+                .subList(0, Math.min(Config.numSuspectCount, listFiltered.size())).stream()
+                .map(Map.Entry::getKey).collect(Collectors.toList());
+        List<Address> potentialLeaders = leaderNodes.stream().filter(key -> !finalExcludedNodes.contains(key))
+                .collect(Collectors.toList());
+
+        Logging.log(Level.FINE, id, "Received leader ids: " + leaderNodes);
+        Logging.log(Level.FINE, id, "Top suspect count nodes to be excluded: " + finalExcludedNodes);
+        Logging.log(Level.FINE, id, "Potential leaders: " + potentialLeaders);
+        AlgorithmMetric.setExcludedSuspects(finalExcludedNodes);
+
+        return potentialLeaders;
     }
 
     public void processEvent(Event event) {
@@ -58,23 +80,18 @@ public class Server {
                 return;
             }
 
-            if (Config.algorithm == 2) {
+            if (Config.algorithm == 2 || Config.algorithm == 4) {
+                if (Config.algorithm == 4) {
+                    for (Address ip: Network.getAddresses()) {
+                        EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
+                    }
+                }
                 // we must have notified the tempId previously
                 return;
             }
 
             if (Config.algorithm == 3) {
-                // find the top numSuspectCount nodes and exclude them
-                List<Map.Entry<Address, Integer>> list = excludedNodes.entrySet().stream()
-                        .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
-                List<Map.Entry<Address, Integer>> listFiltered = list.stream()
-                        .filter(entry -> entry.getValue() >= Config.suspectCountThreshold).collect(Collectors.toList());
-                List<Address> finalExcludedNodes = listFiltered
-                        .subList(0, Math.min(Config.numSuspectCount, listFiltered.size())).stream()
-                        .map(Map.Entry::getKey).collect(Collectors.toList());
-                List<Address> potentialLeaders = leaderNodes.stream().filter(key -> !finalExcludedNodes.contains(key))
-                        .collect(Collectors.toList());
-
+                List<Address> potentialLeaders = getPotentialLeaders();
                 if (potentialLeaders.size() == 0) {
                     Logging.log(Level.INFO, id, "Algorithm 3 resulting potential leaders set is empty. Restarting...");
                     Config.numLowNode = Math.min(Config.numLowNode + 1, Config.numServers);
@@ -83,23 +100,19 @@ public class Server {
                     return;
                 }
 
-                Logging.log(Level.FINE, id, "Received leader ids: " + leaderNodes);
-                Logging.log(Level.FINE, id, "Top suspect count nodes to be excluded: " + finalExcludedNodes);
-                Logging.log(Level.FINE, id, "Potential leaders: " + potentialLeaders);
-                AlgorithmMetric.setExcludedSuspects(finalExcludedNodes);
                 for (Address ip: Network.getAddresses()) {
                     EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
                 }
 
                 tempIdLock.lock();
-                tempId = potentialLeaders.stream().min(new AddressComparator<>()).get();
+                tempId = potentialLeaders.stream().min(new AddressComparator<>()).orElse(new Address(-1));
                 tempIdLock.unlock();
             }
 
             Logging.log(Level.INFO, id, "Node " + tempId + " is chosen as the leader. Sending notify leader...");
 
             QualityMetric.setLeader(tempId);
-            MessagePayload payload = new NotifyLeaderPayload();
+            MessagePayload payload = new NotifyLeaderPayload(leaderNo.incrementAndGet());
             Message msg = new Message(id, seqNo.incrementAndGet(), tempId, payload);
             Network.unicast(msg);
 
@@ -116,7 +129,7 @@ public class Server {
                 }
                 leaderNotifyCount--;
                 Logging.log(Level.INFO, id, "Leader id not set, resending notify leader message.");
-                MessagePayload payload = new NotifyLeaderPayload();
+                MessagePayload payload = new NotifyLeaderPayload(leaderNo.incrementAndGet());
                 Message msg = new Message(id, seqNo.incrementAndGet(), tempId, payload);
                 Network.unicast(msg);
 
@@ -147,7 +160,12 @@ public class Server {
             Logging.log(Level.FINE, id, "Resending msg (" + msg + ") to nodes: " + newTargetNodes);
             Network.multicast(msg, newTargetNodes);
 
-            Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes);
+            int ttl = ((ResendEvent) event).getTtl();
+            if (ttl == 0) {
+                Logging.log(Level.FINE, id, "Resending canceled");
+                return;
+            }
+            Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes, ttl - 1);
             EventService.addEvent(nextEvent);
 
         } else if (event.getType() == EventType.SET_SUSPECT) {
@@ -161,7 +179,7 @@ public class Server {
         Logging.log(Level.FINE, id, "Receiving message " + msg);
         MessagePayload payload = msg.getPayload();
         if (payload.getType() == MessageType.QUERY) {
-            if (Config.algorithm == 3) {
+            if (Config.algorithm == 3 || Config.algorithm == 4) {
                 Pair<List<Address>, List<Pair<Address, Integer>>> idPair = membership.getPairIds(
                         ((QueryPayload) payload).getNumNodes(),
                         ((QueryPayload) payload).getNumSuspects(),
@@ -189,7 +207,7 @@ public class Server {
                 Address currId = new Address(tempId);
                 tempIdLock.unlock();
                 QualityMetric.setLeader(currId);
-                MessagePayload newPayload = new NotifyLeaderPayload();
+                MessagePayload newPayload = new NotifyLeaderPayload(leaderNo.incrementAndGet());
                 Message newMsg = new Message(id, seqNo.incrementAndGet(), currId, newPayload);
                 Network.unicast(newMsg);
 
@@ -197,45 +215,69 @@ public class Server {
                 EventService.addEvent(nextEvent);
                 return;
             }
-            // algorithm 3 related
-            if (Config.algorithm == 3) {
+            // algorithm 3 & 4 related
+            if (Config.algorithm == 3 || Config.algorithm == 4) {
                 tempIdLock.unlock();
                 leaderNodes.addAll(((QueryResponsePayload) payload).getLowestIds());
                 ((QueryResponsePayload) payload).getHighestSuspectIds()
                         .forEach(entry -> excludedNodes.put(entry.getKey(), entry.getValue()
                                 + excludedNodes.getOrDefault(entry.getKey(), 0)));
+
+                if (Config.algorithm == 4) {
+                    List<Address> potentialLeaders = getPotentialLeaders();
+                    if (potentialLeaders.size() == 0) {
+                        return;
+                    }
+                    tempIdLock.lock();
+                    tempId = potentialLeaders.stream().min(new AddressComparator<>()).orElse(new Address(-1));
+                    Address currId = new Address(tempId);
+                    tempIdLock.unlock();
+
+                    QualityMetric.setLeader(currId);
+                    MessagePayload newPayload = new NotifyLeaderPayload(leaderNo.incrementAndGet());
+                    Message newMsg = new Message(id, seqNo.incrementAndGet(), currId, newPayload);
+                    Network.unicast(newMsg);
+
+                    Event nextEvent = new LeaderCheckEvent(LogicalTime.time + Config.eventCheckTimeout, id);
+                    EventService.addEvent(nextEvent);
+                }
                 return;
             }
             tempId = AddressComparator.getMin(tempId, newId);
             tempIdLock.unlock();
 
         } else if (payload.getType() == MessageType.NOTIFY_LEADER) {
+            int newLeaderNo = ((NotifyLeaderPayload) payload).getLeaderNo();
             leaderIdLock.lock();
-            if (!id.lt(leaderId)) {
+            if (receivedLeaderNo >= newLeaderNo) {
                 leaderIdLock.unlock();
                 return;
             }
+            receivedLeaderNo = newLeaderNo;
             leaderId = new Address(id);
             AlgorithmMetric.setCorrectLeader(id, leaderId);
+            MessagePayload responsePayload = new LeaderPayload(receivedLeaderNo);
             leaderIdLock.unlock();
             Logging.log(Level.INFO, id, "Leader gets notified");
-            MessagePayload responsePayload = new LeaderPayload();
             Message responseMsg = new Message(id, seqNo.incrementAndGet(), null, responsePayload, messageNo.incrementAndGet());
             ackedIds.put(responseMsg.getMessageNo(), new HashSet<>());
             Network.multicast(responseMsg, membership.getAllNodes(true));
 
-            Event event = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, responseMsg, membership.getAllNodes(true));
+            Event event = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, responseMsg, membership.getAllNodes(true), 10);
             EventService.addEvent(event);
 
         } else if (payload.getType() == MessageType.LEADER) {
+            int newLeaderNo = ((LeaderPayload) payload).getLeaderNo();
             leaderIdLock.lock();
-            if (msg.getSrc().greaterThan(leaderId)) {
+            if (receivedLeaderNo >= newLeaderNo) {
                 leaderIdLock.unlock();
                 return;
             }
+            receivedLeaderNo = newLeaderNo;
             leaderId = msg.getSrc();
             AlgorithmMetric.setCorrectLeader(id, leaderId);
-            if (msg.getSrc().lt(leaderId)) Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
+
+            Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             leaderIdLock.unlock();
             MessagePayload responsePayload = new LeaderAckPayload();
             Message responseMsg = new Message(id, seqNo.incrementAndGet(), msg.getSrc(), responsePayload, msg.getMessageNo());
@@ -253,12 +295,12 @@ public class Server {
         queryReceivedIds.clear();
         leaderNodes.clear();
         excludedNodes.clear();
-        leaderNotifyCount = 3;
+        leaderNotifyCount = 10;
 
         List<Address> targetNodes = membership.getRandomNodes(numNodes, excludes, true);
         Logging.log(Level.INFO, id, "Node sending query message to " + targetNodes);
         MessagePayload payload = new QueryPayload();
-        if (Config.algorithm == 3) {
+        if (Config.algorithm == 3 || Config.algorithm == 4) {
             payload = new QueryPayload(Config.numLowNode, Config.numSuspectCount);
         }
 

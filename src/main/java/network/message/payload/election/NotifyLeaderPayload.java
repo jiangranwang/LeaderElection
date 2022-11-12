@@ -4,7 +4,15 @@ import enums.MessageType;
 import network.message.payload.MessagePayload;
 
 public class NotifyLeaderPayload extends MessagePayload {
-    public NotifyLeaderPayload() {
+    private final int leaderNo;
+
+    public NotifyLeaderPayload(int leaderNo) {
         super(MessageType.NOTIFY_LEADER);
+
+        this.leaderNo = leaderNo;
+    }
+
+    public int getLeaderNo() {
+        return leaderNo;
     }
 }

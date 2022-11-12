@@ -27,7 +27,7 @@ public class QueryResponsePayload extends MessagePayload {
 
     public QueryResponsePayload(List<Address> lowestIds, List<Pair<Address, Integer>> highestSuspectIds) {
         super(MessageType.QUERY_RESPONSE);
-        assert Config.algorithm == 3;
+        assert Config.algorithm == 3 || Config.algorithm == 4;
         this.lowestId = null;
         this.lowestIds = new HashSet<>(lowestIds);
         this.highestSuspectIds = new HashSet<>(highestSuspectIds);
