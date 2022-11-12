@@ -1,6 +1,8 @@
 package network;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private final int id;
 
     public Address(int id) {

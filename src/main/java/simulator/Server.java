@@ -10,6 +10,7 @@ import simulator.event.*;
 import utils.*;
 import javafx.util.Pair;
 import utils.metric.AlgorithmMetric;
+import utils.metric.QualityMetric;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -97,6 +98,7 @@ public class Server {
 
             Logging.log(Level.INFO, id, "Node " + tempId + " is chosen as the leader. Sending notify leader...");
 
+            QualityMetric.setLeader(tempId);
             MessagePayload payload = new NotifyLeaderPayload();
             Message msg = new Message(id, seqNo.incrementAndGet(), tempId, payload);
             Network.unicast(msg);
@@ -186,6 +188,7 @@ public class Server {
                 tempId = newId;
                 Address currId = new Address(tempId);
                 tempIdLock.unlock();
+                QualityMetric.setLeader(currId);
                 MessagePayload newPayload = new NotifyLeaderPayload();
                 Message newMsg = new Message(id, seqNo.incrementAndGet(), currId, newPayload);
                 Network.unicast(newMsg);

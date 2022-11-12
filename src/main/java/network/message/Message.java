@@ -1,5 +1,7 @@
 package network.message;
 
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 import network.Address;
@@ -61,6 +63,20 @@ public class Message implements Cloneable, Serializable {
 
     public int getMessageNo() {
         return messageNo;
+    }
+
+    public int getByteSize() {
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(bos)) {
+            oos.writeObject(this.clone());
+            oos.flush();
+            return bos.toByteArray().length;
+        }
+        catch (Exception ex) {
+            System.out.println("Exception during msg byte size calculation with " + payload);
+            ex.printStackTrace(System.out);
+            return -1;
+        }
     }
 
     public MessagePayload getPayload() {

@@ -36,6 +36,10 @@ public class AlgorithmMetric {
         AlgorithmMetric.excludedSuspects = excludedSuspects;
     }
 
+    public static ConcurrentHashMap<Address, Integer> getTrueSuspects() {
+        return trueSuspects;
+    }
+
     @SuppressWarnings("unchecked")
     public static JSONObject getStat() {
         JSONObject obj = new JSONObject();

@@ -14,8 +14,7 @@ import network.Address;
 import network.Network;
 import org.json.simple.JSONObject;
 import utils.Config;
-import utils.metric.AlgorithmMetric;
-import utils.metric.NetworkMetric;
+import utils.metric.*;
 
 public class Simulator {
     private static final Logger LOG = Logger.getLogger(Simulator.class.getName());
@@ -85,6 +84,7 @@ public class Simulator {
         JSONObject obj = new JSONObject();
         obj.put("networkMetric", NetworkMetric.getStat());
         obj.put("latencyMetric", AlgorithmMetric.getStat());
+        obj.put("qualityMetric", QualityMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonElement je = JsonParser.parseString(obj.toJSONString());
