@@ -4,13 +4,17 @@ if [ ! -f 'run.sh' ]; then
 fi
 
 algos=(1 2 3 4)
-num_run=1
+num_run=100
 config_name="config.json"
 drop_rates=(0.05 0.1 0.15 0.2)
+ks=(4 7 10 13)
 
-for drop_rate in ${drop_rates[@]}; do
+for (( idx=0; idx<4; i++ )); do
+  ks=${ks[$idx]}
+  drop_rate=${drop_rates[$idx]}
   echo "drop rate: ${drop_rate}"
   echo "$(cat $config_name | jq --arg drop_rate "$drop_rate" '.msg_drop_rate = $drop_rate')" > $config_name
+  echo "$(cat $config_name | jq --arg k "$k" '.k = $k')" > $config_name
   cd ../../Inconsistency-on-Medley/bin/
   echo "$(cat $config_name | jq --arg drop_rate "$drop_rate" '.msg_drop_rate = $drop_rate')" > $config_name
   ./run.sh &
@@ -30,4 +34,3 @@ for drop_rate in ${drop_rates[@]}; do
   echo "killing medley process..."
   kill -INT $pid
 done
-

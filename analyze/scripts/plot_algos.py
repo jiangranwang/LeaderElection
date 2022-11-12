@@ -4,7 +4,7 @@ import numpy as np
 
 
 drop_rates = [0.05, 0.1, 0.15, 0.2]
-algos = [1, 2, 3]
+algos = [1, 2, 3, 4]
 num_runs = 100
 num_servers = 49
 
@@ -18,9 +18,10 @@ def plot(data, fn):
     width = 0.1
     x = np.arange(len(drop_rates))
     fig, ax = plt.subplots(figsize=(10, 7))
-    bp1 = ax.boxplot(data[0], positions=x - 0.2, widths=width)
-    bp2 = ax.boxplot(data[1], positions=x, widths=width)
-    bp3 = ax.boxplot(data[2], positions=x + 0.2, widths=width)
+    bp1 = ax.boxplot(data[0], positions=x - 0.3, widths=width)
+    bp2 = ax.boxplot(data[1], positions=x - 0.1, widths=width)
+    bp3 = ax.boxplot(data[2], positions=x + 0.1, widths=width)
+    bp4 = ax.boxplot(data[3], positions=x + 0.3, widths=width)
     ax.grid(axis='y')
     ax.set_title(fn)
     ax.set_xticks(x)
@@ -28,57 +29,59 @@ def plot(data, fn):
     set_box_color(bp1, 'red')
     set_box_color(bp2, 'green')
     set_box_color(bp3, 'blue')
+    set_box_color(bp4, 'cyan')
     handle1, = plt.plot([1, 1], '-', color='red')
     handle2, = plt.plot([1, 1], '-', color='green')
     handle3, = plt.plot([1, 1], '-', color='blue')
-    ax.legend([handle1, handle2, handle3],
-              ['algo1', 'algo2', 'algo3'])
+    handle4, = plt.plot([1, 1], '-', color='cyan')
+    ax.legend([handle1, handle2, handle3, handle4],
+              ['algo1', 'algo2', 'algo3', 'algo4'])
     handle1.set_visible(False)
     handle2.set_visible(False)
     handle3.set_visible(False)
+    handle4.set_visible(False)
 
     plt.savefig('plots/' + fn + '.png')
 
 
 def get_data():
-    e2e_msgs = []
-    h2h_msgs = []
-    latencies = []
-    for drop_rate in drop_rates:
-        e2e_msg = []
-        h2h_msg = []
-        latency = []
-        for algo in algos:
-            folder = f'results/{drop_rate}/algo{algo}/'
-            e2e = []
-            h2h = []
-            lat = []
-            for run in range(1, num_runs + 1):
-                file_name = folder + f'stats_{run}.json'
-                with open(file_name, 'r') as f:
-                    obj = json.load(f)
-                    if obj['latencyMetric']['totalLatency'] == 0:
-                        continue
-                    e2e.append(obj['networkMetric']['e2eMsgTotal'])
-                    h2h.append(obj['networkMetric']['h2hMsgTotal'])
-                    lat.append(obj['latencyMetric']['totalLatency'])
-            e2e_msg.append(e2e)
-            h2h_msg.append(h2h)
-            latency.append(lat)
-        e2e_msgs.append(e2e_msg)
-        h2h_msgs.append(h2h_msg)
-        latencies.append(latency)
-
-    e2e_msgs = np.asarray(e2e_msgs, dtype=object).transpose(1, 0)
-    h2h_msgs = np.asarray(h2h_msgs, dtype=object).transpose(1, 0)
-    latencies = np.asarray(latencies, dtype=object).transpose(1, 0)
-    return e2e_msgs, h2h_msgs, latencies
+    keys = [('networkMetric', 'e2eMsgTotal'),
+            ('networkMetric', 'h2hMsgTotal'),
+            ('networkMetric', 'e2eMsgSizeTotal'),
+            ('networkMetric', 'h2hMsgSizeTotal'),
+            ('latencyMetric', 'totalLatency'),
+            ('qualityMetric', 'suspect_rank'),
+            ('qualityMetric', 'hash_rank')]
+    ret = []
+    for key1, key2 in keys:
+        all_datas = []
+        for drop_rate in drop_rates:
+            datas = []
+            for algo in algos:
+                folder = f'results/{drop_rate}/algo{algo}/'
+                data = []
+                for run in range(1, num_runs + 1):
+                    file_name = folder + f'stats_{run}.json'
+                    with open(file_name, 'r') as f:
+                        obj = json.load(f)
+                        if obj['latencyMetric']['totalLatency'] == 0:
+                            continue
+                        data.append(obj[key1][key2])
+                datas.append(data)
+            all_datas.append(datas)
+        all_datas = np.asarray(all_datas, dtype=object).transpose(1, 0)
+        ret.append(all_datas)
+    return ret
 
 
-# e2e_msgs_data, h2h_msgs_data, latencies_data = get_data()
-# plot(e2e_msgs_data, 'e2e_msgs')
-# plot(h2h_msgs_data, 'h2h_msgs')
-# plot(latencies_data, 'latencies')
+raw_data = get_data()
+plot(raw_data[0], 'e2e_msgs')
+plot(raw_data[1], 'h2h_msgs')
+plot(raw_data[2], 'e2e_msg_sizes')
+plot(raw_data[3], 'h2h_msg_sizes')
+plot(raw_data[4], 'latencies')
+plot(raw_data[5], 'suspect_rank')
+plot(raw_data[6], 'hash_rank')
 
 
 # plot inconsistency related

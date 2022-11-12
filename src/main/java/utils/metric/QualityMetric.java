@@ -24,9 +24,9 @@ public class QualityMetric {
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).map(Map.Entry::getKey).collect(Collectors.toList());
 
         JSONObject obj = new JSONObject();
-        obj.put("suspect_rank", leader == null ? -1 :
+        obj.put("suspectRank", leader == null ? -1 :
                 suspectCounts.contains(leader) ? suspectCounts.indexOf(leader) : Config.numServers - 1);
-        obj.put("hash_rank", leader == null ? -1 : leader.getId());
+        obj.put("hashRank", leader == null ? -1 : leader.getId());
 
         return obj;
     }

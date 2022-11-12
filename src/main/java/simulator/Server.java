@@ -80,12 +80,11 @@ public class Server {
                 return;
             }
 
+            for (Address ip: Network.getAddresses()) {
+                EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
+            }
+
             if (Config.algorithm == 2 || Config.algorithm == 4) {
-                if (Config.algorithm == 4) {
-                    for (Address ip: Network.getAddresses()) {
-                        EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
-                    }
-                }
                 // we must have notified the tempId previously
                 return;
             }
@@ -98,10 +97,6 @@ public class Server {
                     Config.numSuspectCount = Math.max(Config.numSuspectCount - 1, 0);
                     sendQuery(Config.f + Config.k + 1, null);
                     return;
-                }
-
-                for (Address ip: Network.getAddresses()) {
-                    EventService.addEvent(new SetSuspectEvent(LogicalTime.time, ip));
                 }
 
                 tempIdLock.lock();
@@ -229,8 +224,9 @@ public class Server {
                         return;
                     }
                     tempIdLock.lock();
-                    tempId = potentialLeaders.stream().min(new AddressComparator<>()).orElse(new Address(-1));
-                    Address currId = new Address(tempId);
+                    Address currId = potentialLeaders.stream().min(new AddressComparator<>()).orElse(new Address(-1));
+                    if (currId.equals(tempId)) return;
+                    tempId = new Address(currId);
                     tempIdLock.unlock();
 
                     QualityMetric.setLeader(currId);
