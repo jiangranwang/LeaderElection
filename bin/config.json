@@ -10,7 +10,7 @@
   "end_time": "100000",
   "event_check_timeout": "500",
   "algorithm": "4",
-  "k": "4",
+  "k": "13",
   "f": "0",
   "num_low_node": "5",
   "num_suspect_count": "5",

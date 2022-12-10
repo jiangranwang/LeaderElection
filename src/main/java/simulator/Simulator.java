@@ -83,7 +83,7 @@ public class Simulator {
 
         JSONObject obj = new JSONObject();
         obj.put("networkMetric", NetworkMetric.getStat());
-        obj.put("latencyMetric", AlgorithmMetric.getStat());
+        obj.put("algorithmMetric", AlgorithmMetric.getStat());
         obj.put("qualityMetric", QualityMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

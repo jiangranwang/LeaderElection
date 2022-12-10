@@ -27,6 +27,7 @@ public class QualityMetric {
         obj.put("suspectRank", leader == null ? -1 :
                 suspectCounts.contains(leader) ? suspectCounts.indexOf(leader) : Config.numServers - 1);
         obj.put("hashRank", leader == null ? -1 : leader.getId());
+        obj.put("suspectCount", trueSuspects.getOrDefault(leader, 0));
 
         return obj;
     }

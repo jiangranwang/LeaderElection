@@ -79,7 +79,8 @@ public class Membership {
 
     public List<Address> getRandomNodes(int numNodes, List<Address> excludedNodes, boolean activeOnly) {
         if (numNodes > allNodes.size()) {
-            throw new RuntimeException("Cannot get " + numNodes + " nodes from list!!!");
+            LOG.log(Level.WARNING, "Cannot get " + numNodes + " nodes from list!!!");
+            numNodes = allNodes.size();
         }
 
         addressLock.lock();

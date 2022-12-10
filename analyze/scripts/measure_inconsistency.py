@@ -2,15 +2,21 @@ import sys
 import time
 import json
 import signal
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--num_servers', dest='num_servers', type=int, required=True)
+parser.add_argument('--drop_rate', dest='drop_rate', type=float, required=True)
+args = parser.parse_args()
+
 membership_path = '../../Inconsistency-on-Medley/bin/membership/'
-num_servers = 49
+num_servers = args.num_servers
 update_interval = 200
 result = []
-drop_rate = 0.2
+drop_rate = args.drop_rate
 
 
 def handler(sig, frame):
@@ -19,8 +25,8 @@ def handler(sig, frame):
     plt.plot(result)
     plt.grid(axis='y')
     plt.title(f'drop_rate={drop_rate}')
-    plt.savefig(f'plots/inconsistency_measure/{drop_rate}.png')
-    plt.show()
+    plt.savefig(f'plots/inconsistency_measure/{drop_rate}_{num_servers}.png')
+    # plt.show()
     plt.close()
     sys.exit(0)
 
