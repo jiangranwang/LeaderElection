@@ -265,7 +265,7 @@ public class Server {
         } else if (payload.getType() == MessageType.LEADER) {
             int newLeaderNo = ((LeaderPayload) payload).getLeaderNo();
             leaderIdLock.lock();
-            if (receivedLeaderNo >= newLeaderNo) {
+            if (receivedLeaderNo > newLeaderNo) {
                 leaderIdLock.unlock();
                 return;
             }
