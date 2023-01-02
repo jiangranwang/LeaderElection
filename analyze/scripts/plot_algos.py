@@ -1,15 +1,22 @@
 import matplotlib.pyplot as plt
 import json
+import os
 import numpy as np
 
 
 algos = [1, 2, 3, 4]
 num_runs = 100
-drop_rates = [0.05, 0.1, 0.15, 0.2]
-num_server = 49
+
+topology = 'random'
+topologies = ['grid', 'random', 'cluster']
+
 drop_rate = 0.1
+drop_rates = [0.05, 0.1, 0.15, 0.2]
+
+num_server = 49
 num_servers = [32, 64, 96, 128]
-labels = drop_rates
+
+labels = topologies
 
 
 def set_box_color(bp, color):
@@ -22,21 +29,16 @@ def plot(data, fn):
         return [np.mean(val) for val in vals]
     def get_std(vals):
         return [np.std(val) for val in vals]
-    width = 0.1
     x = np.arange(len(labels))
     fig, ax = plt.subplots(figsize=(10, 7))
-    bp1 = ax.errorbar(x-0.3, get_mean(data[0]), get_std(data[0]), color='red', fmt='o')
-    bp2 = ax.errorbar(x-0.1, get_mean(data[1]), get_std(data[1]), color='green', fmt='o')
-    bp3 = ax.errorbar(x+0.1, get_mean(data[2]), get_std(data[2]), color='blue', fmt='o')
-    bp4 = ax.errorbar(x+0.3, get_mean(data[3]), get_std(data[3]), color='cyan', fmt='o')
+    ax.errorbar(x-0.3, get_mean(data[0]), get_std(data[0]), color='red', fmt='o')
+    ax.errorbar(x-0.1, get_mean(data[1]), get_std(data[1]), color='green', fmt='o')
+    ax.errorbar(x+0.1, get_mean(data[2]), get_std(data[2]), color='blue', fmt='o')
+    ax.errorbar(x+0.3, get_mean(data[3]), get_std(data[3]), color='cyan', fmt='o')
     ax.grid(axis='y')
     ax.set_title(fn)
     ax.set_xticks(x)
-    ax.set_xticklabels(drop_rates)
-    # set_box_color(bp1, 'red')
-    # set_box_color(bp2, 'green')
-    # set_box_color(bp3, 'blue')
-    # set_box_color(bp4, 'cyan')
+    ax.set_xticklabels(labels)
     handle1, = plt.plot([1, 1], '-', color='red')
     handle2, = plt.plot([1, 1], '-', color='green')
     handle3, = plt.plot([1, 1], '-', color='blue')
@@ -66,14 +68,19 @@ def get_data():
     ret = []
     for key1, key2 in keys:
         all_datas = []
+        # for topology in topologies:
+        # for drop_rate in drop_rates:
         # for num_server in num_servers:
-        for drop_rate in drop_rates:
+        for topology in topologies:
             datas = []
             for algo in algos:
-                folder = f'results/{num_server}/{drop_rate}/algo{algo}/'
+                folder = f'results/{topology}/{num_server}/{drop_rate}/algo{algo}/'
                 data = []
                 for run in range(1, num_runs + 1):
                     file_name = folder + f'stats_{run}.json'
+                    if not os.path.exists(file_name):
+                        print(f'file {file_name} does not exist. skipped')
+                        continue
                     with open(file_name, 'r') as f:
                         obj = json.load(f)
                         if obj['algorithmMetric']['totalLatency'] == 0:

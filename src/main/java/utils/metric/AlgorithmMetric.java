@@ -48,7 +48,7 @@ public class AlgorithmMetric {
         JSONObject obj = new JSONObject();
         obj.put("totalLatency", electionEndTime - electionStartTime);
         obj.put("trueSuspects", trueSuspects);
-        obj.put("excludedSuspects", excludedSuspects.toString().trim());
+        obj.put("excludedSuspects", excludedSuspects == null ? "[]" : excludedSuspects.toString().trim());
         obj.put("leaderChanges", (float) leaderChanges / (float) Config.numServers);
 
         List<Map.Entry<Address, Integer>> sortedTrueSuspects = trueSuspects.entrySet().stream()
