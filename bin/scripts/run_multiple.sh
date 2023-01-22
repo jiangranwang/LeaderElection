@@ -7,7 +7,7 @@ algos=(1 2 3 4)
 num_run=100
 medley_run=10
 config_name="config.json"
-mode="topologies" # drop_rates, num_servers, or topologies
+mode="num_servers" # drop_rates, num_servers, or topologies
 
 if [ $mode == "drop_rates" ]; then
   # different drop rates
@@ -18,15 +18,15 @@ if [ $mode == "drop_rates" ]; then
 elif [ $mode == "num_servers" ]; then
   # different number of servers
   topologies=("random")
-  num_servers=(32 64 96 128)
-  drop_rates=(0.1)
-  ks=(2 6 20 40)
+  num_servers=(32 64 128 256)
+  drop_rates=(0.05)
+  ks=(2 5 9 17)
 elif [ $mode == "topologies" ]; then
   # different topologies
   topologies=("grid" "random" "cluster")
   num_servers=(49)
-  drop_rates=(0.1)
-  ks=(7 7 7)
+  drop_rates=(0.05)
+  ks=(4 4 4)
 else
   echo "wrong mode!"
   exit
