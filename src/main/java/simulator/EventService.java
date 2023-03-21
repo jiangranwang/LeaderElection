@@ -27,6 +27,7 @@ public class EventService {
 
     public static void processAll() {
         while (!events.isEmpty()) {
+            // System.out.println("Size of events is " + events.size());
             Event event = events.pollFirst();
             if (event != null) {
                 LogicalTime.time = event.getTime();

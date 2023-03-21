@@ -19,15 +19,16 @@ public class QualityMetric {
 
     @SuppressWarnings("unchecked")
     public static JSONObject getStat() {
-        ConcurrentHashMap<Address, Integer> trueSuspects = AlgorithmMetric.getTrueSuspects();
-        List<Address> suspectCounts = trueSuspects.entrySet().stream()
-                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).map(Map.Entry::getKey).collect(Collectors.toList());
+        // ConcurrentHashMap<Address, Integer> trueSuspects = new ConcurrentHashMap<Address,Integer>();
+        // // ConcurrentHashMap<Address, Integer> trueSuspects = AlgorithmMetric.getTrueSuspects();
+        // List<Address> suspectCounts = trueSuspects.entrySet().stream()
+        //         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).map(Map.Entry::getKey).collect(Collectors.toList());
 
         JSONObject obj = new JSONObject();
-        obj.put("suspectRank", leader == null ? -1 :
-                suspectCounts.contains(leader) ? suspectCounts.indexOf(leader) : Config.numServers - 1);
-        obj.put("hashRank", leader == null ? -1 : leader.getId());
-        obj.put("suspectCount", trueSuspects.getOrDefault(leader, 0));
+        // obj.put("suspectRank", leader == null ? -1 :
+        //         suspectCounts.contains(leader) ? suspectCounts.indexOf(leader) : Config.numServers - 1);
+        // obj.put("hashRank", leader == null ? -1 : leader.getId());
+        // obj.put("suspectCount", trueSuspects.getOrDefault(leader, 0));
 
         return obj;
     }

@@ -12,8 +12,9 @@ public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
     public static String membershipFile, topologyFile, statsFile;
-    public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
-            numSuspectCount, suspectCountThreshold, verbose;
+    // public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
+    //         numSuspectCount, suspectCountThreshold, verbose;
+    public static int numServers, oneHopDelay, granularity, eventCheckTimeout, critDuration, concRequesters, verbose;
     public static long endTime;
     public static double oneHopRadius, msgDropRate;
 
@@ -36,14 +37,16 @@ public class Config {
             numServers = Integer.parseInt((String) config.get("num_servers"));
             oneHopDelay = Integer.parseInt((String) config.get("one_hop_delay"));
             granularity = Integer.parseInt((String) config.get("granularity"));
-            k = Integer.parseInt((String) config.get("k"));
-            f = Integer.parseInt((String) config.get("f"));
+            // k = Integer.parseInt((String) config.get("k"));
+            // f = Integer.parseInt((String) config.get("f"));
             eventCheckTimeout = Integer.parseInt((String) config.get("event_check_timeout"));
-            algorithm = Integer.parseInt((String) config.get("algorithm"));
-            if (algorithm > 4) throw new RuntimeException("Algorithm should be 1, 2, 3, or 4!");
-            numLowNode = Integer.parseInt((String) config.get("num_low_node"));
-            numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
-            suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
+            critDuration = Integer.parseInt((String) config.get("crit_duration"));
+            concRequesters = Integer.parseInt((String) config.get("conc_requesters"));
+            // algorithm = Integer.parseInt((String) config.get("algorithm"));
+            // if (algorithm > 4) throw new RuntimeException("Algorithm should be 1, 2, 3, or 4!");
+            // numLowNode = Integer.parseInt((String) config.get("num_low_node"));
+            // numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
+            // suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
             verbose = Integer.parseInt((String) config.get("verbose"));
             if (verbose > 2) throw new RuntimeException("Verbose should be 0, 1, or 2!");
 

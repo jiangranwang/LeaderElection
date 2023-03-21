@@ -4,12 +4,9 @@ import simulator.event.*;
 
 public enum EventType {
     RECEIVE_MSG(ReceiveMsgEvent.class),
-    RESPONSE_CHECK(ResponseCheckEvent.class),
-    LEADER_CHECK(LeaderCheckEvent.class),
-    ACK_CHECK(AckCheckEvent.class),
     ROUTE_MSG(RouteMsgEvent.class),
     RESEND(ResendEvent.class),
-    SET_SUSPECT(SetSuspectEvent.class);
+    EXIT_CRIT(ExitCritEvent.class);
 
     private final Class<? extends Event> eventClass;
     EventType(Class<? extends Event> eventClass) {

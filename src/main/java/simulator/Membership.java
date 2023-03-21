@@ -124,7 +124,12 @@ public class Membership {
         return result;
     }
 
+    public void addNodeToAll(Address addr) {
+        allNodes.add(addr);
+    }
+    
     public List<Address> getAllNodes(boolean excludeSelf) {
+        update();
         addressLock.lock();
         List<Address> copy = allNodes.stream().filter(key -> !(excludeSelf && key.equals(id))).collect(Collectors.toList());
         addressLock.unlock();
@@ -154,9 +159,10 @@ public class Membership {
         addressLock.unlock();
         List<Map.Entry<Address, Integer>> list = suspectCandidates.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
-        List<Map.Entry<Address, Integer>> listFiltered = list.stream()
-                .filter(entry -> entry.getValue() >= Config.suspectCountThreshold).collect(Collectors.toList());
-        return listFiltered.subList(0, Math.min(numNodes, listFiltered.size())).stream()
+        // List<Map.Entry<Address, Integer>> listFiltered = list.stream()
+                // .filter(entry -> entry.getValue() >= Config.suspectCountThreshold).collect(Collectors.toList());
+        return list.subList(0, Math.min(numNodes, list.size())).stream()
+        // return listFiltered.subList(0, Math.min(numNodes, listFiltered.size())).stream()
                 .map(entry -> new Pair<>(entry.getKey(), entry.getValue())).collect(Collectors.toList());
     }
 }

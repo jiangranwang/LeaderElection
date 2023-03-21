@@ -23,6 +23,16 @@ public class Message implements Cloneable, Serializable {
         this.messageNo = -1;
     }
 
+    
+    public Message(Address src, Address dst, MessagePayload payload) {
+        this.src = src;
+        this.curr = src;
+        this.srcSeqNo = -1;
+        this.dst = dst;
+        this.payload = payload;
+        this.messageNo = -1;
+    }
+
     public Message(Address src, int srcSeqNo, Address dst, MessagePayload payload, int messageNo) {
         this.src = src;
         this.curr = src;

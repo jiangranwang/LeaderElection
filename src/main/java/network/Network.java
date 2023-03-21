@@ -162,10 +162,11 @@ public class Network {
         msg.setCurr(nextHop);
         NetworkMetric.h2hRecord(msg.getCurr(), nextHop, msg.getByteSize());
         LOG.log(Level.FINER, "Routing message " + msg + " through node " + nextHop);
-        if (Config.random.nextDouble() < Config.msgDropRate) {
-            LOG.log(Level.FINE, "Message " + msg + " dropped.");
-            return;
-        }
+        // if (Config.random.nextDouble() < Config.msgDropRate) {
+        //     LOG.log(Level.FINE, "Message " + msg + " dropped.");
+        //     System.out.println("Message dropped from " + msg.getSrc() + " to " + msg.getDst());
+        //     return;
+        // }
         Event event;
         if (msg.getDst() == nextHop)
             event = new ReceiveMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
