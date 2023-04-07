@@ -13,7 +13,7 @@ public class Config {
 
     public static String membershipFile, topologyFile, statsFile;
     public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
-            numSuspectCount, suspectCountThreshold, verbose;
+            numSuspectCount, numCoordinator, suspectCountThreshold, verbose;
     public static long endTime;
     public static double oneHopRadius, msgDropRate;
 
@@ -43,6 +43,7 @@ public class Config {
             if (algorithm > 4) throw new RuntimeException("Algorithm should be 1, 2, 3, or 4!");
             numLowNode = Integer.parseInt((String) config.get("num_low_node"));
             numSuspectCount = Integer.parseInt((String) config.get("num_suspect_count"));
+            numCoordinator = Integer.parseInt((String) config.get("num_coordinator"));
             suspectCountThreshold = Integer.parseInt((String) config.get("suspect_count_threshold"));
             verbose = Integer.parseInt((String) config.get("verbose"));
             if (verbose > 2) throw new RuntimeException("Verbose should be 0, 1, or 2!");

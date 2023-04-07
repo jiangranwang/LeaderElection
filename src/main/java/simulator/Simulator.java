@@ -46,13 +46,17 @@ public class Simulator {
 
     private static void run() {
         LogicalTime.time = 0;
-        // pick a server as the coordinator
-        Address coordinator = addresses.get(Config.random.nextInt(Config.numServers));
-        LOG.log(Level.INFO, "Coordinator is: " + coordinator);
         // get k + f + 1 random servers to send query message
         int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
         AlgorithmMetric.setElectionStartTime(LogicalTime.time);
-        servers.get(coordinator).sendQuery(num_nodes, null);
+        List<Address> addressesCopy = new ArrayList<>(addresses);
+        Collections.shuffle(addressesCopy);
+        for (int i = 0; i < Config.numCoordinator; i++) {
+            // pick a server as the coordinator
+            Address coordinator = addresses.get(i);
+            LOG.log(Level.INFO, "Coordinator is: " + coordinator);
+            servers.get(coordinator).sendQuery(num_nodes, null);
+        }
 
         TimerTask updateMembership = new TimerTask() {
             public void run() {

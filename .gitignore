@@ -27,4 +27,5 @@ analyze/plots/
 # other
 *.ctxt
 *.DS_Store
+*.png
 

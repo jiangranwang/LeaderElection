@@ -2,6 +2,7 @@ package utils.metric;
 
 import network.Address;
 import org.json.simple.JSONObject;
+import utils.AddressComparator;
 import utils.Config;
 
 import java.util.Collections;
@@ -14,7 +15,7 @@ public class QualityMetric {
     private static Address leader = null;
 
     public static void setLeader(Address leader) {
-        QualityMetric.leader = leader;
+        QualityMetric.leader = AddressComparator.getMin(QualityMetric.leader, leader);
     }
 
     @SuppressWarnings("unchecked")

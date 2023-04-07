@@ -49,7 +49,7 @@ public class AlgorithmMetric {
         obj.put("totalLatency", electionEndTime - electionStartTime);
         obj.put("trueSuspects", trueSuspects);
         obj.put("excludedSuspects", excludedSuspects == null ? "[]" : excludedSuspects.toString().trim());
-        obj.put("leaderChanges", (float) leaderChanges / (float) Config.numServers);
+        obj.put("leaderChanges", (float) leaderChanges); // / (float) Config.numServers);
 
         List<Map.Entry<Address, Integer>> sortedTrueSuspects = trueSuspects.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());

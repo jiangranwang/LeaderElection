@@ -245,10 +245,10 @@ public class Server {
         } else if (payload.getType() == MessageType.NOTIFY_LEADER) {
             int newLeaderNo = ((NotifyLeaderPayload) payload).getLeaderNo();
             leaderIdLock.lock();
-            if (receivedLeaderNo >= newLeaderNo) {
-                leaderIdLock.unlock();
-                return;
-            }
+//            if (receivedLeaderNo >= newLeaderNo) {
+//                leaderIdLock.unlock();
+//                return;
+//            }
             receivedLeaderNo = newLeaderNo;
             leaderId = new Address(id);
             AlgorithmMetric.setCorrectLeader(id, leaderId);
@@ -271,7 +271,7 @@ public class Server {
             }
             receivedLeaderNo = newLeaderNo;
             leaderId = msg.getSrc();
-            AlgorithmMetric.setCorrectLeader(id, leaderId);
+            // AlgorithmMetric.setCorrectLeader(id, leaderId);
 
             Logging.log(Level.INFO, id, "Leader " + leaderId + " gets recognized");
             leaderIdLock.unlock();
