@@ -1,3 +1,8 @@
+/*
+All functionalities related to a specific server (node), including processing all types of events, processing messages,
+updating membership, and initiate leader election (only called at the initiator)
+ */
+
 package simulator;
 
 import enums.*;

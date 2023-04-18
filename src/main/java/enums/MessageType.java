@@ -1,3 +1,7 @@
+/*
+Different message types.
+ */
+
 package enums;
 
 import network.message.payload.MessagePayload;

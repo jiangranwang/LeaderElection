@@ -1,3 +1,7 @@
+/*
+Processes the events in chronological order
+ */
+
 package simulator;
 
 import network.Address;

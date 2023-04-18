@@ -13,9 +13,9 @@ import java.util.List;
 public class QueryResponsePayload extends MessagePayload {
     private static final long serialVersionUID = 2385748139579123L;
 
-    private final Address lowestId;
-    private final HashSet<Address> lowestIds;
-    private final HashSet<Pair<Address, Integer>> highestSuspectIds;
+    private final Address lowestId; // lowest hash id in its membership list. Used for algorithm 1 & 2
+    private final HashSet<Address> lowestIds; // a set of the lowest hash ids. Used for algorithm 3 & 4
+    private final HashSet<Pair<Address, Integer>> highestSuspectIds; // a set of high suspect-count nodes. Used for algorithm 3 & 4
 
     public QueryResponsePayload(Address lowestId) {
         super(MessageType.QUERY_RESPONSE);

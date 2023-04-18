@@ -1,3 +1,7 @@
+/*
+Responsible for the overall simulation logic.
+ */
+
 package simulator;
 
 import java.io.FileWriter;

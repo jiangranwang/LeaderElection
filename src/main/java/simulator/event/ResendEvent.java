@@ -7,8 +7,8 @@ import network.message.Message;
 import java.util.List;
 
 public class ResendEvent extends Event {
-    private final Message msg;
-    private final List<Address> target_nodes;
+    private final Message msg; // the message to be resent
+    private final List<Address> target_nodes; // the target nodes to be resent to
     private final int ttl;
 
     public ResendEvent(long time, Address id, Message msg, List<Address> target_nodes, int ttl) {

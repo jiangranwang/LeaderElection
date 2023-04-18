@@ -3,43 +3,46 @@ if [ ! -f 'run.sh' ]; then
   exit
 fi
 
-run_medley=false
-algos=(1) # 2 3 4)
-num_run=100
-medley_run=100
-config_name="config.json"
-mem_path="membership/"
-mode="drop_rates" # num_coordinators, drop_rates, num_servers, or topologies
+run_medley=false # if set to true, run Medley at the same time; otherwise, the memberships will be randomly generated
+algos=(1 2 3 4) # which algorithms to run
+num_run=100 # number of experiment runs for a single configuration
+medley_run=100 # how frequent the medley should run
+config_name="config.json" # configuration file name
+mem_path="membership/" # membership file path
+mode="drop_rates" # available modes: num_coordinators, drop_rates, num_servers, topologies
 
 if [ $mode == "drop_rates" ]; then
   # different drop rates
   topologies=("random")
   num_servers=(49)
   drop_rates=(0.05 0.1 0.15 0.2)
-  drop_rates=(0.05 0.05 0.05 0.05 0.1 0.1 0.1 0.1 0.15 0.15 0.15 0.15 0.2 0.2 0.2 0.2)
   ks=(4 7 10 13)
-  ks=(1 2 3 4 1 3 5 7 1 4 8 10 1 5 9 13)
-  ks=($(for (( i=0; i<5; i++ )); do for x in "${ks[@]}"; do printf "$x%.0s "; done; done))
-  echo ${ks[@]}
-  num_coordinators=(1 3 5 7 9)
+  num_coordinators=(1)
+  # drop_rates=(0.05 0.05 0.05 0.05 0.1 0.1 0.1 0.1 0.15 0.15 0.15 0.15 0.2 0.2 0.2 0.2)
+  # ks=(1 2 3 4 1 3 5 7 1 4 8 10 1 5 9 13)
+  # ks=($(for (( i=0; i<5; i++ )); do for x in "${ks[@]}"; do printf "$x%.0s "; done; done))
+  # num_coordinators=(1 3 5 7 9)
 elif [ $mode == "num_coordinators" ]; then
+  # different number of initiators
   topologies=("random")
   num_servers=(49)
   drop_rates=(0.05)
-  num_coordinators=(1 3 5 7 9)
   ks=(2 2 2 2 2)
+  num_coordinators=(1 3 5 7 9)
 elif [ $mode == "num_servers" ]; then
   # different number of servers
   topologies=("random")
   num_servers=(32 64 128 256)
   drop_rates=(0.05)
   ks=(2 5 9 17)
+  num_coordinators=(1)
 elif [ $mode == "topologies" ]; then
   # different topologies
   topologies=("grid" "random" "cluster")
   num_servers=(49)
   drop_rates=(0.05)
   ks=(4 4 4)
+  num_coordinators=(1)
 else
   echo "wrong mode!"
   exit
@@ -72,7 +75,7 @@ for coordinator in ${num_coordinators[@]}; do
               echo "run number: $i"
               cd ../../Inconsistency-on-Medley/bin/
               echo "$(cat $config_name | jq --arg drop_rate "$drop_rate" '.msg_drop_rate = $drop_rate')" > $config_name
-              ./run.sh & # run about 10 seconds
+              ./run.sh $config_name & # run about 10 seconds
               sleep 10
               cd ../../LeaderElection/bin/
             fi

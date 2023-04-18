@@ -5,7 +5,7 @@ import network.Address;
 import network.message.Message;
 
 public class RouteMsgEvent extends Event {
-    private final Message msg;
+    private final Message msg; // the message to be routed
 
     public RouteMsgEvent(long time, Address id, Message msg) {
         super(EventType.ROUTE_MSG, time, id);

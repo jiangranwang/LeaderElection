@@ -1,12 +1,16 @@
+/*
+Base class for all types of events.
+ */
+
 package simulator.event;
 
 import enums.EventType;
 import network.Address;
 
 public class Event {
-    private final EventType type;
-    private final long time;
-    private final Address id;
+    private final EventType type; // event type
+    private final long time; // time when the event happens
+    private final Address id; // at which node the event happens
 
     public Event(EventType type, long time, Address id) {
         this.type = type;

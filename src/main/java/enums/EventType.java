@@ -1,3 +1,8 @@
+/*
+Different event types. This is useful for events that are not immediately triggered but instead with a delay. For
+example, the initiator will check if it receives enough Response messages after a certain timeout.
+ */
+
 package enums;
 
 import simulator.event.*;

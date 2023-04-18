@@ -1,3 +1,7 @@
+/*
+Configuration file parser
+ */
+
 package utils;
 
 import org.json.simple.JSONObject;

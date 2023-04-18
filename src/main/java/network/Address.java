@@ -1,3 +1,7 @@
+/*
+Unique address for each node. Identified by an integer.
+ */
+
 package network;
 
 import java.io.Serializable;

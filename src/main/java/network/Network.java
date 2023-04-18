@@ -1,3 +1,7 @@
+/*
+Simulates all network related events, including topology initialization, message unicast, message multicast, and routing
+ */
+
 package network;
 
 import javafx.util.Pair;

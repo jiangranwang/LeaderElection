@@ -1,3 +1,7 @@
+/*
+Wrapper class for all message types
+ */
+
 package network.message;
 
 import java.io.ByteArrayOutputStream;
@@ -9,10 +13,10 @@ import network.message.payload.MessagePayload;
 
 public class Message implements Cloneable, Serializable {
     private static final long serialVersionUID = 47223974816589531L;
-    private final Address src, dst;
-    private Address curr;
-    private final int srcSeqNo, messageNo;
-    private final MessagePayload payload;
+    private final Address src, dst; // source and destination of the message
+    private Address curr; // message is currently at this node (in the middle of routing)
+    private final int srcSeqNo, messageNo; // numbers that uniquely identifies this message
+    private final MessagePayload payload; // actual message payload
 
     public Message(Address src, int srcSeqNo, Address dst, MessagePayload payload) {
         this.src = src;

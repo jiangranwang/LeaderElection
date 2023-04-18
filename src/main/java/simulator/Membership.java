@@ -1,3 +1,7 @@
+/*
+Class that parses membership files and return nodes with specific properties
+ */
+
 package simulator;
 
 import javafx.util.Pair;

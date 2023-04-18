@@ -1,3 +1,7 @@
+/*
+Base class for different types of message payload.
+ */
+
 package network.message.payload;
 
 import enums.MessageType;
