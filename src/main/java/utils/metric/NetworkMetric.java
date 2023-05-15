@@ -36,18 +36,18 @@ public class NetworkMetric {
 
     @SuppressWarnings("unchecked")
     public static JSONObject getStat() {
-        int e2eMsgTotal = 0;
-        int h2hMsgTotal = 0;
-        int e2eMsgSizeTotal = 0;
-        int h2hMsgSizeTotal = 0;
+        Integer e2eMsgTotal = 0;
+        Integer h2hMsgTotal = 0;
+        Integer e2eMsgSizeTotal = 0;
+        Integer h2hMsgSizeTotal = 0;
         HashMap<Address, Integer> e2eMsgsTotal = new HashMap<>();
         HashMap<Address, Integer> h2hMsgsTotal = new HashMap<>();
         HashMap<Address, Integer> e2eMsgSizesTotal = new HashMap<>();
         HashMap<Address, Integer> h2hMsgSizesTotal = new HashMap<>();
 
         for (Address src: e2eMsgs.keySet()) {
-            int curr = 0;
-            int currSize = 0;
+            Integer curr = 0;
+            Integer currSize = 0;
             for (Address dst: e2eMsgs.get(src).keySet()) {
                 e2eMsgTotal += e2eMsgs.get(src).get(dst);
                 curr += e2eMsgs.get(src).get(dst);
@@ -58,8 +58,8 @@ public class NetworkMetric {
             e2eMsgSizesTotal.put(src, currSize);
         }
         for (Address src: h2hMsgs.keySet()) {
-            int curr = 0;
-            int currSize = 0;
+            Integer curr = 0;
+            Integer currSize = 0;
             for (Address dst: h2hMsgs.get(src).keySet()) {
                 h2hMsgTotal += h2hMsgs.get(src).get(dst);
                 curr += h2hMsgs.get(src).get(dst);

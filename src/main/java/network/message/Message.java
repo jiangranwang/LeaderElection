@@ -67,6 +67,10 @@ public class Message implements Cloneable, Serializable {
         this.curr = curr;
     }
 
+    public void resetCurr() {
+        this.curr = this.src;
+    }
+
     public int getSrcSeqNo() {
         return srcSeqNo;
     }
@@ -74,6 +78,7 @@ public class Message implements Cloneable, Serializable {
     public int getMessageNo() {
         return messageNo;
     }
+
 
     public int getByteSize() {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream();

@@ -6,6 +6,7 @@ import simulator.EventService;
 import simulator.LogicalTime;
 import simulator.event.Event;
 import simulator.event.ReceiveMsgEvent;
+import simulator.event.ResendEvent;
 import simulator.event.RouteMsgEvent;
 import utils.Config;
 import utils.Logging;
@@ -154,18 +155,26 @@ public class Network {
     }
 
     public static void unicast(Message msg) {
+        Integer size;
+        if ((size = msg.getByteSize())==-1) {
+            // System.out.println("This is -1 sized");
+            System.out.println("Negative message size with message: "+msg);
+            // System.exit(1);
+        }
         if (msg.getSrc() == msg.getCurr()) {
-            NetworkMetric.e2eRecord(msg.getSrc(), msg.getDst(), msg.getByteSize());
+            NetworkMetric.e2eRecord(msg.getSrc(), msg.getDst(), size);
             Logging.log(Level.FINE, msg.getSrc(), "Sending message " + msg);
         }
         Address nextHop = getNextHop(msg.getCurr(), msg.getDst());
         msg.setCurr(nextHop);
-        NetworkMetric.h2hRecord(msg.getCurr(), nextHop, msg.getByteSize());
+        NetworkMetric.h2hRecord(msg.getCurr(), nextHop, size);
         LOG.log(Level.FINER, "Routing message " + msg + " through node " + nextHop);
         if (Config.random.nextDouble() < Config.msgDropRate) {
             LOG.log(Level.FINE, "Message " + msg + " dropped.");
+            // msg.setCurr(msg.getSrc());
+            Event event = new ResendEvent(LogicalTime.time + Config.random.nextInt(Config.eventCheckTimeout), msg.getSrc(), msg);
             // System.out.println("Message dropped from " + msg.getSrc() + " to " + msg.getDst());
-            Network.unicast(msg);
+            EventService.addEvent(event);
             return;
         }
         Event event;

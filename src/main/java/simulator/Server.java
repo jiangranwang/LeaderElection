@@ -36,9 +36,11 @@ public class Server {
     private AlgoState myState = AlgoState.NONE;
     private long initTime = 0;
     private RequestPayload currRequest;
-    private final Set<RequestPayload> deferred = ConcurrentHashMap.newKeySet();;
+    private final Set<RequestPayload> deferred = ConcurrentHashMap.newKeySet();
     private final Set<Address> recentlyOKed = ConcurrentHashMap.newKeySet();
     private final Set<Address> pendingOKs = ConcurrentHashMap.newKeySet();
+    private final Set<Long> req_times = ConcurrentHashMap.newKeySet();
+
 
 
     // private final ConcurrentLinkedQueue<Address> queryReceivedIds = new ConcurrentLinkedQueue<>();
@@ -81,9 +83,11 @@ public class Server {
         Logging.log(Level.FINER, id, "Processing event: " + event.toString());
         if (event.getType() == EventType.RECEIVE_MSG) {
             processMsg(((ReceiveMsgEvent) event).getMsg());
+        } else if (event.getType() == EventType.INITATE_REQ){
+            initiateRequest();
         } else if (event.getType() == EventType.EXIT_CRIT) {
              // EXIT
-             System.out.println("Exiting critical section at node " + id);
+            //  System.out.println("Exiting critical section at node " + id);
              AlgorithmMetric.setFirstExitTime(LogicalTime.time);
              MessagePayload release = new ReleasePayload(currSeqNum,id);
              Message rel_msg = new Message(id,id,release);
@@ -165,27 +169,28 @@ public class Server {
         else if (event.getType() == EventType.ROUTE_MSG) {
             Network.unicast(((RouteMsgEvent) event).getMsg());
 
-        // } else if (event.getType() == EventType.RESEND) {
-        //     Message msg = ((ResendEvent) event).getMsg();
-        //     List<Address> targetNodes = ((ResendEvent) event).getTargetNodes();
-        //     List<Address> newTargetNodes = targetNodes.stream()
-        //             .filter(key -> !ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
-        //     if (newTargetNodes.size() == 0) {
-        //         return;
-        //     }
-        //     Logging.log(Level.FINE, id, "Resending msg (" + msg + ") to nodes: " + newTargetNodes);
-        //     Network.multicast(msg, newTargetNodes);
+        } else if (event.getType() == EventType.RESEND) {
+            Message msg = ((ResendEvent) event).getMsg();
+            msg.resetCurr();
+            // List<Address> targetNodes = ((ResendEvent) event).getTargetNodes();
+            // List<Address> newTargetNodes = targetNodes.stream()
+            //         .filter(key -> !ackedIds.getOrDefault(msg.getMessageNo(), new HashSet<>()).contains(key)).collect(Collectors.toList());
+            // if (newTargetNodes.size() == 0) {
+            //     return;
+            // }
+            Logging.log(Level.FINE, id, "Resending msg (" + msg + ")");
+            Network.unicast(msg);
 
-        //     int ttl = ((ResendEvent) event).getTtl();
-        //     if (ttl == 0) {
-        //         Logging.log(Level.FINE, id, "Resending canceled");
-        //         return;
-        //     }
-        //     Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes, ttl - 1);
-        //     EventService.addEvent(nextEvent);
+            // int ttl = ((ResendEvent) event).getTtl();
+            // if (ttl == 0) {
+            //     Logging.log(Level.FINE, id, "Resending canceled");
+            //     return;
+            // }
+            // Event nextEvent = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, id, msg, newTargetNodes, ttl - 1);
+            // EventService.addEvent(nextEvent);
 
-        // // } else if (event.getType() == EventType.SET_SUSPECT) {
-        // //     AlgorithmMetric.setTrueSuspects(membership.getSuspects());
+        // } else if (event.getType() == EventType.SET_SUSPECT) {
+        //     AlgorithmMetric.setTrueSuspects(membership.getSuspects());
         } else {
             throw new RuntimeException("Event type " + event.getType() + " not found!!!");
         }
@@ -232,10 +237,11 @@ public class Server {
                 }
             }
             pendingOKs.remove(msg.getSrc());
-            System.out.println("Now only waiting for " + pendingOKs.size() + " OKs");
+            // System.out.println("Now only waiting for " + pendingOKs.size() + " OKs");
             
             // includes running critical section and sending out releases
-            if (pendingOKs.isEmpty()) {
+            // System.out.println("Size of pendingOks is "+String.valueOf(pendingOKs.size()));
+            if (pendingOKs.isEmpty() && myState == AlgoState.WAIT) {
                 // execute the critical section
                 executeCriticalSection();
             }
@@ -270,6 +276,26 @@ public class Server {
 
     public void initiateRequest() {
 
+        // local serialization
+        if (myState==AlgoState.WAIT || myState==AlgoState.HELD) {
+            if (Config.batched) {
+                if (myState==AlgoState.WAIT){
+                    req_times.add(LogicalTime.time);
+                    AlgorithmMetric.addArrivalTime(LogicalTime.time);
+                } else if (myState==AlgoState.HELD) {
+                     AlgorithmMetric.addWaitTime(0); // we already in the CS, so batch for free
+                }
+            } else {
+                InitiateRequestEvent e = new InitiateRequestEvent(LogicalTime.time+Config.critDuration, id);
+                EventService.addEvent(e);
+            }
+            return;
+        } 
+
+        // System.out.println("Initiated "+String.valueOf(++Config.reqInitProcessedCt));
+
+        AlgorithmMetric.addArrivalTime(LogicalTime.time);
+
         myState = AlgoState.WAIT;
         initTime = LogicalTime.time;
         maxSeqSeen++;
@@ -281,6 +307,9 @@ public class Server {
 
         // List<Address> targetNodes = membership.getRandomNodes(numNodes, excludes, true);
         // Logging.log(Level.INFO, id, "Node sending query message to " + targetNodes);
+        if (pendingOKs.size() <= Config.numServers/2) {
+            AlgorithmMetric.incrementSlows();
+        }
         currRequest = new RequestPayload(currSeqNum,id,AlgorithmPath.FAST);
         // if (Config.algorithm == 3 || Config.algorithm == 4) {
         //     payload = new QueryPayload(Config.numLowNode, Config.numSuspectCount);
@@ -292,7 +321,7 @@ public class Server {
         }
 
 
-        System.out.println("Initiated pendingOKs with size " + pendingOKs.size());
+        // System.out.println("Initiated pendingOKs with size " + pendingOKs.size());
         // System.out.println(pendingOKs);
 
         // check response after certain time
@@ -304,9 +333,19 @@ public class Server {
         membership.update();
     }
 
+    public void loadRequest(long time) {
+        InitiateRequestEvent req = new InitiateRequestEvent(time, id);
+        EventService.addEvent(req);
+    }
+
     private void executeCriticalSection() {
-        System.out.println("Entering critical section at node " + id);
+        // System.out.println("Entering critical section at node " + id);
         AlgorithmMetric.addWaitTime(LogicalTime.time - initTime);
+        if (Config.batched) {
+            for (Long time : req_times) {
+                AlgorithmMetric.addWaitTime(LogicalTime.time - time);
+            }
+        }
         AlgorithmMetric.setSecondEnterTime(LogicalTime.time);
         myState = AlgoState.HELD;
         ExitCritEvent exit = new ExitCritEvent(LogicalTime.time + Config.critDuration, id);

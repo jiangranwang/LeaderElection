@@ -1,0 +1,7801 @@
+{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6971262,
+    "h2hMsgSizeTotal": 27858782,
+    "h2hMsgTotal": 32281,
+    "e2eMsgTotal": 8001
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19775,
+      33582
+    ],
+    "slows": 0,
+    "clientDelay": 13607
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6783096,
+    "h2hMsgSizeTotal": 26814346,
+    "h2hMsgTotal": 30362,
+    "e2eMsgTotal": 7572
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13798,
+      29259
+    ],
+    "slows": 0,
+    "clientDelay": 15261
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7027494,
+    "h2hMsgSizeTotal": 27777995,
+    "h2hMsgTotal": 31072,
+    "e2eMsgTotal": 7761
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11356,
+      31524
+    ],
+    "slows": 0,
+    "clientDelay": 19968
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6813888,
+    "h2hMsgSizeTotal": 27098150,
+    "h2hMsgTotal": 30278,
+    "e2eMsgTotal": 7468
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13222,
+      23930
+    ],
+    "slows": 0,
+    "clientDelay": 10508
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7009440,
+    "h2hMsgSizeTotal": 28080047,
+    "h2hMsgTotal": 32121,
+    "e2eMsgTotal": 7916
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8813,
+      43381
+    ],
+    "slows": 0,
+    "clientDelay": 34368
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6803778,
+    "h2hMsgSizeTotal": 26704809,
+    "h2hMsgTotal": 30908,
+    "e2eMsgTotal": 7751
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11499,
+      30171
+    ],
+    "slows": 0,
+    "clientDelay": 18472
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7201374,
+    "h2hMsgSizeTotal": 28706812,
+    "h2hMsgTotal": 32975,
+    "e2eMsgTotal": 8229
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14182,
+      31864
+    ],
+    "slows": 0,
+    "clientDelay": 17482
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7141242,
+    "h2hMsgSizeTotal": 28485004,
+    "h2hMsgTotal": 32609,
+    "e2eMsgTotal": 8091
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15434,
+      37259
+    ],
+    "slows": 0,
+    "clientDelay": 21625
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7097880,
+    "h2hMsgSizeTotal": 27961667,
+    "h2hMsgTotal": 32705,
+    "e2eMsgTotal": 8176
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18822,
+      32010
+    ],
+    "slows": 0,
+    "clientDelay": 12988
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6589896,
+    "h2hMsgSizeTotal": 26090069,
+    "h2hMsgTotal": 29359,
+    "e2eMsgTotal": 7368
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11402,
+      19323
+    ],
+    "slows": 0,
+    "clientDelay": 7721
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7497894,
+    "h2hMsgSizeTotal": 29172852,
+    "h2hMsgTotal": 33723,
+    "e2eMsgTotal": 8481
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14175,
+      48296
+    ],
+    "slows": 0,
+    "clientDelay": 33921
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6987474,
+    "h2hMsgSizeTotal": 27750807,
+    "h2hMsgTotal": 31782,
+    "e2eMsgTotal": 7959
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11090,
+      34410
+    ],
+    "slows": 0,
+    "clientDelay": 23120
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6833952,
+    "h2hMsgSizeTotal": 27136552,
+    "h2hMsgTotal": 31080,
+    "e2eMsgTotal": 7720
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18611,
+      50964
+    ],
+    "slows": 0,
+    "clientDelay": 32153
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6965148,
+    "h2hMsgSizeTotal": 27931036,
+    "h2hMsgTotal": 32274,
+    "e2eMsgTotal": 8002
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15503,
+      27701
+    ],
+    "slows": 0,
+    "clientDelay": 11998
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7019274,
+    "h2hMsgSizeTotal": 27773220,
+    "h2hMsgTotal": 31365,
+    "e2eMsgTotal": 7815
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13935,
+      25738
+    ],
+    "slows": 0,
+    "clientDelay": 11603
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6932730,
+    "h2hMsgSizeTotal": 26936759,
+    "h2hMsgTotal": 30446,
+    "e2eMsgTotal": 7663
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13461,
+      21324
+    ],
+    "slows": 0,
+    "clientDelay": 7663
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7097316,
+    "h2hMsgSizeTotal": 27629574,
+    "h2hMsgTotal": 30984,
+    "e2eMsgTotal": 7794
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10632,
+      20571
+    ],
+    "slows": 0,
+    "clientDelay": 9739
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7119822,
+    "h2hMsgSizeTotal": 28546222,
+    "h2hMsgTotal": 32817,
+    "e2eMsgTotal": 8137
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9212,
+      50386
+    ],
+    "slows": 0,
+    "clientDelay": 40974
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6740670,
+    "h2hMsgSizeTotal": 26587278,
+    "h2hMsgTotal": 30193,
+    "e2eMsgTotal": 7537
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11249,
+      31178
+    ],
+    "slows": 0,
+    "clientDelay": 19729
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7052628,
+    "h2hMsgSizeTotal": 28259391,
+    "h2hMsgTotal": 32235,
+    "e2eMsgTotal": 7962
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7934,
+      45312
+    ],
+    "slows": 0,
+    "clientDelay": 37178
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6795702,
+    "h2hMsgSizeTotal": 26782566,
+    "h2hMsgTotal": 30733,
+    "e2eMsgTotal": 7693
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12237,
+      39322
+    ],
+    "slows": 0,
+    "clientDelay": 26885
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6944658,
+    "h2hMsgSizeTotal": 27804559,
+    "h2hMsgTotal": 31746,
+    "e2eMsgTotal": 7819
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10222,
+      26601
+    ],
+    "slows": 0,
+    "clientDelay": 16179
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7029630,
+    "h2hMsgSizeTotal": 27714324,
+    "h2hMsgTotal": 31815,
+    "e2eMsgTotal": 7917
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12904,
+      28382
+    ],
+    "slows": 0,
+    "clientDelay": 15278
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6525948,
+    "h2hMsgSizeTotal": 26160780,
+    "h2hMsgTotal": 31282,
+    "e2eMsgTotal": 7762
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12230,
+      39637
+    ],
+    "slows": 0,
+    "clientDelay": 27207
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7127100,
+    "h2hMsgSizeTotal": 28019976,
+    "h2hMsgTotal": 31386,
+    "e2eMsgTotal": 7854
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8827,
+      43671
+    ],
+    "slows": 0,
+    "clientDelay": 34644
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6757158,
+    "h2hMsgSizeTotal": 27085693,
+    "h2hMsgTotal": 30742,
+    "e2eMsgTotal": 7625
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10014,
+      29200
+    ],
+    "slows": 0,
+    "clientDelay": 18986
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6831882,
+    "h2hMsgSizeTotal": 27308127,
+    "h2hMsgTotal": 31502,
+    "e2eMsgTotal": 7775
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10760,
+      36049
+    ],
+    "slows": 0,
+    "clientDelay": 25089
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6832188,
+    "h2hMsgSizeTotal": 27357627,
+    "h2hMsgTotal": 31523,
+    "e2eMsgTotal": 7790
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13747,
+      36153
+    ],
+    "slows": 0,
+    "clientDelay": 22206
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7077588,
+    "h2hMsgSizeTotal": 28074633,
+    "h2hMsgTotal": 31497,
+    "e2eMsgTotal": 7818
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14466,
+      32732
+    ],
+    "slows": 0,
+    "clientDelay": 18066
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7481574,
+    "h2hMsgSizeTotal": 29310053,
+    "h2hMsgTotal": 32758,
+    "e2eMsgTotal": 8265
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14333,
+      37079
+    ],
+    "slows": 0,
+    "clientDelay": 22546
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7173096,
+    "h2hMsgSizeTotal": 28534555,
+    "h2hMsgTotal": 32909,
+    "e2eMsgTotal": 8172
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12575,
+      32655
+    ],
+    "slows": 0,
+    "clientDelay": 19880
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6971004,
+    "h2hMsgSizeTotal": 27784494,
+    "h2hMsgTotal": 30992,
+    "e2eMsgTotal": 7658
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12193,
+      35143
+    ],
+    "slows": 0,
+    "clientDelay": 22750
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6912516,
+    "h2hMsgSizeTotal": 27626529,
+    "h2hMsgTotal": 31617,
+    "e2eMsgTotal": 7770
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14455,
+      54092
+    ],
+    "slows": 0,
+    "clientDelay": 39437
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6957708,
+    "h2hMsgSizeTotal": 27639604,
+    "h2hMsgTotal": 31550,
+    "e2eMsgTotal": 7830
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11136,
+      32673
+    ],
+    "slows": 0,
+    "clientDelay": 21337
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6752202,
+    "h2hMsgSizeTotal": 26769474,
+    "h2hMsgTotal": 30519,
+    "e2eMsgTotal": 7599
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9048,
+      28654
+    ],
+    "slows": 0,
+    "clientDelay": 19406
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6631254,
+    "h2hMsgSizeTotal": 26827764,
+    "h2hMsgTotal": 30575,
+    "e2eMsgTotal": 7493
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11777,
+      29615
+    ],
+    "slows": 0,
+    "clientDelay": 17638
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6758976,
+    "h2hMsgSizeTotal": 26885430,
+    "h2hMsgTotal": 30658,
+    "e2eMsgTotal": 7648
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9705,
+      20540
+    ],
+    "slows": 0,
+    "clientDelay": 10635
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6830154,
+    "h2hMsgSizeTotal": 27030442,
+    "h2hMsgTotal": 30667,
+    "e2eMsgTotal": 7667
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9964,
+      33715
+    ],
+    "slows": 0,
+    "clientDelay": 23551
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7030278,
+    "h2hMsgSizeTotal": 27959709,
+    "h2hMsgTotal": 31490,
+    "e2eMsgTotal": 7805
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14304,
+      44976
+    ],
+    "slows": 0,
+    "clientDelay": 30472
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7065186,
+    "h2hMsgSizeTotal": 28023502,
+    "h2hMsgTotal": 32451,
+    "e2eMsgTotal": 8071
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12122,
+      31030
+    ],
+    "slows": 0,
+    "clientDelay": 18708
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6527028,
+    "h2hMsgSizeTotal": 26274973,
+    "h2hMsgTotal": 30101,
+    "e2eMsgTotal": 7386
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11068,
+      28261
+    ],
+    "slows": 0,
+    "clientDelay": 16993
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6899910,
+    "h2hMsgSizeTotal": 27821124,
+    "h2hMsgTotal": 31747,
+    "e2eMsgTotal": 7801
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10667,
+      46336
+    ],
+    "slows": 0,
+    "clientDelay": 35469
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7122678,
+    "h2hMsgSizeTotal": 28162153,
+    "h2hMsgTotal": 31942,
+    "e2eMsgTotal": 7925
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14138,
+      32400
+    ],
+    "slows": 0,
+    "clientDelay": 18062
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6895848,
+    "h2hMsgSizeTotal": 27382056,
+    "h2hMsgTotal": 31196,
+    "e2eMsgTotal": 7796
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      20298,
+      25942
+    ],
+    "slows": 0,
+    "clientDelay": 5444
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6796638,
+    "h2hMsgSizeTotal": 26791478,
+    "h2hMsgTotal": 30809,
+    "e2eMsgTotal": 7681
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17675,
+      30894
+    ],
+    "slows": 0,
+    "clientDelay": 13019
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7293576,
+    "h2hMsgSizeTotal": 29453638,
+    "h2hMsgTotal": 33074,
+    "e2eMsgTotal": 8160
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15335,
+      50254
+    ],
+    "slows": 0,
+    "clientDelay": 34719
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6776430,
+    "h2hMsgSizeTotal": 27172901,
+    "h2hMsgTotal": 31834,
+    "e2eMsgTotal": 7845
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18385,
+      26938
+    ],
+    "slows": 0,
+    "clientDelay": 8353
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7013058,
+    "h2hMsgSizeTotal": 28068686,
+    "h2hMsgTotal": 32203,
+    "e2eMsgTotal": 7935
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13263,
+      27220
+    ],
+    "slows": 0,
+    "clientDelay": 13757
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7013316,
+    "h2hMsgSizeTotal": 27710728,
+    "h2hMsgTotal": 31818,
+    "e2eMsgTotal": 7918
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9699,
+      23798
+    ],
+    "slows": 0,
+    "clientDelay": 13899
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6949158,
+    "h2hMsgSizeTotal": 27655336,
+    "h2hMsgTotal": 31943,
+    "e2eMsgTotal": 7881
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17036,
+      22272
+    ],
+    "slows": 0,
+    "clientDelay": 5036
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6811608,
+    "h2hMsgSizeTotal": 26763141,
+    "h2hMsgTotal": 29631,
+    "e2eMsgTotal": 7416
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14474,
+      21296
+    ],
+    "slows": 0,
+    "clientDelay": 6622
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7058886,
+    "h2hMsgSizeTotal": 27839687,
+    "h2hMsgTotal": 32616,
+    "e2eMsgTotal": 8189
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7614,
+      48948
+    ],
+    "slows": 0,
+    "clientDelay": 41134
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6485142,
+    "h2hMsgSizeTotal": 25764349,
+    "h2hMsgTotal": 30330,
+    "e2eMsgTotal": 7549
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16194,
+      38253
+    ],
+    "slows": 0,
+    "clientDelay": 21859
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7223166,
+    "h2hMsgSizeTotal": 28213439,
+    "h2hMsgTotal": 32292,
+    "e2eMsgTotal": 8105
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9742,
+      45456
+    ],
+    "slows": 0,
+    "clientDelay": 35514
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6991350,
+    "h2hMsgSizeTotal": 27462896,
+    "h2hMsgTotal": 31307,
+    "e2eMsgTotal": 7861
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11247,
+      22361
+    ],
+    "slows": 0,
+    "clientDelay": 10914
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6849792,
+    "h2hMsgSizeTotal": 27198528,
+    "h2hMsgTotal": 31188,
+    "e2eMsgTotal": 7788
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16907,
+      45179
+    ],
+    "slows": 0,
+    "clientDelay": 28072
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6935862,
+    "h2hMsgSizeTotal": 27336647,
+    "h2hMsgTotal": 30628,
+    "e2eMsgTotal": 7641
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12414,
+      21589
+    ],
+    "slows": 0,
+    "clientDelay": 8975
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7252140,
+    "h2hMsgSizeTotal": 29157561,
+    "h2hMsgTotal": 32713,
+    "e2eMsgTotal": 8050
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      25085,
+      30342
+    ],
+    "slows": 0,
+    "clientDelay": 5057
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6840240,
+    "h2hMsgSizeTotal": 27141940,
+    "h2hMsgTotal": 31408,
+    "e2eMsgTotal": 7820
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10706,
+      29026
+    ],
+    "slows": 0,
+    "clientDelay": 18120
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6893208,
+    "h2hMsgSizeTotal": 27406886,
+    "h2hMsgTotal": 31442,
+    "e2eMsgTotal": 7816
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11594,
+      32492
+    ],
+    "slows": 0,
+    "clientDelay": 20698
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6836946,
+    "h2hMsgSizeTotal": 26970068,
+    "h2hMsgTotal": 30785,
+    "e2eMsgTotal": 7747
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13382,
+      26234
+    ],
+    "slows": 0,
+    "clientDelay": 12652
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7289442,
+    "h2hMsgSizeTotal": 28896831,
+    "h2hMsgTotal": 31574,
+    "e2eMsgTotal": 7943
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17325,
+      28401
+    ],
+    "slows": 0,
+    "clientDelay": 10876
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6974688,
+    "h2hMsgSizeTotal": 27492826,
+    "h2hMsgTotal": 32302,
+    "e2eMsgTotal": 8096
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11993,
+      60112
+    ],
+    "slows": 0,
+    "clientDelay": 47919
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7044156,
+    "h2hMsgSizeTotal": 27852262,
+    "h2hMsgTotal": 32068,
+    "e2eMsgTotal": 8030
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13926,
+      34811
+    ],
+    "slows": 0,
+    "clientDelay": 20685
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6832650,
+    "h2hMsgSizeTotal": 27331674,
+    "h2hMsgTotal": 32387,
+    "e2eMsgTotal": 8027
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14965,
+      42147
+    ],
+    "slows": 0,
+    "clientDelay": 26982
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7146462,
+    "h2hMsgSizeTotal": 28407907,
+    "h2hMsgTotal": 32148,
+    "e2eMsgTotal": 7981
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11028,
+      32723
+    ],
+    "slows": 0,
+    "clientDelay": 21495
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7308438,
+    "h2hMsgSizeTotal": 29195242,
+    "h2hMsgTotal": 32845,
+    "e2eMsgTotal": 8153
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11202,
+      28915
+    ],
+    "slows": 0,
+    "clientDelay": 17513
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6727260,
+    "h2hMsgSizeTotal": 26903923,
+    "h2hMsgTotal": 31559,
+    "e2eMsgTotal": 7794
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      26526,
+      26897
+    ],
+    "slows": 0,
+    "clientDelay": 171
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6830778,
+    "h2hMsgSizeTotal": 27291188,
+    "h2hMsgTotal": 31113,
+    "e2eMsgTotal": 7691
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11487,
+      63593
+    ],
+    "slows": 0,
+    "clientDelay": 51906
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7265946,
+    "h2hMsgSizeTotal": 29020026,
+    "h2hMsgTotal": 32259,
+    "e2eMsgTotal": 8019
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11782,
+      31803
+    ],
+    "slows": 0,
+    "clientDelay": 19821
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7315848,
+    "h2hMsgSizeTotal": 28670509,
+    "h2hMsgTotal": 32131,
+    "e2eMsgTotal": 8060
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14490,
+      49944
+    ],
+    "slows": 0,
+    "clientDelay": 35254
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7175016,
+    "h2hMsgSizeTotal": 28351730,
+    "h2hMsgTotal": 32086,
+    "e2eMsgTotal": 8016
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15594,
+      29159
+    ],
+    "slows": 0,
+    "clientDelay": 13365
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6918636,
+    "h2hMsgSizeTotal": 27289015,
+    "h2hMsgTotal": 30759,
+    "e2eMsgTotal": 7702
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13744,
+      27748
+    ],
+    "slows": 0,
+    "clientDelay": 13804
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7128984,
+    "h2hMsgSizeTotal": 28336150,
+    "h2hMsgTotal": 31538,
+    "e2eMsgTotal": 7800
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16427,
+      26011
+    ],
+    "slows": 0,
+    "clientDelay": 9384
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6788346,
+    "h2hMsgSizeTotal": 26935103,
+    "h2hMsgTotal": 30474,
+    "e2eMsgTotal": 7595
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16953,
+      17817
+    ],
+    "slows": 0,
+    "clientDelay": 664
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7019574,
+    "h2hMsgSizeTotal": 27932113,
+    "h2hMsgTotal": 32294,
+    "e2eMsgTotal": 8061
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9375,
+      26838
+    ],
+    "slows": 0,
+    "clientDelay": 17263
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7398420,
+    "h2hMsgSizeTotal": 29053975,
+    "h2hMsgTotal": 32675,
+    "e2eMsgTotal": 8202
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9617,
+      24885
+    ],
+    "slows": 0,
+    "clientDelay": 15068
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6573612,
+    "h2hMsgSizeTotal": 25963278,
+    "h2hMsgTotal": 29808,
+    "e2eMsgTotal": 7410
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10106,
+      27066
+    ],
+    "slows": 0,
+    "clientDelay": 16760
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7102494,
+    "h2hMsgSizeTotal": 28160174,
+    "h2hMsgTotal": 32141,
+    "e2eMsgTotal": 7981
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17387,
+      26840
+    ],
+    "slows": 0,
+    "clientDelay": 9253
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7144272,
+    "h2hMsgSizeTotal": 28172469,
+    "h2hMsgTotal": 30335,
+    "e2eMsgTotal": 7592
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10911,
+      36043
+    ],
+    "slows": 0,
+    "clientDelay": 24932
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7340406,
+    "h2hMsgSizeTotal": 29139839,
+    "h2hMsgTotal": 32240,
+    "e2eMsgTotal": 8005
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10404,
+      31497
+    ],
+    "slows": 0,
+    "clientDelay": 20893
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6939966,
+    "h2hMsgSizeTotal": 27601677,
+    "h2hMsgTotal": 32650,
+    "e2eMsgTotal": 8101
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8238,
+      22725
+    ],
+    "slows": 0,
+    "clientDelay": 14287
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7342032,
+    "h2hMsgSizeTotal": 29456845,
+    "h2hMsgTotal": 32891,
+    "e2eMsgTotal": 8148
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8115,
+      29246
+    ],
+    "slows": 0,
+    "clientDelay": 20931
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7014930,
+    "h2hMsgSizeTotal": 27673333,
+    "h2hMsgTotal": 31476,
+    "e2eMsgTotal": 7819
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14617,
+      32959
+    ],
+    "slows": 0,
+    "clientDelay": 18142
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6596034,
+    "h2hMsgSizeTotal": 26225167,
+    "h2hMsgTotal": 30346,
+    "e2eMsgTotal": 7499
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12650,
+      33237
+    ],
+    "slows": 0,
+    "clientDelay": 20387
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6976530,
+    "h2hMsgSizeTotal": 27897584,
+    "h2hMsgTotal": 31901,
+    "e2eMsgTotal": 7891
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9392,
+      26009
+    ],
+    "slows": 0,
+    "clientDelay": 16417
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7164594,
+    "h2hMsgSizeTotal": 28596017,
+    "h2hMsgTotal": 32148,
+    "e2eMsgTotal": 7991
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16186,
+      52511
+    ],
+    "slows": 0,
+    "clientDelay": 36125
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6725340,
+    "h2hMsgSizeTotal": 26662812,
+    "h2hMsgTotal": 31014,
+    "e2eMsgTotal": 7686
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12151,
+      21385
+    ],
+    "slows": 0,
+    "clientDelay": 9034
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7340178,
+    "h2hMsgSizeTotal": 28881998,
+    "h2hMsgTotal": 32399,
+    "e2eMsgTotal": 8131
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10939,
+      46082
+    ],
+    "slows": 0,
+    "clientDelay": 34943
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7136466,
+    "h2hMsgSizeTotal": 28331669,
+    "h2hMsgTotal": 32028,
+    "e2eMsgTotal": 7955
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11743,
+      39767
+    ],
+    "slows": 0,
+    "clientDelay": 27824
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6689880,
+    "h2hMsgSizeTotal": 26868315,
+    "h2hMsgTotal": 30493,
+    "e2eMsgTotal": 7516
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15420,
+      35091
+    ],
+    "slows": 0,
+    "clientDelay": 19471
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7028004,
+    "h2hMsgSizeTotal": 27946063,
+    "h2hMsgTotal": 31671,
+    "e2eMsgTotal": 7822
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9269,
+      37889
+    ],
+    "slows": 0,
+    "clientDelay": 28420
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6674880,
+    "h2hMsgSizeTotal": 26242291,
+    "h2hMsgTotal": 30321,
+    "e2eMsgTotal": 7576
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8962,
+      22307
+    ],
+    "slows": 0,
+    "clientDelay": 13145
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6673284,
+    "h2hMsgSizeTotal": 26497142,
+    "h2hMsgTotal": 30608,
+    "e2eMsgTotal": 7594
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15633,
+      28050
+    ],
+    "slows": 0,
+    "clientDelay": 12217
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7011570,
+    "h2hMsgSizeTotal": 28153274,
+    "h2hMsgTotal": 31751,
+    "e2eMsgTotal": 7855
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15500,
+      50346
+    ],
+    "slows": 0,
+    "clientDelay": 34646
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7253544,
+    "h2hMsgSizeTotal": 28696331,
+    "h2hMsgTotal": 32749,
+    "e2eMsgTotal": 8196
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12663,
+      30985
+    ],
+    "slows": 0,
+    "clientDelay": 18122
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6849558,
+    "h2hMsgSizeTotal": 27454602,
+    "h2hMsgTotal": 32597,
+    "e2eMsgTotal": 8081
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10316,
+      28605
+    ],
+    "slows": 0,
+    "clientDelay": 18089
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 7062522,
+    "h2hMsgSizeTotal": 28095555,
+    "h2hMsgTotal": 32230,
+    "e2eMsgTotal": 7987
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14628,
+      28333
+    ],
+    "slows": 0,
+    "clientDelay": 13505
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6521550,
+    "h2hMsgSizeTotal": 26149311,
+    "h2hMsgTotal": 29948,
+    "e2eMsgTotal": 7385
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10996,
+      28496
+    ],
+    "slows": 0,
+    "clientDelay": 17300
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 6539376,
+    "h2hMsgSizeTotal": 26364802,
+    "h2hMsgTotal": 30630,
+    "e2eMsgTotal": 7480
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10559,
+      27269
+    ],
+    "slows": 0,
+    "clientDelay": 16510
+  },
+  "conc_requesters": 2,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11400660,
+    "h2hMsgSizeTotal": 46506797,
+    "h2hMsgTotal": 51969,
+    "e2eMsgTotal": 12614
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10383,
+      26378,
+      49612
+    ],
+    "slows": 0,
+    "clientDelay": 15795
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11836998,
+    "h2hMsgSizeTotal": 47746714,
+    "h2hMsgTotal": 53937,
+    "e2eMsgTotal": 13285
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10003,
+      30831,
+      31039
+    ],
+    "slows": 0,
+    "clientDelay": 20628
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11296188,
+    "h2hMsgSizeTotal": 46437150,
+    "h2hMsgTotal": 53084,
+    "e2eMsgTotal": 12782
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11606,
+      29261,
+      29491
+    ],
+    "slows": 0,
+    "clientDelay": 17455
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11375412,
+    "h2hMsgSizeTotal": 46340978,
+    "h2hMsgTotal": 52680,
+    "e2eMsgTotal": 12830
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13132,
+      20589,
+      36473
+    ],
+    "slows": 0,
+    "clientDelay": 7257
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11736042,
+    "h2hMsgSizeTotal": 47017687,
+    "h2hMsgTotal": 53510,
+    "e2eMsgTotal": 13167
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15601,
+      29106,
+      29347
+    ],
+    "slows": 0,
+    "clientDelay": 13305
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11728536,
+    "h2hMsgSizeTotal": 47570609,
+    "h2hMsgTotal": 54171,
+    "e2eMsgTotal": 13232
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14622,
+      29694,
+      64066
+    ],
+    "slows": 0,
+    "clientDelay": 14872
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11088870,
+    "h2hMsgSizeTotal": 44796520,
+    "h2hMsgTotal": 51123,
+    "e2eMsgTotal": 12493
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10314,
+      32516,
+      32760
+    ],
+    "slows": 0,
+    "clientDelay": 22002
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11407590,
+    "h2hMsgSizeTotal": 46221110,
+    "h2hMsgTotal": 51297,
+    "e2eMsgTotal": 12521
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14213,
+      24905,
+      30469
+    ],
+    "slows": 0,
+    "clientDelay": 10492
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11630706,
+    "h2hMsgSizeTotal": 47371025,
+    "h2hMsgTotal": 52776,
+    "e2eMsgTotal": 12827
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13620,
+      39491,
+      39735
+    ],
+    "slows": 0,
+    "clientDelay": 25671
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11180604,
+    "h2hMsgSizeTotal": 45798086,
+    "h2hMsgTotal": 53084,
+    "e2eMsgTotal": 12886
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15690,
+      31438,
+      31642
+    ],
+    "slows": 0,
+    "clientDelay": 15548
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11371662,
+    "h2hMsgSizeTotal": 45886879,
+    "h2hMsgTotal": 52228,
+    "e2eMsgTotal": 12809
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14398,
+      24001,
+      29571
+    ],
+    "slows": 0,
+    "clientDelay": 9403
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11169066,
+    "h2hMsgSizeTotal": 45814864,
+    "h2hMsgTotal": 52845,
+    "e2eMsgTotal": 12787
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9522,
+      30454,
+      32913
+    ],
+    "slows": 0,
+    "clientDelay": 20732
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11161380,
+    "h2hMsgSizeTotal": 45198510,
+    "h2hMsgTotal": 52908,
+    "e2eMsgTotal": 12894
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      22130,
+      28296,
+      28505
+    ],
+    "slows": 0,
+    "clientDelay": 5966
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11196054,
+    "h2hMsgSizeTotal": 45846731,
+    "h2hMsgTotal": 52408,
+    "e2eMsgTotal": 12705
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10318,
+      23311,
+      27796
+    ],
+    "slows": 0,
+    "clientDelay": 12793
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 10843644,
+    "h2hMsgSizeTotal": 44542798,
+    "h2hMsgTotal": 51224,
+    "e2eMsgTotal": 12402
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11224,
+      21929,
+      24095
+    ],
+    "slows": 0,
+    "clientDelay": 10505
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11581380,
+    "h2hMsgSizeTotal": 47591980,
+    "h2hMsgTotal": 54518,
+    "e2eMsgTotal": 13182
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11868,
+      29735,
+      34854
+    ],
+    "slows": 0,
+    "clientDelay": 17667
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11147172,
+    "h2hMsgSizeTotal": 45242979,
+    "h2hMsgTotal": 52063,
+    "e2eMsgTotal": 12706
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10033,
+      26274,
+      34486
+    ],
+    "slows": 0,
+    "clientDelay": 16041
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11516742,
+    "h2hMsgSizeTotal": 47034038,
+    "h2hMsgTotal": 52109,
+    "e2eMsgTotal": 12613
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11282,
+      43590,
+      43816
+    ],
+    "slows": 0,
+    "clientDelay": 32108
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11708790,
+    "h2hMsgSizeTotal": 47584320,
+    "h2hMsgTotal": 54055,
+    "e2eMsgTotal": 13177
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11068,
+      31395,
+      33627
+    ],
+    "slows": 0,
+    "clientDelay": 20127
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11204454,
+    "h2hMsgSizeTotal": 45801567,
+    "h2hMsgTotal": 51688,
+    "e2eMsgTotal": 12541
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8389,
+      34998,
+      37292
+    ],
+    "slows": 0,
+    "clientDelay": 26409
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11640222,
+    "h2hMsgSizeTotal": 47103555,
+    "h2hMsgTotal": 53252,
+    "e2eMsgTotal": 12965
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9530,
+      30661,
+      31559
+    ],
+    "slows": 0,
+    "clientDelay": 20931
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11381880,
+    "h2hMsgSizeTotal": 46188555,
+    "h2hMsgTotal": 53377,
+    "e2eMsgTotal": 13024
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15107,
+      26762,
+      32800
+    ],
+    "slows": 0,
+    "clientDelay": 11455
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11397462,
+    "h2hMsgSizeTotal": 46830279,
+    "h2hMsgTotal": 52136,
+    "e2eMsgTotal": 12629
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11915,
+      26366,
+      26596
+    ],
+    "slows": 0,
+    "clientDelay": 14251
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11674902,
+    "h2hMsgSizeTotal": 47661484,
+    "h2hMsgTotal": 53527,
+    "e2eMsgTotal": 12965
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15363,
+      33879,
+      34125
+    ],
+    "slows": 0,
+    "clientDelay": 18316
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11523768,
+    "h2hMsgSizeTotal": 46549890,
+    "h2hMsgTotal": 53722,
+    "e2eMsgTotal": 13156
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15956,
+      30786,
+      44893
+    ],
+    "slows": 0,
+    "clientDelay": 14630
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11766072,
+    "h2hMsgSizeTotal": 47782267,
+    "h2hMsgTotal": 54129,
+    "e2eMsgTotal": 13240
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17854,
+      38780,
+      39027
+    ],
+    "slows": 0,
+    "clientDelay": 20726
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 10906692,
+    "h2hMsgSizeTotal": 44865543,
+    "h2hMsgTotal": 50871,
+    "e2eMsgTotal": 12270
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13520,
+      32006,
+      32212
+    ],
+    "slows": 0,
+    "clientDelay": 18286
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11262642,
+    "h2hMsgSizeTotal": 45947770,
+    "h2hMsgTotal": 51535,
+    "e2eMsgTotal": 12479
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14351,
+      24747,
+      45169
+    ],
+    "slows": 0,
+    "clientDelay": 10196
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11580204,
+    "h2hMsgSizeTotal": 47358656,
+    "h2hMsgTotal": 53470,
+    "e2eMsgTotal": 13002
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13788,
+      29075,
+      37899
+    ],
+    "slows": 0,
+    "clientDelay": 15087
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12025602,
+    "h2hMsgSizeTotal": 49087217,
+    "h2hMsgTotal": 54524,
+    "e2eMsgTotal": 13159
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11808,
+      25257,
+      25830
+    ],
+    "slows": 0,
+    "clientDelay": 13249
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11168874,
+    "h2hMsgSizeTotal": 45704846,
+    "h2hMsgTotal": 52847,
+    "e2eMsgTotal": 12811
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12309,
+      26839,
+      27512
+    ],
+    "slows": 0,
+    "clientDelay": 14330
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11963190,
+    "h2hMsgSizeTotal": 47997529,
+    "h2hMsgTotal": 53914,
+    "e2eMsgTotal": 13217
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11766,
+      41294,
+      41991
+    ],
+    "slows": 0,
+    "clientDelay": 29328
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 10902516,
+    "h2hMsgSizeTotal": 44750910,
+    "h2hMsgTotal": 51256,
+    "e2eMsgTotal": 12370
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17850,
+      33944,
+      34166
+    ],
+    "slows": 0,
+    "clientDelay": 15894
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11669316,
+    "h2hMsgSizeTotal": 47704257,
+    "h2hMsgTotal": 54493,
+    "e2eMsgTotal": 13198
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17802,
+      31706,
+      44777
+    ],
+    "slows": 0,
+    "clientDelay": 13704
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11285118,
+    "h2hMsgSizeTotal": 45953120,
+    "h2hMsgTotal": 53899,
+    "e2eMsgTotal": 13125
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14966,
+      18407,
+      23926
+    ],
+    "slows": 0,
+    "clientDelay": 3241
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11934768,
+    "h2hMsgSizeTotal": 48458340,
+    "h2hMsgTotal": 54848,
+    "e2eMsgTotal": 13316
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19778,
+      40914,
+      41142
+    ],
+    "slows": 0,
+    "clientDelay": 20936
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11183544,
+    "h2hMsgSizeTotal": 45320903,
+    "h2hMsgTotal": 52121,
+    "e2eMsgTotal": 12724
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10056,
+      20897,
+      26518
+    ],
+    "slows": 0,
+    "clientDelay": 10641
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11755422,
+    "h2hMsgSizeTotal": 48018933,
+    "h2hMsgTotal": 53518,
+    "e2eMsgTotal": 12985
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10687,
+      33837,
+      34060
+    ],
+    "slows": 0,
+    "clientDelay": 22950
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11488692,
+    "h2hMsgSizeTotal": 46853389,
+    "h2hMsgTotal": 53341,
+    "e2eMsgTotal": 12866
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12917,
+      25432,
+      34684
+    ],
+    "slows": 0,
+    "clientDelay": 12315
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11585226,
+    "h2hMsgSizeTotal": 46671220,
+    "h2hMsgTotal": 52537,
+    "e2eMsgTotal": 12851
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12847,
+      31669,
+      31899
+    ],
+    "slows": 0,
+    "clientDelay": 18622
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11590800,
+    "h2hMsgSizeTotal": 46529439,
+    "h2hMsgTotal": 52265,
+    "e2eMsgTotal": 12860
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19263,
+      26017,
+      26257
+    ],
+    "slows": 0,
+    "clientDelay": 6554
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12007728,
+    "h2hMsgSizeTotal": 49012268,
+    "h2hMsgTotal": 54536,
+    "e2eMsgTotal": 13204
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17043,
+      27416,
+      45449
+    ],
+    "slows": 0,
+    "clientDelay": 10173
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11989236,
+    "h2hMsgSizeTotal": 48559154,
+    "h2hMsgTotal": 54720,
+    "e2eMsgTotal": 13430
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13564,
+      35899,
+      36125
+    ],
+    "slows": 0,
+    "clientDelay": 22135
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11164194,
+    "h2hMsgSizeTotal": 45244564,
+    "h2hMsgTotal": 52569,
+    "e2eMsgTotal": 12811
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9719,
+      58525,
+      58727
+    ],
+    "slows": 0,
+    "clientDelay": 48606
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11342982,
+    "h2hMsgSizeTotal": 45854353,
+    "h2hMsgTotal": 51602,
+    "e2eMsgTotal": 12609
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15404,
+      21695,
+      21902
+    ],
+    "slows": 0,
+    "clientDelay": 6091
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11655642,
+    "h2hMsgSizeTotal": 46919011,
+    "h2hMsgTotal": 52334,
+    "e2eMsgTotal": 12771
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12364,
+      28917,
+      49706
+    ],
+    "slows": 0,
+    "clientDelay": 16353
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11067102,
+    "h2hMsgSizeTotal": 45251413,
+    "h2hMsgTotal": 51366,
+    "e2eMsgTotal": 12385
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11002,
+      20561,
+      33456
+    ],
+    "slows": 0,
+    "clientDelay": 9359
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11861844,
+    "h2hMsgSizeTotal": 47920023,
+    "h2hMsgTotal": 54679,
+    "e2eMsgTotal": 13342
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10454,
+      32409,
+      32652
+    ],
+    "slows": 0,
+    "clientDelay": 21755
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11518596,
+    "h2hMsgSizeTotal": 46969797,
+    "h2hMsgTotal": 53697,
+    "e2eMsgTotal": 13014
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11026,
+      45695,
+      45915
+    ],
+    "slows": 0,
+    "clientDelay": 34469
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11426598,
+    "h2hMsgSizeTotal": 46597368,
+    "h2hMsgTotal": 52927,
+    "e2eMsgTotal": 12889
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11980,
+      23272,
+      25833
+    ],
+    "slows": 0,
+    "clientDelay": 11092
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11675646,
+    "h2hMsgSizeTotal": 47016574,
+    "h2hMsgTotal": 53325,
+    "e2eMsgTotal": 13045
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11599,
+      44780,
+      53825
+    ],
+    "slows": 0,
+    "clientDelay": 32981
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11251122,
+    "h2hMsgSizeTotal": 46230531,
+    "h2hMsgTotal": 54030,
+    "e2eMsgTotal": 13035
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11481,
+      25728,
+      26125
+    ],
+    "slows": 0,
+    "clientDelay": 14047
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11590908,
+    "h2hMsgSizeTotal": 46525178,
+    "h2hMsgTotal": 53116,
+    "e2eMsgTotal": 13050
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11813,
+      51025,
+      51734
+    ],
+    "slows": 0,
+    "clientDelay": 39012
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12085944,
+    "h2hMsgSizeTotal": 49131922,
+    "h2hMsgTotal": 55786,
+    "e2eMsgTotal": 13556
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16352,
+      36099,
+      41606
+    ],
+    "slows": 0,
+    "clientDelay": 19547
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11271630,
+    "h2hMsgSizeTotal": 46236355,
+    "h2hMsgTotal": 53776,
+    "e2eMsgTotal": 13049
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19669,
+      29036,
+      32427
+    ],
+    "slows": 0,
+    "clientDelay": 9167
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11201508,
+    "h2hMsgSizeTotal": 45732716,
+    "h2hMsgTotal": 52514,
+    "e2eMsgTotal": 12754
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16161,
+      28725,
+      28968
+    ],
+    "slows": 0,
+    "clientDelay": 12364
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11423730,
+    "h2hMsgSizeTotal": 46412222,
+    "h2hMsgTotal": 53115,
+    "e2eMsgTotal": 12887
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13904,
+      25969,
+      26185
+    ],
+    "slows": 0,
+    "clientDelay": 11865
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11263200,
+    "h2hMsgSizeTotal": 45899245,
+    "h2hMsgTotal": 53379,
+    "e2eMsgTotal": 12988
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9764,
+      29385,
+      32230
+    ],
+    "slows": 0,
+    "clientDelay": 19421
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11096406,
+    "h2hMsgSizeTotal": 45364642,
+    "h2hMsgTotal": 53073,
+    "e2eMsgTotal": 12877
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13115,
+      25105,
+      30198
+    ],
+    "slows": 0,
+    "clientDelay": 11790
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11132790,
+    "h2hMsgSizeTotal": 45676659,
+    "h2hMsgTotal": 52460,
+    "e2eMsgTotal": 12653
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11148,
+      22288,
+      24996
+    ],
+    "slows": 0,
+    "clientDelay": 10940
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11500596,
+    "h2hMsgSizeTotal": 46751615,
+    "h2hMsgTotal": 52723,
+    "e2eMsgTotal": 12882
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14112,
+      36550,
+      36791
+    ],
+    "slows": 0,
+    "clientDelay": 22238
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11139240,
+    "h2hMsgSizeTotal": 45591243,
+    "h2hMsgTotal": 50769,
+    "e2eMsgTotal": 12264
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9333,
+      23071,
+      42461
+    ],
+    "slows": 0,
+    "clientDelay": 13538
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11602848,
+    "h2hMsgSizeTotal": 47076779,
+    "h2hMsgTotal": 53381,
+    "e2eMsgTotal": 13036
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15582,
+      31346,
+      31557
+    ],
+    "slows": 0,
+    "clientDelay": 15564
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11969724,
+    "h2hMsgSizeTotal": 48656043,
+    "h2hMsgTotal": 54355,
+    "e2eMsgTotal": 13270
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11198,
+      40111,
+      40323
+    ],
+    "slows": 0,
+    "clientDelay": 28713
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11458326,
+    "h2hMsgSizeTotal": 46742835,
+    "h2hMsgTotal": 53436,
+    "e2eMsgTotal": 12981
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9998,
+      17457,
+      34208
+    ],
+    "slows": 0,
+    "clientDelay": 7259
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11312916,
+    "h2hMsgSizeTotal": 46153544,
+    "h2hMsgTotal": 52094,
+    "e2eMsgTotal": 12586
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18340,
+      24664,
+      29207
+    ],
+    "slows": 0,
+    "clientDelay": 6124
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11275710,
+    "h2hMsgSizeTotal": 46028753,
+    "h2hMsgTotal": 52850,
+    "e2eMsgTotal": 12721
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11233,
+      47528,
+      48575
+    ],
+    "slows": 0,
+    "clientDelay": 36095
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12104970,
+    "h2hMsgSizeTotal": 48849637,
+    "h2hMsgTotal": 54504,
+    "e2eMsgTotal": 13375
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13530,
+      34014,
+      35237
+    ],
+    "slows": 0,
+    "clientDelay": 20284
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11536584,
+    "h2hMsgSizeTotal": 46488326,
+    "h2hMsgTotal": 51834,
+    "e2eMsgTotal": 12656
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13450,
+      26130,
+      26357
+    ],
+    "slows": 0,
+    "clientDelay": 12480
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11647650,
+    "h2hMsgSizeTotal": 46899208,
+    "h2hMsgTotal": 52957,
+    "e2eMsgTotal": 12971
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16681,
+      26536,
+      47944
+    ],
+    "slows": 0,
+    "clientDelay": 9655
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12052656,
+    "h2hMsgSizeTotal": 48520228,
+    "h2hMsgTotal": 54256,
+    "e2eMsgTotal": 13316
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8361,
+      30638,
+      30847
+    ],
+    "slows": 0,
+    "clientDelay": 22077
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11489058,
+    "h2hMsgSizeTotal": 46622755,
+    "h2hMsgTotal": 52978,
+    "e2eMsgTotal": 12887
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      27580,
+      28974,
+      29336
+    ],
+    "slows": 0,
+    "clientDelay": 1194
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 10803894,
+    "h2hMsgSizeTotal": 44270293,
+    "h2hMsgTotal": 50458,
+    "e2eMsgTotal": 12221
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16518,
+      52166,
+      52366
+    ],
+    "slows": 0,
+    "clientDelay": 35448
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11586834,
+    "h2hMsgSizeTotal": 47204089,
+    "h2hMsgTotal": 54748,
+    "e2eMsgTotal": 13295
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10204,
+      22400,
+      29545
+    ],
+    "slows": 0,
+    "clientDelay": 11996
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 10861776,
+    "h2hMsgSizeTotal": 44228746,
+    "h2hMsgTotal": 49178,
+    "e2eMsgTotal": 11892
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13097,
+      23121,
+      31211
+    ],
+    "slows": 0,
+    "clientDelay": 9824
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11485722,
+    "h2hMsgSizeTotal": 47027241,
+    "h2hMsgTotal": 52048,
+    "e2eMsgTotal": 12715
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14812,
+      24877,
+      25264
+    ],
+    "slows": 0,
+    "clientDelay": 9865
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11502096,
+    "h2hMsgSizeTotal": 46817851,
+    "h2hMsgTotal": 53709,
+    "e2eMsgTotal": 13060
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11514,
+      29842,
+      42956
+    ],
+    "slows": 0,
+    "clientDelay": 18128
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11518932,
+    "h2hMsgSizeTotal": 46763289,
+    "h2hMsgTotal": 53441,
+    "e2eMsgTotal": 13034
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11307,
+      34014,
+      34362
+    ],
+    "slows": 0,
+    "clientDelay": 22507
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11068662,
+    "h2hMsgSizeTotal": 44965653,
+    "h2hMsgTotal": 51334,
+    "e2eMsgTotal": 12481
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14550,
+      18044,
+      23034
+    ],
+    "slows": 0,
+    "clientDelay": 3294
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11285550,
+    "h2hMsgSizeTotal": 46351497,
+    "h2hMsgTotal": 54414,
+    "e2eMsgTotal": 13197
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14126,
+      27788,
+      28233
+    ],
+    "slows": 0,
+    "clientDelay": 13462
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11465442,
+    "h2hMsgSizeTotal": 46793655,
+    "h2hMsgTotal": 53494,
+    "e2eMsgTotal": 12991
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17512,
+      27380,
+      27988
+    ],
+    "slows": 0,
+    "clientDelay": 9668
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11452566,
+    "h2hMsgSizeTotal": 46884615,
+    "h2hMsgTotal": 52796,
+    "e2eMsgTotal": 12737
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9560,
+      26313,
+      34467
+    ],
+    "slows": 0,
+    "clientDelay": 16553
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11109078,
+    "h2hMsgSizeTotal": 45260398,
+    "h2hMsgTotal": 51405,
+    "e2eMsgTotal": 12445
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12094,
+      18651,
+      18895
+    ],
+    "slows": 0,
+    "clientDelay": 6357
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11724594,
+    "h2hMsgSizeTotal": 48028430,
+    "h2hMsgTotal": 54451,
+    "e2eMsgTotal": 13167
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15209,
+      24897,
+      38294
+    ],
+    "slows": 0,
+    "clientDelay": 9488
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11676912,
+    "h2hMsgSizeTotal": 47412203,
+    "h2hMsgTotal": 53733,
+    "e2eMsgTotal": 13076
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16834,
+      40142,
+      40388
+    ],
+    "slows": 0,
+    "clientDelay": 23108
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11610162,
+    "h2hMsgSizeTotal": 47207386,
+    "h2hMsgTotal": 54351,
+    "e2eMsgTotal": 13231
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10938,
+      22347,
+      31686
+    ],
+    "slows": 0,
+    "clientDelay": 11209
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11321520,
+    "h2hMsgSizeTotal": 46507809,
+    "h2hMsgTotal": 53919,
+    "e2eMsgTotal": 13044
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10655,
+      39745,
+      39949
+    ],
+    "slows": 0,
+    "clientDelay": 28890
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11496210,
+    "h2hMsgSizeTotal": 46303866,
+    "h2hMsgTotal": 53171,
+    "e2eMsgTotal": 12995
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9861,
+      37124,
+      38398
+    ],
+    "slows": 0,
+    "clientDelay": 27063
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11636178,
+    "h2hMsgSizeTotal": 47278125,
+    "h2hMsgTotal": 54048,
+    "e2eMsgTotal": 13191
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11073,
+      21801,
+      28207
+    ],
+    "slows": 0,
+    "clientDelay": 10528
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11278866,
+    "h2hMsgSizeTotal": 46189641,
+    "h2hMsgTotal": 53432,
+    "e2eMsgTotal": 12923
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11343,
+      27133,
+      27376
+    ],
+    "slows": 0,
+    "clientDelay": 15590
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11186028,
+    "h2hMsgSizeTotal": 45583328,
+    "h2hMsgTotal": 51038,
+    "e2eMsgTotal": 12346
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16435,
+      21611,
+      28709
+    ],
+    "slows": 0,
+    "clientDelay": 4976
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11154756,
+    "h2hMsgSizeTotal": 45378451,
+    "h2hMsgTotal": 52327,
+    "e2eMsgTotal": 12770
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10461,
+      30871,
+      31470
+    ],
+    "slows": 0,
+    "clientDelay": 20210
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 12055380,
+    "h2hMsgSizeTotal": 48936247,
+    "h2hMsgTotal": 55699,
+    "e2eMsgTotal": 13538
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12597,
+      27985,
+      40160
+    ],
+    "slows": 0,
+    "clientDelay": 15188
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11095878,
+    "h2hMsgSizeTotal": 45193209,
+    "h2hMsgTotal": 51022,
+    "e2eMsgTotal": 12373
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19809,
+      23399,
+      31524
+    ],
+    "slows": 0,
+    "clientDelay": 3390
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11934462,
+    "h2hMsgSizeTotal": 48475868,
+    "h2hMsgTotal": 56159,
+    "e2eMsgTotal": 13621
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9882,
+      60209,
+      60423
+    ],
+    "slows": 0,
+    "clientDelay": 50127
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11399328,
+    "h2hMsgSizeTotal": 46520843,
+    "h2hMsgTotal": 52829,
+    "e2eMsgTotal": 12820
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11298,
+      36519,
+      57884
+    ],
+    "slows": 0,
+    "clientDelay": 25021
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11758434,
+    "h2hMsgSizeTotal": 48225933,
+    "h2hMsgTotal": 54172,
+    "e2eMsgTotal": 13099
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12353,
+      21294,
+      31906
+    ],
+    "slows": 0,
+    "clientDelay": 8741
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11359698,
+    "h2hMsgSizeTotal": 46683222,
+    "h2hMsgTotal": 53735,
+    "e2eMsgTotal": 13019
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7765,
+      35410,
+      35634
+    ],
+    "slows": 0,
+    "clientDelay": 27445
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11241540,
+    "h2hMsgSizeTotal": 45879141,
+    "h2hMsgTotal": 52481,
+    "e2eMsgTotal": 12782
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10295,
+      30704,
+      30926
+    ],
+    "slows": 0,
+    "clientDelay": 20209
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 11568138,
+    "h2hMsgSizeTotal": 46923361,
+    "h2hMsgTotal": 53612,
+    "e2eMsgTotal": 13119
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9656,
+      40380,
+      58064
+    ],
+    "slows": 0,
+    "clientDelay": 30524
+  },
+  "conc_requesters": 3,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16263804,
+    "h2hMsgSizeTotal": 67254940,
+    "h2hMsgTotal": 76610,
+    "e2eMsgTotal": 18450
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13107,
+      53700,
+      53939,
+      68729
+    ],
+    "slows": 0,
+    "clientDelay": 40393
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16544190,
+    "h2hMsgSizeTotal": 67825553,
+    "h2hMsgTotal": 75926,
+    "e2eMsgTotal": 18325
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8975,
+      39100,
+      39347,
+      40930
+    ],
+    "slows": 0,
+    "clientDelay": 29925
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16325676,
+    "h2hMsgSizeTotal": 67532514,
+    "h2hMsgTotal": 74948,
+    "e2eMsgTotal": 18074
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13304,
+      30076,
+      30278,
+      40032
+    ],
+    "slows": 0,
+    "clientDelay": 16572
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16492584,
+    "h2hMsgSizeTotal": 68060851,
+    "h2hMsgTotal": 77981,
+    "e2eMsgTotal": 18732
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12655,
+      28466,
+      61666,
+      62039
+    ],
+    "slows": 0,
+    "clientDelay": 15611
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16326162,
+    "h2hMsgSizeTotal": 66678701,
+    "h2hMsgTotal": 75348,
+    "e2eMsgTotal": 18251
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      28364,
+      45670,
+      45912,
+      47230
+    ],
+    "slows": 0,
+    "clientDelay": 17106
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15650466,
+    "h2hMsgSizeTotal": 65133262,
+    "h2hMsgTotal": 73955,
+    "e2eMsgTotal": 17607
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12121,
+      48755,
+      48955,
+      49614
+    ],
+    "slows": 0,
+    "clientDelay": 36434
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16553178,
+    "h2hMsgSizeTotal": 68135951,
+    "h2hMsgTotal": 77410,
+    "e2eMsgTotal": 18723
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10414,
+      28250,
+      38650,
+      42091
+    ],
+    "slows": 0,
+    "clientDelay": 17636
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16647162,
+    "h2hMsgSizeTotal": 68765491,
+    "h2hMsgTotal": 77178,
+    "e2eMsgTotal": 18487
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11167,
+      29974,
+      32146,
+      43560
+    ],
+    "slows": 0,
+    "clientDelay": 18607
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16643520,
+    "h2hMsgSizeTotal": 68765292,
+    "h2hMsgTotal": 76200,
+    "e2eMsgTotal": 18324
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10643,
+      32651,
+      32887,
+      34053
+    ],
+    "slows": 0,
+    "clientDelay": 21808
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16701108,
+    "h2hMsgSizeTotal": 68944119,
+    "h2hMsgTotal": 79295,
+    "e2eMsgTotal": 19046
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10516,
+      65405,
+      65621,
+      70934
+    ],
+    "slows": 0,
+    "clientDelay": 54689
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16481346,
+    "h2hMsgSizeTotal": 68380177,
+    "h2hMsgTotal": 76796,
+    "e2eMsgTotal": 18327
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11838,
+      33424,
+      39536,
+      40522
+    ],
+    "slows": 0,
+    "clientDelay": 21386
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16155846,
+    "h2hMsgSizeTotal": 66779543,
+    "h2hMsgTotal": 76572,
+    "e2eMsgTotal": 18401
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8445,
+      18119,
+      20748,
+      58702
+    ],
+    "slows": 0,
+    "clientDelay": 9474
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15872406,
+    "h2hMsgSizeTotal": 66668372,
+    "h2hMsgTotal": 75631,
+    "e2eMsgTotal": 17925
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8787,
+      21136,
+      36396,
+      44673
+    ],
+    "slows": 0,
+    "clientDelay": 12149
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16126410,
+    "h2hMsgSizeTotal": 66849394,
+    "h2hMsgTotal": 75191,
+    "e2eMsgTotal": 17991
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9598,
+      36179,
+      36435,
+      61004
+    ],
+    "slows": 0,
+    "clientDelay": 26381
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15935004,
+    "h2hMsgSizeTotal": 65703869,
+    "h2hMsgTotal": 73589,
+    "e2eMsgTotal": 17722
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11495,
+      27572,
+      31433,
+      33749
+    ],
+    "slows": 0,
+    "clientDelay": 15877
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16009884,
+    "h2hMsgSizeTotal": 65769052,
+    "h2hMsgTotal": 72534,
+    "e2eMsgTotal": 17374
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10387,
+      38042,
+      38523,
+      39486
+    ],
+    "slows": 0,
+    "clientDelay": 27455
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15940068,
+    "h2hMsgSizeTotal": 65651247,
+    "h2hMsgTotal": 74467,
+    "e2eMsgTotal": 17890
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12139,
+      25323,
+      27866,
+      39494
+    ],
+    "slows": 0,
+    "clientDelay": 12984
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15631524,
+    "h2hMsgSizeTotal": 64735060,
+    "h2hMsgTotal": 73154,
+    "e2eMsgTotal": 17538
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7304,
+      32117,
+      32322,
+      33663
+    ],
+    "slows": 0,
+    "clientDelay": 24613
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16188990,
+    "h2hMsgSizeTotal": 67072486,
+    "h2hMsgTotal": 76309,
+    "e2eMsgTotal": 18269
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12072,
+      33086,
+      33437,
+      38705
+    ],
+    "slows": 0,
+    "clientDelay": 20814
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16163778,
+    "h2hMsgSizeTotal": 66593034,
+    "h2hMsgTotal": 75547,
+    "e2eMsgTotal": 18187
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9919,
+      35975,
+      36175,
+      39435
+    ],
+    "slows": 0,
+    "clientDelay": 25856
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16124154,
+    "h2hMsgSizeTotal": 66519452,
+    "h2hMsgTotal": 74897,
+    "e2eMsgTotal": 17947
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10532,
+      43779,
+      44003,
+      47724
+    ],
+    "slows": 0,
+    "clientDelay": 33047
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15794418,
+    "h2hMsgSizeTotal": 65198883,
+    "h2hMsgTotal": 74378,
+    "e2eMsgTotal": 17783
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17691,
+      32530,
+      40231,
+      43257
+    ],
+    "slows": 0,
+    "clientDelay": 14639
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16132722,
+    "h2hMsgSizeTotal": 66873344,
+    "h2hMsgTotal": 76873,
+    "e2eMsgTotal": 18495
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9834,
+      21453,
+      47198,
+      49599
+    ],
+    "slows": 0,
+    "clientDelay": 11419
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16147404,
+    "h2hMsgSizeTotal": 66689840,
+    "h2hMsgTotal": 76514,
+    "e2eMsgTotal": 18286
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12471,
+      28262,
+      46360,
+      47644
+    ],
+    "slows": 0,
+    "clientDelay": 15591
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15945234,
+    "h2hMsgSizeTotal": 65170746,
+    "h2hMsgTotal": 72347,
+    "e2eMsgTotal": 17483
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11416,
+      25819,
+      31476,
+      33681
+    ],
+    "slows": 0,
+    "clientDelay": 14203
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16442370,
+    "h2hMsgSizeTotal": 67875809,
+    "h2hMsgTotal": 76488,
+    "e2eMsgTotal": 18443
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9851,
+      49056,
+      49288,
+      50927
+    ],
+    "slows": 0,
+    "clientDelay": 39005
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16973028,
+    "h2hMsgSizeTotal": 69293100,
+    "h2hMsgTotal": 77770,
+    "e2eMsgTotal": 18778
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18805,
+      34814,
+      39738,
+      40524
+    ],
+    "slows": 0,
+    "clientDelay": 15809
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15677718,
+    "h2hMsgSizeTotal": 64608013,
+    "h2hMsgTotal": 72950,
+    "e2eMsgTotal": 17529
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8724,
+      28132,
+      28365,
+      46712
+    ],
+    "slows": 0,
+    "clientDelay": 19208
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16702890,
+    "h2hMsgSizeTotal": 69025306,
+    "h2hMsgTotal": 77323,
+    "e2eMsgTotal": 18515
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11013,
+      36449,
+      61893,
+      64397
+    ],
+    "slows": 0,
+    "clientDelay": 25236
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16047978,
+    "h2hMsgSizeTotal": 66568083,
+    "h2hMsgTotal": 75766,
+    "e2eMsgTotal": 18115
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11445,
+      26027,
+      40345,
+      41063
+    ],
+    "slows": 0,
+    "clientDelay": 14382
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16496448,
+    "h2hMsgSizeTotal": 67607251,
+    "h2hMsgTotal": 74793,
+    "e2eMsgTotal": 18040
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13450,
+      37763,
+      37992,
+      41601
+    ],
+    "slows": 0,
+    "clientDelay": 24113
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15846552,
+    "h2hMsgSizeTotal": 64728339,
+    "h2hMsgTotal": 73553,
+    "e2eMsgTotal": 17768
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9658,
+      28786,
+      29004,
+      54998
+    ],
+    "slows": 0,
+    "clientDelay": 18928
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15963828,
+    "h2hMsgSizeTotal": 65753848,
+    "h2hMsgTotal": 74366,
+    "e2eMsgTotal": 17922
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13199,
+      24474,
+      47787,
+      50875
+    ],
+    "slows": 0,
+    "clientDelay": 11075
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16258752,
+    "h2hMsgSizeTotal": 66821591,
+    "h2hMsgTotal": 75417,
+    "e2eMsgTotal": 18212
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11938,
+      35981,
+      36203,
+      54777
+    ],
+    "slows": 0,
+    "clientDelay": 23843
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16265334,
+    "h2hMsgSizeTotal": 66851795,
+    "h2hMsgTotal": 75760,
+    "e2eMsgTotal": 18321
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11009,
+      29336,
+      40078,
+      40500
+    ],
+    "slows": 0,
+    "clientDelay": 18127
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15957720,
+    "h2hMsgSizeTotal": 65905140,
+    "h2hMsgTotal": 75336,
+    "e2eMsgTotal": 18084
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      20624,
+      30454,
+      30668,
+      37664
+    ],
+    "slows": 0,
+    "clientDelay": 9630
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 17013840,
+    "h2hMsgSizeTotal": 69785920,
+    "h2hMsgTotal": 80168,
+    "e2eMsgTotal": 19296
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10756,
+      47812,
+      48023,
+      49679
+    ],
+    "slows": 0,
+    "clientDelay": 36856
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16644918,
+    "h2hMsgSizeTotal": 68888859,
+    "h2hMsgTotal": 78464,
+    "e2eMsgTotal": 18737
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15663,
+      29090,
+      29860,
+      60777
+    ],
+    "slows": 0,
+    "clientDelay": 13227
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15548418,
+    "h2hMsgSizeTotal": 64399412,
+    "h2hMsgTotal": 74489,
+    "e2eMsgTotal": 17875
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9217,
+      57561,
+      57785,
+      58358
+    ],
+    "slows": 0,
+    "clientDelay": 48144
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15222612,
+    "h2hMsgSizeTotal": 62556430,
+    "h2hMsgTotal": 71604,
+    "e2eMsgTotal": 17254
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11778,
+      31856,
+      32699,
+      33441
+    ],
+    "slows": 0,
+    "clientDelay": 19878
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15578682,
+    "h2hMsgSizeTotal": 64754758,
+    "h2hMsgTotal": 73263,
+    "e2eMsgTotal": 17563
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11119,
+      24913,
+      25139,
+      62881
+    ],
+    "slows": 0,
+    "clientDelay": 13594
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16291134,
+    "h2hMsgSizeTotal": 67477989,
+    "h2hMsgTotal": 74686,
+    "e2eMsgTotal": 17881
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12402,
+      24331,
+      24595,
+      34989
+    ],
+    "slows": 0,
+    "clientDelay": 11729
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16413348,
+    "h2hMsgSizeTotal": 67919705,
+    "h2hMsgTotal": 76581,
+    "e2eMsgTotal": 18278
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12957,
+      23531,
+      29022,
+      45327
+    ],
+    "slows": 0,
+    "clientDelay": 10374
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15695448,
+    "h2hMsgSizeTotal": 65103587,
+    "h2hMsgTotal": 75753,
+    "e2eMsgTotal": 18152
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13058,
+      36347,
+      36581,
+      38859
+    ],
+    "slows": 0,
+    "clientDelay": 23089
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15938634,
+    "h2hMsgSizeTotal": 65878223,
+    "h2hMsgTotal": 75190,
+    "e2eMsgTotal": 18087
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9140,
+      34001,
+      34229,
+      37022
+    ],
+    "slows": 0,
+    "clientDelay": 24661
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15860454,
+    "h2hMsgSizeTotal": 65344403,
+    "h2hMsgTotal": 75900,
+    "e2eMsgTotal": 18197
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11272,
+      25415,
+      25656,
+      31570
+    ],
+    "slows": 0,
+    "clientDelay": 13943
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16202154,
+    "h2hMsgSizeTotal": 67114083,
+    "h2hMsgTotal": 75978,
+    "e2eMsgTotal": 18231
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8752,
+      21271,
+      26654,
+      30291
+    ],
+    "slows": 0,
+    "clientDelay": 12319
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16123590,
+    "h2hMsgSizeTotal": 66257219,
+    "h2hMsgTotal": 76064,
+    "e2eMsgTotal": 18313
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18059,
+      26847,
+      29243,
+      30021
+    ],
+    "slows": 0,
+    "clientDelay": 8588
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16551084,
+    "h2hMsgSizeTotal": 67721808,
+    "h2hMsgTotal": 77054,
+    "e2eMsgTotal": 18626
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15565,
+      37140,
+      37379,
+      39902
+    ],
+    "slows": 0,
+    "clientDelay": 21375
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16229436,
+    "h2hMsgSizeTotal": 67003828,
+    "h2hMsgTotal": 75090,
+    "e2eMsgTotal": 17914
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10338,
+      22431,
+      31685,
+      36114
+    ],
+    "slows": 0,
+    "clientDelay": 11893
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15805476,
+    "h2hMsgSizeTotal": 65341186,
+    "h2hMsgTotal": 76252,
+    "e2eMsgTotal": 18338
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11634,
+      55342,
+      55586,
+      57484
+    ],
+    "slows": 0,
+    "clientDelay": 43508
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15880914,
+    "h2hMsgSizeTotal": 65251347,
+    "h2hMsgTotal": 74230,
+    "e2eMsgTotal": 17899
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13189,
+      30663,
+      34563,
+      36352
+    ],
+    "slows": 0,
+    "clientDelay": 17274
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15891156,
+    "h2hMsgSizeTotal": 65907099,
+    "h2hMsgTotal": 75663,
+    "e2eMsgTotal": 18042
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12579,
+      29536,
+      31676,
+      33799
+    ],
+    "slows": 0,
+    "clientDelay": 16757
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15894996,
+    "h2hMsgSizeTotal": 65570327,
+    "h2hMsgTotal": 74583,
+    "e2eMsgTotal": 17942
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14429,
+      41787,
+      42009,
+      45464
+    ],
+    "slows": 0,
+    "clientDelay": 27158
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15748326,
+    "h2hMsgSizeTotal": 65126591,
+    "h2hMsgTotal": 74272,
+    "e2eMsgTotal": 17757
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14274,
+      33348,
+      33594,
+      34011
+    ],
+    "slows": 0,
+    "clientDelay": 18874
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16268352,
+    "h2hMsgSizeTotal": 67221379,
+    "h2hMsgTotal": 76145,
+    "e2eMsgTotal": 18264
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10515,
+      33270,
+      33470,
+      41080
+    ],
+    "slows": 0,
+    "clientDelay": 22555
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16185744,
+    "h2hMsgSizeTotal": 65877029,
+    "h2hMsgTotal": 75931,
+    "e2eMsgTotal": 18372
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13927,
+      33439,
+      50309,
+      51163
+    ],
+    "slows": 0,
+    "clientDelay": 19312
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16217748,
+    "h2hMsgSizeTotal": 66129507,
+    "h2hMsgTotal": 76243,
+    "e2eMsgTotal": 18406
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10878,
+      30526,
+      30972,
+      34637
+    ],
+    "slows": 0,
+    "clientDelay": 19448
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15981126,
+    "h2hMsgSizeTotal": 65963051,
+    "h2hMsgTotal": 75668,
+    "e2eMsgTotal": 18181
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13595,
+      35313,
+      35521,
+      38621
+    ],
+    "slows": 0,
+    "clientDelay": 21518
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15851304,
+    "h2hMsgSizeTotal": 65525158,
+    "h2hMsgTotal": 75054,
+    "e2eMsgTotal": 17860
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9573,
+      30090,
+      39094,
+      39803
+    ],
+    "slows": 0,
+    "clientDelay": 20317
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16741308,
+    "h2hMsgSizeTotal": 68311936,
+    "h2hMsgTotal": 77018,
+    "e2eMsgTotal": 18630
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9904,
+      26062,
+      39091,
+      50024
+    ],
+    "slows": 0,
+    "clientDelay": 15958
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15706674,
+    "h2hMsgSizeTotal": 64944820,
+    "h2hMsgTotal": 74477,
+    "e2eMsgTotal": 17847
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13386,
+      26707,
+      28337,
+      55059
+    ],
+    "slows": 0,
+    "clientDelay": 13121
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16344588,
+    "h2hMsgSizeTotal": 67337661,
+    "h2hMsgTotal": 76509,
+    "e2eMsgTotal": 18402
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8418,
+      33333,
+      46410,
+      48187
+    ],
+    "slows": 0,
+    "clientDelay": 24715
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16281024,
+    "h2hMsgSizeTotal": 67173368,
+    "h2hMsgTotal": 75992,
+    "e2eMsgTotal": 18280
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12211,
+      25902,
+      27697,
+      40661
+    ],
+    "slows": 0,
+    "clientDelay": 13491
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16245078,
+    "h2hMsgSizeTotal": 66736373,
+    "h2hMsgTotal": 74890,
+    "e2eMsgTotal": 18045
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9593,
+      40096,
+      40342,
+      40719
+    ],
+    "slows": 0,
+    "clientDelay": 30303
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15279900,
+    "h2hMsgSizeTotal": 63312696,
+    "h2hMsgTotal": 72486,
+    "e2eMsgTotal": 17322
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19126,
+      36142,
+      36529,
+      36900
+    ],
+    "slows": 0,
+    "clientDelay": 16816
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16103904,
+    "h2hMsgSizeTotal": 66446424,
+    "h2hMsgTotal": 74872,
+    "e2eMsgTotal": 17992
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12758,
+      36509,
+      36757,
+      51429
+    ],
+    "slows": 0,
+    "clientDelay": 23551
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16400634,
+    "h2hMsgSizeTotal": 68010811,
+    "h2hMsgTotal": 77830,
+    "e2eMsgTotal": 18611
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16118,
+      27176,
+      27381,
+      35467
+    ],
+    "slows": 0,
+    "clientDelay": 10858
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16720032,
+    "h2hMsgSizeTotal": 69866303,
+    "h2hMsgTotal": 78601,
+    "e2eMsgTotal": 18732
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7686,
+      27130,
+      27380,
+      52719
+    ],
+    "slows": 0,
+    "clientDelay": 19244
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15758202,
+    "h2hMsgSizeTotal": 65115123,
+    "h2hMsgTotal": 74346,
+    "e2eMsgTotal": 17871
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11296,
+      25048,
+      40122,
+      42162
+    ],
+    "slows": 0,
+    "clientDelay": 13552
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16156338,
+    "h2hMsgSizeTotal": 66957955,
+    "h2hMsgTotal": 76162,
+    "e2eMsgTotal": 18215
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14560,
+      31162,
+      46719,
+      49751
+    ],
+    "slows": 0,
+    "clientDelay": 16402
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15739272,
+    "h2hMsgSizeTotal": 65172225,
+    "h2hMsgTotal": 74799,
+    "e2eMsgTotal": 17940
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14497,
+      29252,
+      34044,
+      38775
+    ],
+    "slows": 0,
+    "clientDelay": 14555
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15609228,
+    "h2hMsgSizeTotal": 64674634,
+    "h2hMsgTotal": 73200,
+    "e2eMsgTotal": 17446
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15360,
+      26911,
+      27136,
+      29545
+    ],
+    "slows": 0,
+    "clientDelay": 11351
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16255446,
+    "h2hMsgSizeTotal": 66503327,
+    "h2hMsgTotal": 74808,
+    "e2eMsgTotal": 18053
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12443,
+      38579,
+      38781,
+      40588
+    ],
+    "slows": 0,
+    "clientDelay": 25936
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15640122,
+    "h2hMsgSizeTotal": 64650590,
+    "h2hMsgTotal": 74351,
+    "e2eMsgTotal": 17779
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12305,
+      18552,
+      39329,
+      40343
+    ],
+    "slows": 0,
+    "clientDelay": 6047
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16959204,
+    "h2hMsgSizeTotal": 69250577,
+    "h2hMsgTotal": 78561,
+    "e2eMsgTotal": 19034
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14612,
+      27661,
+      54254,
+      56055
+    ],
+    "slows": 0,
+    "clientDelay": 12849
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15716562,
+    "h2hMsgSizeTotal": 64832462,
+    "h2hMsgTotal": 74503,
+    "e2eMsgTotal": 17931
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10225,
+      21611,
+      65383,
+      67769
+    ],
+    "slows": 0,
+    "clientDelay": 11186
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16898526,
+    "h2hMsgSizeTotal": 69496624,
+    "h2hMsgTotal": 78595,
+    "e2eMsgTotal": 19013
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14311,
+      57306,
+      57531,
+      57923
+    ],
+    "slows": 0,
+    "clientDelay": 42795
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16011882,
+    "h2hMsgSizeTotal": 66294872,
+    "h2hMsgTotal": 76181,
+    "e2eMsgTotal": 18235
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9080,
+      27639,
+      32232,
+      36845
+    ],
+    "slows": 0,
+    "clientDelay": 18359
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15885462,
+    "h2hMsgSizeTotal": 65395197,
+    "h2hMsgTotal": 73614,
+    "e2eMsgTotal": 17697
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13413,
+      29607,
+      34074,
+      35062
+    ],
+    "slows": 0,
+    "clientDelay": 15994
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15441648,
+    "h2hMsgSizeTotal": 63726603,
+    "h2hMsgTotal": 71769,
+    "e2eMsgTotal": 17256
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9627,
+      23441,
+      27585,
+      32558
+    ],
+    "slows": 0,
+    "clientDelay": 13614
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15991992,
+    "h2hMsgSizeTotal": 66108599,
+    "h2hMsgTotal": 75481,
+    "e2eMsgTotal": 18084
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18527,
+      45662,
+      45899,
+      46303
+    ],
+    "slows": 0,
+    "clientDelay": 26935
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15808140,
+    "h2hMsgSizeTotal": 65110772,
+    "h2hMsgTotal": 73814,
+    "e2eMsgTotal": 17686
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11287,
+      35822,
+      36057,
+      37212
+    ],
+    "slows": 0,
+    "clientDelay": 24335
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15976104,
+    "h2hMsgSizeTotal": 65519936,
+    "h2hMsgTotal": 73604,
+    "e2eMsgTotal": 17740
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11746,
+      42104,
+      42333,
+      45564
+    ],
+    "slows": 0,
+    "clientDelay": 30158
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16708914,
+    "h2hMsgSizeTotal": 68870806,
+    "h2hMsgTotal": 77651,
+    "e2eMsgTotal": 18639
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14798,
+      39268,
+      39485,
+      40306
+    ],
+    "slows": 0,
+    "clientDelay": 24270
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16689468,
+    "h2hMsgSizeTotal": 68513369,
+    "h2hMsgTotal": 76729,
+    "e2eMsgTotal": 18426
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11642,
+      38669,
+      39265,
+      42363
+    ],
+    "slows": 0,
+    "clientDelay": 26827
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16319508,
+    "h2hMsgSizeTotal": 67175328,
+    "h2hMsgTotal": 76102,
+    "e2eMsgTotal": 18346
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12194,
+      21081,
+      44951,
+      46906
+    ],
+    "slows": 0,
+    "clientDelay": 8687
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16102056,
+    "h2hMsgSizeTotal": 66313802,
+    "h2hMsgTotal": 75278,
+    "e2eMsgTotal": 18160
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13465,
+      35725,
+      35961,
+      43877
+    ],
+    "slows": 0,
+    "clientDelay": 22060
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15964944,
+    "h2hMsgSizeTotal": 65587229,
+    "h2hMsgTotal": 75111,
+    "e2eMsgTotal": 18128
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14038,
+      47637,
+      47869,
+      48766
+    ],
+    "slows": 0,
+    "clientDelay": 33399
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15480750,
+    "h2hMsgSizeTotal": 63531947,
+    "h2hMsgTotal": 73016,
+    "e2eMsgTotal": 17569
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13078,
+      23037,
+      40272,
+      41662
+    ],
+    "slows": 0,
+    "clientDelay": 9759
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16352526,
+    "h2hMsgSizeTotal": 66628585,
+    "h2hMsgTotal": 76150,
+    "e2eMsgTotal": 18509
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15112,
+      42303,
+      42515,
+      45153
+    ],
+    "slows": 0,
+    "clientDelay": 26991
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15926280,
+    "h2hMsgSizeTotal": 65837785,
+    "h2hMsgTotal": 74827,
+    "e2eMsgTotal": 17984
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      22014,
+      39030,
+      39599,
+      49999
+    ],
+    "slows": 0,
+    "clientDelay": 16816
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15658044,
+    "h2hMsgSizeTotal": 64908624,
+    "h2hMsgTotal": 74390,
+    "e2eMsgTotal": 17786
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9336,
+      34855,
+      48865,
+      51958
+    ],
+    "slows": 0,
+    "clientDelay": 25319
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15345264,
+    "h2hMsgSizeTotal": 63981795,
+    "h2hMsgTotal": 73413,
+    "e2eMsgTotal": 17508
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12419,
+      21902,
+      35357,
+      48614
+    ],
+    "slows": 0,
+    "clientDelay": 9283
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16201014,
+    "h2hMsgSizeTotal": 66354373,
+    "h2hMsgTotal": 74358,
+    "e2eMsgTotal": 17905
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      18271,
+      21453,
+      29436,
+      34884
+    ],
+    "slows": 0,
+    "clientDelay": 2982
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16029072,
+    "h2hMsgSizeTotal": 66077511,
+    "h2hMsgTotal": 75325,
+    "e2eMsgTotal": 18136
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15956,
+      25886,
+      29307,
+      41535
+    ],
+    "slows": 0,
+    "clientDelay": 9730
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16043970,
+    "h2hMsgSizeTotal": 65893872,
+    "h2hMsgTotal": 73737,
+    "e2eMsgTotal": 17751
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11741,
+      28431,
+      28795,
+      31134
+    ],
+    "slows": 0,
+    "clientDelay": 16490
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 15778236,
+    "h2hMsgSizeTotal": 65118653,
+    "h2hMsgTotal": 72145,
+    "e2eMsgTotal": 17382
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17318,
+      35862,
+      36077,
+      39457
+    ],
+    "slows": 0,
+    "clientDelay": 18344
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16394976,
+    "h2hMsgSizeTotal": 67459270,
+    "h2hMsgTotal": 76890,
+    "e2eMsgTotal": 18496
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12030,
+      34329,
+      34562,
+      35574
+    ],
+    "slows": 0,
+    "clientDelay": 22099
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 16500762,
+    "h2hMsgSizeTotal": 67930102,
+    "h2hMsgTotal": 76619,
+    "e2eMsgTotal": 18399
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11485,
+      21005,
+      41337,
+      42721
+    ],
+    "slows": 0,
+    "clientDelay": 9320
+  },
+  "conc_requesters": 4,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18518466,
+    "h2hMsgSizeTotal": 74809937,
+    "h2hMsgTotal": 85336,
+    "e2eMsgTotal": 20835
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12398,
+      31100,
+      31374,
+      34101,
+      35537
+    ],
+    "slows": 0,
+    "clientDelay": 18502
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18950370,
+    "h2hMsgSizeTotal": 76875550,
+    "h2hMsgTotal": 87491,
+    "e2eMsgTotal": 21327
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14576,
+      53970,
+      54178,
+      54732,
+      55743
+    ],
+    "slows": 0,
+    "clientDelay": 39194
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19179504,
+    "h2hMsgSizeTotal": 77460014,
+    "h2hMsgTotal": 87446,
+    "e2eMsgTotal": 21460
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9282,
+      23802,
+      38641,
+      40155,
+      41367
+    ],
+    "slows": 0,
+    "clientDelay": 14320
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18691746,
+    "h2hMsgSizeTotal": 75728294,
+    "h2hMsgTotal": 87115,
+    "e2eMsgTotal": 21303
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12499,
+      28532,
+      30918,
+      31309,
+      32809
+    ],
+    "slows": 0,
+    "clientDelay": 15833
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18798624,
+    "h2hMsgSizeTotal": 75843966,
+    "h2hMsgTotal": 87594,
+    "e2eMsgTotal": 21432
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11256,
+      31613,
+      32125,
+      32507,
+      33327
+    ],
+    "slows": 0,
+    "clientDelay": 20157
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18871458,
+    "h2hMsgSizeTotal": 76359909,
+    "h2hMsgTotal": 86532,
+    "e2eMsgTotal": 21027
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10795,
+      38025,
+      38267,
+      40355,
+      41688
+    ],
+    "slows": 0,
+    "clientDelay": 27030
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19075044,
+    "h2hMsgSizeTotal": 77395905,
+    "h2hMsgTotal": 87837,
+    "e2eMsgTotal": 21366
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16959,
+      32699,
+      32946,
+      33933,
+      34463
+    ],
+    "slows": 0,
+    "clientDelay": 15540
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18956244,
+    "h2hMsgSizeTotal": 76990659,
+    "h2hMsgTotal": 87499,
+    "e2eMsgTotal": 21310
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13594,
+      32204,
+      34025,
+      34413,
+      34729
+    ],
+    "slows": 0,
+    "clientDelay": 18410
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18352734,
+    "h2hMsgSizeTotal": 73714922,
+    "h2hMsgTotal": 82905,
+    "e2eMsgTotal": 20357
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9809,
+      23170,
+      43966,
+      45690,
+      47140
+    ],
+    "slows": 0,
+    "clientDelay": 13161
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18949956,
+    "h2hMsgSizeTotal": 76386059,
+    "h2hMsgTotal": 86735,
+    "e2eMsgTotal": 21274
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      19731,
+      47147,
+      47528,
+      49648,
+      50587
+    ],
+    "slows": 0,
+    "clientDelay": 27216
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19208334,
+    "h2hMsgSizeTotal": 77198896,
+    "h2hMsgTotal": 87291,
+    "e2eMsgTotal": 21493
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10837,
+      42002,
+      42206,
+      45821,
+      47055
+    ],
+    "slows": 0,
+    "clientDelay": 30965
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18002328,
+    "h2hMsgSizeTotal": 73144896,
+    "h2hMsgTotal": 83296,
+    "e2eMsgTotal": 20272
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15819,
+      23397,
+      29518,
+      54509,
+      54960
+    ],
+    "slows": 0,
+    "clientDelay": 7378
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18588726,
+    "h2hMsgSizeTotal": 74718669,
+    "h2hMsgTotal": 84622,
+    "e2eMsgTotal": 20713
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13364,
+      24324,
+      27329,
+      27874,
+      28234
+    ],
+    "slows": 0,
+    "clientDelay": 10760
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18731958,
+    "h2hMsgSizeTotal": 75992830,
+    "h2hMsgTotal": 85429,
+    "e2eMsgTotal": 20837
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15036,
+      34734,
+      46570,
+      47827,
+      48716
+    ],
+    "slows": 0,
+    "clientDelay": 19498
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19546050,
+    "h2hMsgSizeTotal": 79070784,
+    "h2hMsgTotal": 89085,
+    "e2eMsgTotal": 21771
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12364,
+      35553,
+      36261,
+      38391,
+      38990
+    ],
+    "slows": 0,
+    "clientDelay": 22989
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18840474,
+    "h2hMsgSizeTotal": 76192805,
+    "h2hMsgTotal": 86972,
+    "e2eMsgTotal": 21235
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13222,
+      30366,
+      38940,
+      39722,
+      40080
+    ],
+    "slows": 0,
+    "clientDelay": 16944
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18841734,
+    "h2hMsgSizeTotal": 76544452,
+    "h2hMsgTotal": 87395,
+    "e2eMsgTotal": 21297
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13811,
+      47898,
+      48118,
+      51516,
+      51914
+    ],
+    "slows": 0,
+    "clientDelay": 33887
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18399810,
+    "h2hMsgSizeTotal": 74812799,
+    "h2hMsgTotal": 84886,
+    "e2eMsgTotal": 20655
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16494,
+      19808,
+      20380,
+      39182,
+      39945
+    ],
+    "slows": 0,
+    "clientDelay": 3114
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18684036,
+    "h2hMsgSizeTotal": 75947151,
+    "h2hMsgTotal": 88563,
+    "e2eMsgTotal": 21618
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11629,
+      46591,
+      46820,
+      47312,
+      48432
+    ],
+    "slows": 0,
+    "clientDelay": 34762
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19628304,
+    "h2hMsgSizeTotal": 79154649,
+    "h2hMsgTotal": 90735,
+    "e2eMsgTotal": 22260
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13330,
+      32517,
+      49693,
+      50748,
+      51321
+    ],
+    "slows": 0,
+    "clientDelay": 18987
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19058976,
+    "h2hMsgSizeTotal": 76995599,
+    "h2hMsgTotal": 87241,
+    "e2eMsgTotal": 21396
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15642,
+      25128,
+      25343,
+      31734,
+      34218
+    ],
+    "slows": 0,
+    "clientDelay": 9286
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19788486,
+    "h2hMsgSizeTotal": 80051843,
+    "h2hMsgTotal": 89052,
+    "e2eMsgTotal": 21773
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12152,
+      25601,
+      26264,
+      30202,
+      32865
+    ],
+    "slows": 0,
+    "clientDelay": 13249
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18652080,
+    "h2hMsgSizeTotal": 75786147,
+    "h2hMsgTotal": 85829,
+    "e2eMsgTotal": 20876
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11502,
+      19177,
+      37517,
+      40128,
+      41796
+    ],
+    "slows": 0,
+    "clientDelay": 7475
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19374540,
+    "h2hMsgSizeTotal": 77658131,
+    "h2hMsgTotal": 88919,
+    "e2eMsgTotal": 21874
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12114,
+      55665,
+      55891,
+      56493,
+      56833
+    ],
+    "slows": 0,
+    "clientDelay": 43351
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19168158,
+    "h2hMsgSizeTotal": 77163995,
+    "h2hMsgTotal": 86856,
+    "e2eMsgTotal": 21329
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12053,
+      30320,
+      30566,
+      43586,
+      44581
+    ],
+    "slows": 0,
+    "clientDelay": 18067
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19117842,
+    "h2hMsgSizeTotal": 76857453,
+    "h2hMsgTotal": 85496,
+    "e2eMsgTotal": 21047
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9668,
+      32689,
+      32917,
+      34018,
+      34370
+    ],
+    "slows": 0,
+    "clientDelay": 22821
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19176942,
+    "h2hMsgSizeTotal": 77622936,
+    "h2hMsgTotal": 87143,
+    "e2eMsgTotal": 21209
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13176,
+      32725,
+      33190,
+      49976,
+      50655
+    ],
+    "slows": 0,
+    "clientDelay": 19349
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18715572,
+    "h2hMsgSizeTotal": 75687878,
+    "h2hMsgTotal": 86588,
+    "e2eMsgTotal": 21166
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9693,
+      26595,
+      38216,
+      41831,
+      42190
+    ],
+    "slows": 0,
+    "clientDelay": 16702
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18179706,
+    "h2hMsgSizeTotal": 73861004,
+    "h2hMsgTotal": 82589,
+    "e2eMsgTotal": 20143
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16898,
+      21532,
+      32640,
+      33037,
+      34966
+    ],
+    "slows": 0,
+    "clientDelay": 4434
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19023762,
+    "h2hMsgSizeTotal": 76740019,
+    "h2hMsgTotal": 86862,
+    "e2eMsgTotal": 21211
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7899,
+      22570,
+      34382,
+      35282,
+      35929
+    ],
+    "slows": 0,
+    "clientDelay": 14471
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18591324,
+    "h2hMsgSizeTotal": 75408375,
+    "h2hMsgTotal": 85951,
+    "e2eMsgTotal": 20974
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13938,
+      28003,
+      28228,
+      47128,
+      47501
+    ],
+    "slows": 0,
+    "clientDelay": 13865
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18816150,
+    "h2hMsgSizeTotal": 75541942,
+    "h2hMsgTotal": 87429,
+    "e2eMsgTotal": 21517
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      8616,
+      21467,
+      21696,
+      37507,
+      38577
+    ],
+    "slows": 0,
+    "clientDelay": 12651
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18477966,
+    "h2hMsgSizeTotal": 74878904,
+    "h2hMsgTotal": 86019,
+    "e2eMsgTotal": 21029
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11086,
+      16596,
+      29400,
+      33660,
+      34417
+    ],
+    "slows": 0,
+    "clientDelay": 5310
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19591512,
+    "h2hMsgSizeTotal": 79910921,
+    "h2hMsgTotal": 91167,
+    "e2eMsgTotal": 22124
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13134,
+      34125,
+      34369,
+      42461,
+      43312
+    ],
+    "slows": 0,
+    "clientDelay": 20791
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18612438,
+    "h2hMsgSizeTotal": 75640448,
+    "h2hMsgTotal": 85479,
+    "e2eMsgTotal": 20801
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17694,
+      25358,
+      25606,
+      42919,
+      47131
+    ],
+    "slows": 0,
+    "clientDelay": 7464
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18551862,
+    "h2hMsgSizeTotal": 75762840,
+    "h2hMsgTotal": 85467,
+    "e2eMsgTotal": 20829
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11589,
+      28350,
+      29466,
+      30090,
+      30756
+    ],
+    "slows": 0,
+    "clientDelay": 16561
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19179114,
+    "h2hMsgSizeTotal": 77227682,
+    "h2hMsgTotal": 86627,
+    "e2eMsgTotal": 21283
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15481,
+      41883,
+      42119,
+      44491,
+      45420
+    ],
+    "slows": 0,
+    "clientDelay": 26202
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18601614,
+    "h2hMsgSizeTotal": 76533607,
+    "h2hMsgTotal": 86700,
+    "e2eMsgTotal": 21001
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12336,
+      50455,
+      50948,
+      53214,
+      56142
+    ],
+    "slows": 0,
+    "clientDelay": 37919
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18873486,
+    "h2hMsgSizeTotal": 76823449,
+    "h2hMsgTotal": 87254,
+    "e2eMsgTotal": 21237
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      20192,
+      24254,
+      33048,
+      43266,
+      43791
+    ],
+    "slows": 0,
+    "clientDelay": 3862
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18698496,
+    "h2hMsgSizeTotal": 75690246,
+    "h2hMsgTotal": 85714,
+    "e2eMsgTotal": 20944
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13398,
+      42258,
+      42458,
+      44213,
+      45051
+    ],
+    "slows": 0,
+    "clientDelay": 28660
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19062168,
+    "h2hMsgSizeTotal": 76484317,
+    "h2hMsgTotal": 88463,
+    "e2eMsgTotal": 21768
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      24974,
+      27434,
+      47071,
+      48590,
+      50686
+    ],
+    "slows": 0,
+    "clientDelay": 2260
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19480602,
+    "h2hMsgSizeTotal": 78837901,
+    "h2hMsgTotal": 87408,
+    "e2eMsgTotal": 21415
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14654,
+      33808,
+      34056,
+      63409,
+      65764
+    ],
+    "slows": 0,
+    "clientDelay": 18954
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19224912,
+    "h2hMsgSizeTotal": 77505469,
+    "h2hMsgTotal": 88295,
+    "e2eMsgTotal": 21600
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16867,
+      26470,
+      29831,
+      30478,
+      31638
+    ],
+    "slows": 0,
+    "clientDelay": 9403
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18987852,
+    "h2hMsgSizeTotal": 76536246,
+    "h2hMsgTotal": 88460,
+    "e2eMsgTotal": 21782
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11966,
+      28368,
+      28788,
+      40532,
+      40941
+    ],
+    "slows": 0,
+    "clientDelay": 16202
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19063914,
+    "h2hMsgSizeTotal": 77217045,
+    "h2hMsgTotal": 86568,
+    "e2eMsgTotal": 21183
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12814,
+      46344,
+      46559,
+      46980,
+      48062
+    ],
+    "slows": 0,
+    "clientDelay": 33330
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19273812,
+    "h2hMsgSizeTotal": 77673702,
+    "h2hMsgTotal": 87592,
+    "e2eMsgTotal": 21466
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12440,
+      46993,
+      47210,
+      48708,
+      49412
+    ],
+    "slows": 0,
+    "clientDelay": 34353
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19006638,
+    "h2hMsgSizeTotal": 77257008,
+    "h2hMsgTotal": 86883,
+    "e2eMsgTotal": 21141
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9817,
+      36536,
+      36738,
+      44278,
+      44595
+    ],
+    "slows": 0,
+    "clientDelay": 26519
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18064710,
+    "h2hMsgSizeTotal": 72970370,
+    "h2hMsgTotal": 83553,
+    "e2eMsgTotal": 20405
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15120,
+      44872,
+      45079,
+      45681,
+      50095
+    ],
+    "slows": 0,
+    "clientDelay": 29552
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18367416,
+    "h2hMsgSizeTotal": 75227740,
+    "h2hMsgTotal": 85884,
+    "e2eMsgTotal": 20848
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13119,
+      39129,
+      39643,
+      54797,
+      55144
+    ],
+    "slows": 0,
+    "clientDelay": 25810
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18460176,
+    "h2hMsgSizeTotal": 75163570,
+    "h2hMsgTotal": 85722,
+    "e2eMsgTotal": 20860
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12861,
+      54273,
+      54494,
+      57158,
+      58424
+    ],
+    "slows": 0,
+    "clientDelay": 41212
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19257462,
+    "h2hMsgSizeTotal": 77365044,
+    "h2hMsgTotal": 88419,
+    "e2eMsgTotal": 21729
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10289,
+      26430,
+      30904,
+      46922,
+      47362
+    ],
+    "slows": 0,
+    "clientDelay": 15941
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18257706,
+    "h2hMsgSizeTotal": 73786118,
+    "h2hMsgTotal": 84179,
+    "e2eMsgTotal": 20551
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14731,
+      26754,
+      27004,
+      31661,
+      34026
+    ],
+    "slows": 0,
+    "clientDelay": 11823
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18654846,
+    "h2hMsgSizeTotal": 75493905,
+    "h2hMsgTotal": 86618,
+    "e2eMsgTotal": 21089
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13610,
+      23096,
+      32531,
+      33770,
+      34088
+    ],
+    "slows": 0,
+    "clientDelay": 9286
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18685218,
+    "h2hMsgSizeTotal": 75567002,
+    "h2hMsgTotal": 86031,
+    "e2eMsgTotal": 21047
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9263,
+      20271,
+      23819,
+      36285,
+      36577
+    ],
+    "slows": 0,
+    "clientDelay": 10808
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18441282,
+    "h2hMsgSizeTotal": 74774812,
+    "h2hMsgTotal": 86489,
+    "e2eMsgTotal": 21075
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11128,
+      35767,
+      36001,
+      56086,
+      57783
+    ],
+    "slows": 0,
+    "clientDelay": 24439
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18191490,
+    "h2hMsgSizeTotal": 73790028,
+    "h2hMsgTotal": 86353,
+    "e2eMsgTotal": 21091
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12810,
+      26275,
+      29120,
+      29459,
+      29841
+    ],
+    "slows": 0,
+    "clientDelay": 13265
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18615132,
+    "h2hMsgSizeTotal": 75933831,
+    "h2hMsgTotal": 86043,
+    "e2eMsgTotal": 20922
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10541,
+      29694,
+      40720,
+      42383,
+      42916
+    ],
+    "slows": 0,
+    "clientDelay": 18953
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18825270,
+    "h2hMsgSizeTotal": 76421192,
+    "h2hMsgTotal": 87023,
+    "e2eMsgTotal": 21217
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12508,
+      42721,
+      42938,
+      44934,
+      45646
+    ],
+    "slows": 0,
+    "clientDelay": 30013
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18782220,
+    "h2hMsgSizeTotal": 76628559,
+    "h2hMsgTotal": 86731,
+    "e2eMsgTotal": 20986
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10358,
+      55029,
+      55359,
+      57347,
+      58725
+    ],
+    "slows": 0,
+    "clientDelay": 44471
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18957360,
+    "h2hMsgSizeTotal": 77041900,
+    "h2hMsgTotal": 85884,
+    "e2eMsgTotal": 20944
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15620,
+      41426,
+      41629,
+      45655,
+      46015
+    ],
+    "slows": 0,
+    "clientDelay": 25606
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18663918,
+    "h2hMsgSizeTotal": 75971748,
+    "h2hMsgTotal": 87787,
+    "e2eMsgTotal": 21361
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9308,
+      26462,
+      26710,
+      29723,
+      30113
+    ],
+    "slows": 0,
+    "clientDelay": 16954
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18923700,
+    "h2hMsgSizeTotal": 76014673,
+    "h2hMsgTotal": 85765,
+    "e2eMsgTotal": 21062
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      7785,
+      20746,
+      29746,
+      38227,
+      38608
+    ],
+    "slows": 0,
+    "clientDelay": 12761
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18328986,
+    "h2hMsgSizeTotal": 74290632,
+    "h2hMsgTotal": 84697,
+    "e2eMsgTotal": 20671
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12746,
+      24746,
+      35103,
+      35701,
+      36252
+    ],
+    "slows": 0,
+    "clientDelay": 11800
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18803034,
+    "h2hMsgSizeTotal": 76164671,
+    "h2hMsgTotal": 87406,
+    "e2eMsgTotal": 21423
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10923,
+      28876,
+      32942,
+      33266,
+      34410
+    ],
+    "slows": 0,
+    "clientDelay": 17753
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19108824,
+    "h2hMsgSizeTotal": 77771887,
+    "h2hMsgTotal": 89449,
+    "e2eMsgTotal": 21716
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9729,
+      34795,
+      35029,
+      37448,
+      37813
+    ],
+    "slows": 0,
+    "clientDelay": 24866
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18189858,
+    "h2hMsgSizeTotal": 74742373,
+    "h2hMsgTotal": 85192,
+    "e2eMsgTotal": 20519
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9300,
+      40287,
+      40534,
+      44848,
+      46572
+    ],
+    "slows": 0,
+    "clientDelay": 30787
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19226592,
+    "h2hMsgSizeTotal": 77391836,
+    "h2hMsgTotal": 87620,
+    "e2eMsgTotal": 21544
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13440,
+      26679,
+      26904,
+      29766,
+      30527
+    ],
+    "slows": 0,
+    "clientDelay": 13039
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19324272,
+    "h2hMsgSizeTotal": 77810670,
+    "h2hMsgTotal": 88474,
+    "e2eMsgTotal": 21712
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12966,
+      54267,
+      54468,
+      58173,
+      60621
+    ],
+    "slows": 0,
+    "clientDelay": 41101
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18335574,
+    "h2hMsgSizeTotal": 73697413,
+    "h2hMsgTotal": 83242,
+    "e2eMsgTotal": 20405
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12296,
+      48628,
+      49076,
+      52568,
+      53802
+    ],
+    "slows": 0,
+    "clientDelay": 36132
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18252816,
+    "h2hMsgSizeTotal": 73826254,
+    "h2hMsgTotal": 83182,
+    "e2eMsgTotal": 20228
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9334,
+      31068,
+      31293,
+      32778,
+      35955
+    ],
+    "slows": 0,
+    "clientDelay": 21534
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19336848,
+    "h2hMsgSizeTotal": 77819047,
+    "h2hMsgTotal": 88229,
+    "e2eMsgTotal": 21624
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15503,
+      57229,
+      57453,
+      59154,
+      61008
+    ],
+    "slows": 0,
+    "clientDelay": 41526
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18555534,
+    "h2hMsgSizeTotal": 75251298,
+    "h2hMsgTotal": 86473,
+    "e2eMsgTotal": 21109
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11029,
+      43060,
+      43264,
+      44565,
+      46811
+    ],
+    "slows": 0,
+    "clientDelay": 31831
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18468576,
+    "h2hMsgSizeTotal": 74757141,
+    "h2hMsgTotal": 85099,
+    "e2eMsgTotal": 20836
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14120,
+      34151,
+      34384,
+      40459,
+      40760
+    ],
+    "slows": 0,
+    "clientDelay": 19831
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19584300,
+    "h2hMsgSizeTotal": 78703394,
+    "h2hMsgTotal": 89692,
+    "e2eMsgTotal": 21978
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11936,
+      28857,
+      41630,
+      59530,
+      59984
+    ],
+    "slows": 0,
+    "clientDelay": 16721
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18600498,
+    "h2hMsgSizeTotal": 74775810,
+    "h2hMsgTotal": 85095,
+    "e2eMsgTotal": 20871
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      17204,
+      45419,
+      45657,
+      48381,
+      48745
+    ],
+    "slows": 0,
+    "clientDelay": 28015
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18805938,
+    "h2hMsgSizeTotal": 75771111,
+    "h2hMsgTotal": 86318,
+    "e2eMsgTotal": 21143
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13042,
+      35992,
+      36193,
+      37196,
+      37768
+    ],
+    "slows": 0,
+    "clientDelay": 22750
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19148874,
+    "h2hMsgSizeTotal": 77167558,
+    "h2hMsgTotal": 86167,
+    "e2eMsgTotal": 21083
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13447,
+      33556,
+      34211,
+      35519,
+      36830
+    ],
+    "slows": 0,
+    "clientDelay": 19909
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18832428,
+    "h2hMsgSizeTotal": 76121821,
+    "h2hMsgTotal": 86377,
+    "e2eMsgTotal": 21158
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13208,
+      36399,
+      36619,
+      38885,
+      39266
+    ],
+    "slows": 0,
+    "clientDelay": 22991
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18985374,
+    "h2hMsgSizeTotal": 77076261,
+    "h2hMsgTotal": 87166,
+    "e2eMsgTotal": 21409
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14727,
+      27547,
+      53138,
+      58529,
+      59330
+    ],
+    "slows": 0,
+    "clientDelay": 12620
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 17866284,
+    "h2hMsgSizeTotal": 73205018,
+    "h2hMsgTotal": 83528,
+    "e2eMsgTotal": 20206
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14417,
+      32576,
+      32802,
+      33913,
+      35789
+    ],
+    "slows": 0,
+    "clientDelay": 17959
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18329880,
+    "h2hMsgSizeTotal": 74792384,
+    "h2hMsgTotal": 86576,
+    "e2eMsgTotal": 21040
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16695,
+      48499,
+      49131,
+      49730,
+      50232
+    ],
+    "slows": 0,
+    "clientDelay": 31604
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18769020,
+    "h2hMsgSizeTotal": 75616543,
+    "h2hMsgTotal": 86771,
+    "e2eMsgTotal": 21234
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12434,
+      28781,
+      29018,
+      42363,
+      44952
+    ],
+    "slows": 0,
+    "clientDelay": 16147
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19027836,
+    "h2hMsgSizeTotal": 76375288,
+    "h2hMsgTotal": 87202,
+    "e2eMsgTotal": 21302
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      14354,
+      31965,
+      32165,
+      33462,
+      33761
+    ],
+    "slows": 0,
+    "clientDelay": 17411
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18862014,
+    "h2hMsgSizeTotal": 76399795,
+    "h2hMsgTotal": 87172,
+    "e2eMsgTotal": 21341
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      16238,
+      24726,
+      28644,
+      29426,
+      31103
+    ],
+    "slows": 0,
+    "clientDelay": 8288
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18262122,
+    "h2hMsgSizeTotal": 74235897,
+    "h2hMsgTotal": 84444,
+    "e2eMsgTotal": 20487
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9611,
+      24184,
+      29121,
+      33101,
+      34561
+    ],
+    "slows": 0,
+    "clientDelay": 14373
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18900756,
+    "h2hMsgSizeTotal": 76668263,
+    "h2hMsgTotal": 85547,
+    "e2eMsgTotal": 20866
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10721,
+      28758,
+      29228,
+      30115,
+      30441
+    ],
+    "slows": 0,
+    "clientDelay": 17837
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18833538,
+    "h2hMsgSizeTotal": 76081893,
+    "h2hMsgTotal": 85576,
+    "e2eMsgTotal": 20887
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      11411,
+      32407,
+      36236,
+      39033,
+      39388
+    ],
+    "slows": 0,
+    "clientDelay": 20796
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19289976,
+    "h2hMsgSizeTotal": 77569969,
+    "h2hMsgTotal": 87943,
+    "e2eMsgTotal": 21548
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15586,
+      21453,
+      37557,
+      46423,
+      46760
+    ],
+    "slows": 0,
+    "clientDelay": 5667
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19249200,
+    "h2hMsgSizeTotal": 77699968,
+    "h2hMsgTotal": 88932,
+    "e2eMsgTotal": 21844
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13573,
+      34752,
+      37197,
+      37604,
+      38147
+    ],
+    "slows": 0,
+    "clientDelay": 20979
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18827922,
+    "h2hMsgSizeTotal": 76192666,
+    "h2hMsgTotal": 87175,
+    "e2eMsgTotal": 21335
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12185,
+      30700,
+      30906,
+      33405,
+      36496
+    ],
+    "slows": 0,
+    "clientDelay": 18315
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18838818,
+    "h2hMsgSizeTotal": 75996979,
+    "h2hMsgTotal": 87322,
+    "e2eMsgTotal": 21455
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      10705,
+      32249,
+      45798,
+      46163,
+      47174
+    ],
+    "slows": 0,
+    "clientDelay": 21344
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18164106,
+    "h2hMsgSizeTotal": 73519639,
+    "h2hMsgTotal": 84042,
+    "e2eMsgTotal": 20467
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13061,
+      25723,
+      29702,
+      30596,
+      32275
+    ],
+    "slows": 0,
+    "clientDelay": 12462
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18516474,
+    "h2hMsgSizeTotal": 74928379,
+    "h2hMsgTotal": 85366,
+    "e2eMsgTotal": 20819
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15080,
+      34645,
+      37067,
+      37567,
+      38652
+    ],
+    "slows": 0,
+    "clientDelay": 19365
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18510624,
+    "h2hMsgSizeTotal": 75432576,
+    "h2hMsgTotal": 87716,
+    "e2eMsgTotal": 21380
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15342,
+      30129,
+      37269,
+      40308,
+      42778
+    ],
+    "slows": 0,
+    "clientDelay": 14587
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18467190,
+    "h2hMsgSizeTotal": 74751758,
+    "h2hMsgTotal": 85581,
+    "e2eMsgTotal": 20933
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15438,
+      33425,
+      33642,
+      40737,
+      41092
+    ],
+    "slows": 0,
+    "clientDelay": 17787
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18750570,
+    "h2hMsgSizeTotal": 75437522,
+    "h2hMsgTotal": 86335,
+    "e2eMsgTotal": 21279
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      20650,
+      32697,
+      32941,
+      33388,
+      34737
+    ],
+    "slows": 0,
+    "clientDelay": 11847
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 19320408,
+    "h2hMsgSizeTotal": 78294649,
+    "h2hMsgTotal": 87107,
+    "e2eMsgTotal": 21312
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      12775,
+      22009,
+      27936,
+      52389,
+      53446
+    ],
+    "slows": 0,
+    "clientDelay": 9034
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18453228,
+    "h2hMsgSizeTotal": 75293490,
+    "h2hMsgTotal": 86720,
+    "e2eMsgTotal": 21014
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      13641,
+      31297,
+      35341,
+      36210,
+      36815
+    ],
+    "slows": 0,
+    "clientDelay": 17456
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18179814,
+    "h2hMsgSizeTotal": 73914643,
+    "h2hMsgTotal": 84516,
+    "e2eMsgTotal": 20581
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      9626,
+      41418,
+      42001,
+      44021,
+      44859
+    ],
+    "slows": 0,
+    "clientDelay": 31592
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 18647778,
+    "h2hMsgSizeTotal": 74787970,
+    "h2hMsgTotal": 85111,
+    "e2eMsgTotal": 20927
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      15619,
+      43923,
+      44138,
+      46746,
+      47101
+    ],
+    "slows": 0,
+    "clientDelay": 28104
+  },
+  "conc_requesters": 5,
+  "msg_drop_rate": 0.2,
+  "N": 256
+}

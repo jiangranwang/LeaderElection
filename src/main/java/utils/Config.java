@@ -11,12 +11,15 @@ import java.util.logging.Logger;
 public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
-    public static String membershipFile, topologyFile, statsFile;
+    public static String membershipFile, topologyFile, statsFile, traceFile, spatialDistro;
     // public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
     //         numSuspectCount, suspectCountThreshold, verbose;
     public static int numServers, oneHopDelay, granularity, eventCheckTimeout, critDuration, concRequesters, verbose;
     public static long endTime;
-    public static double oneHopRadius, msgDropRate;
+    public static double oneHopRadius, msgDropRate, irRatio;
+    public static boolean fromTrace, batched;
+
+    public static int reqInitProcessedCt = 0;
 
     public static Random random = new Random();
     private static final long seed = System.currentTimeMillis();
@@ -33,6 +36,11 @@ public class Config {
             membershipFile = (String) config.get("membership_file");
             topologyFile = (String) config.get("topology_file");
             statsFile = (String) config.get("stats_file");
+            traceFile = (String) config.get("trace_file");
+            spatialDistro = (String) config.get("spatial_distro");
+
+            fromTrace = ((String) config.get("from_trace")).equals("true");
+            batched = ((String) config.get("batched")).equals("true");
 
             numServers = Integer.parseInt((String) config.get("num_servers"));
             oneHopDelay = Integer.parseInt((String) config.get("one_hop_delay"));
@@ -54,6 +62,7 @@ public class Config {
 
             oneHopRadius = Double.parseDouble((String) config.get("one_hop_radius"));
             msgDropRate = Double.parseDouble((String) config.get("msg_drop_rate"));
+            irRatio = Double.parseDouble((String) config.get("ir_ratio"));
         } catch (Exception e) {
             e.printStackTrace();
             LOG.log(Level.SEVERE, "Failed to parse configuration file");

@@ -8,26 +8,26 @@ import java.util.List;
 
 public class ResendEvent extends Event {
     private final Message msg;
-    private final List<Address> target_nodes;
-    private final int ttl;
+    // private final List<Address> target_nodes;
+    // private final int ttl;
 
-    public ResendEvent(long time, Address id, Message msg, List<Address> target_nodes, int ttl) {
+    public ResendEvent(long time, Address id, Message msg) {
         super(EventType.RESEND, time, id);
 
         this.msg = msg;
-        this.target_nodes = target_nodes;
-        this.ttl = ttl;
+        // this.target_nodes = target_nodes;
+        // this.ttl = ttl;
     }
 
     public Message getMsg() {
         return msg;
     }
 
-    public int getTtl() {
-        return ttl;
-    }
+    // public int getTtl() {
+    //     return ttl;
+    // }
 
-    public List<Address> getTargetNodes() {
-        return target_nodes;
-    }
+    // public List<Address> getTargetNodes() {
+    //     return target_nodes;
+    // }
 }

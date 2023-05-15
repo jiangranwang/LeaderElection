@@ -13,7 +13,10 @@ public class EventService {
     private static HashMap<Address, Server> servers;
 
     public static void addEvent(Event event) {
-        if (event.getTime() > Config.endTime) return;
+        // if (event.getTime() > Config.endTime) {
+        //     System.out.println("Quitting early because reached end");
+        //     return;
+        // }
         events.add(event);
     }
 

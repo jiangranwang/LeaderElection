@@ -1,5 +1,7 @@
 package simulator;
 
+import java.io.BufferedReader;  
+import java.io.FileReader;  
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -15,6 +17,9 @@ import network.Network;
 import org.json.simple.JSONObject;
 import utils.Config;
 import utils.metric.*;
+
+import org.apache.commons.math3.distribution.ZipfDistribution;
+
 
 public class Simulator {
     private static final Logger LOG = Logger.getLogger(Simulator.class.getName());
@@ -52,31 +57,71 @@ public class Simulator {
         // get k + f + 1 random servers to send query message
         int num_nodes = Config.numServers;
         
-        int i = 0;
-        for (Map.Entry<Address,Server> elem : servers.entrySet()) {
-            // System.out.println("Initiating another request with i = " + String.valueOf(i));
-            elem.getValue().initiateRequest();
-            if (++i >= Config.concRequesters) break;
+
+        if (!Config.fromTrace) {
+            int i = 0;
+            for (Map.Entry<Address,Server> elem : servers.entrySet()) {
+                // System.out.println("Initiating another request with i = " + String.valueOf(i));
+                elem.getValue().initiateRequest();
+                if (++i >= Config.concRequesters) break;
+            }
+        } else {
+            // going to read in from the tracefile
+
+            String line = "";  
+            // String splitBy = ",";
+            long time;
+            int requester=0;
+            //parsing a CSV file into BufferedReader class constructor
+            Random rand = new Random();
+            ZipfDistribution zipfDistribution = new ZipfDistribution(num_nodes, 2.0);
+
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(Config.traceFile));  
+                while ((line = br.readLine()) != null) {   //returns a Boolean value  
+                    // String[] ln = line.split(splitBy);    // use comma as separator
+                    // time = Long.parseLong(ln[0]);
+                    time = Long.valueOf((long) (Long.parseLong(line)*Config.irRatio));
+                    if (Config.spatialDistro.equals("zipfian")) {
+                        requester = zipfDistribution.sample();
+                        while (requester >= num_nodes) {
+                            System.out.println("Decrementing from requester="+String.valueOf(requester));
+                            requester-=1;
+                        }
+                    } else if (Config.spatialDistro.equals("uniform")) {
+                        requester = rand.nextInt(num_nodes);
+                    } else {
+                        System.out.println("UNKNOWN DISTRIBUTION");
+                        System.exit(1);
+                    }
+                    Address ip = new Address(requester);
+                    servers.get(ip).loadRequest(time);
+                }
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
         }
 
         // int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
         // AlgorithmMetric.setElectionStartTime(LogicalTime.time);
         // servers.get(coordinator).sendQuery(num_nodes, null);
 
-        TimerTask updateMembership = new TimerTask() {
-            public void run() {
-                for (Map.Entry<Address, Server> entry : servers.entrySet()) {
-                    entry.getValue().updateMembership();
-                }
-            }
-        };
+        // TimerTask updateMembership = new TimerTask() {
+        //     public void run() {
+        //         for (Map.Entry<Address, Server> entry : servers.entrySet()) {
+        //             entry.getValue().updateMembership();
+        //         }
+        //     }
+        // };
 
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(updateMembership, 0, Config.granularity);
+        // Timer timer = new Timer();
+        // timer.scheduleAtFixedRate(updateMembership, 0, Config.granularity);
 
         EventService.processAll();
 
-        timer.cancel();
+        // timer.cancel();
     }
 
     @SuppressWarnings("unchecked")
@@ -93,7 +138,11 @@ public class Simulator {
         JSONObject obj = new JSONObject();
         obj.put("networkMetric", NetworkMetric.getStat());
         obj.put("algorithmMetric", AlgorithmMetric.getStat());
-        obj.put("qualityMetric", QualityMetric.getStat());
+        obj.put("conc_requesters",Config.concRequesters);
+        obj.put("msg_drop_rate",Config.msgDropRate);
+        obj.put("N", Config.numServers);
+        obj.put("ir_ratio", Config.irRatio);
+        // obj.put("qualityMetric", QualityMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonElement je = JsonParser.parseString(obj.toJSONString());
