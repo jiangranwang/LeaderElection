@@ -57,6 +57,7 @@ public class Membership {
                 }
                 success = true;
             } catch (FileNotFoundException e) {
+                System.out.println("Was not able to read a membership file either");
                 e.printStackTrace();
                 LOG.log(Level.SEVERE, "Membership file does not exist!");
                 System.exit(1);

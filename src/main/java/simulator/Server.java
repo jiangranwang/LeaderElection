@@ -35,6 +35,7 @@ public class Server {
     private int currSeqNum = 0;
     private AlgoState myState = AlgoState.NONE;
     private long initTime = 0;
+    private Integer queuedReqs = 0;
     private RequestPayload currRequest;
     private final Set<RequestPayload> deferred = ConcurrentHashMap.newKeySet();
     private final Set<Address> recentlyOKed = ConcurrentHashMap.newKeySet();
@@ -100,6 +101,11 @@ public class Server {
                  Message ok_message = new Message(id,waiting.getId(),ok_p);
                  Network.unicast(ok_message);
              }
+
+             if (queuedReqs>0) {
+                queuedReqs--;
+                initiateRequest();
+            }
         }
         //  else if (event.getType() == EventType.RESPONSE_CHECK) {
         //     int numNodes = ((ResponseCheckEvent) event).getNumNodes();
@@ -286,8 +292,9 @@ public class Server {
                      AlgorithmMetric.addWaitTime(0); // we already in the CS, so batch for free
                 }
             } else {
-                InitiateRequestEvent e = new InitiateRequestEvent(LogicalTime.time+Config.critDuration, id);
-                EventService.addEvent(e);
+                queuedReqs++;
+                // InitiateRequestEvent e = new InitiateRequestEvent(LogicalTime.time+Config.critDuration, id);
+                // EventService.addEvent(e);
             }
             return;
         } 

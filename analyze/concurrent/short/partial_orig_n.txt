@@ -1,0 +1,2401 @@
+{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1019976,
+    "h2hMsgSizeTotal": 2823639,
+    "h2hMsgTotal": 3309,
+    "e2eMsgTotal": 1104
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2250,
+      2550,
+      2850,
+      3200,
+      3500,
+      3850,
+      4250,
+      4650,
+      5050,
+      6000
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1026960,
+    "h2hMsgSizeTotal": 2838079,
+    "h2hMsgTotal": 3313,
+    "e2eMsgTotal": 1100
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1750,
+      2050,
+      2350,
+      2700,
+      3000,
+      3350,
+      4350,
+      4750,
+      5150,
+      5500
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1033038,
+    "h2hMsgSizeTotal": 2840294,
+    "h2hMsgTotal": 3293,
+    "e2eMsgTotal": 1093
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      3350,
+      3650,
+      4950,
+      5300,
+      5600,
+      5950,
+      6350,
+      7800,
+      9800,
+      10150
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 993024,
+    "h2hMsgSizeTotal": 2773292,
+    "h2hMsgTotal": 3264,
+    "e2eMsgTotal": 1076
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      4050,
+      4350,
+      4650,
+      5000,
+      5300,
+      5650,
+      6050,
+      6450,
+      6850,
+      7200
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1040394,
+    "h2hMsgSizeTotal": 2857600,
+    "h2hMsgTotal": 3281,
+    "e2eMsgTotal": 1095
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2200,
+      2500,
+      2800,
+      3700,
+      4200,
+      4550,
+      5550,
+      5950,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1027098,
+    "h2hMsgSizeTotal": 2847802,
+    "h2hMsgTotal": 3299,
+    "e2eMsgTotal": 1083
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2600,
+      2900,
+      3750,
+      4100,
+      4400,
+      5350,
+      5750,
+      6150,
+      6550,
+      7400
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1064880,
+    "h2hMsgSizeTotal": 2912941,
+    "h2hMsgTotal": 3355,
+    "e2eMsgTotal": 1124
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1750,
+      2550,
+      2850,
+      3200,
+      3500,
+      3850,
+      4250,
+      4650,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 600
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1038270,
+    "h2hMsgSizeTotal": 2884135,
+    "h2hMsgTotal": 3388,
+    "e2eMsgTotal": 1121
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2350,
+      2650,
+      2950,
+      3900,
+      4200,
+      4550,
+      4950,
+      5350,
+      5750,
+      6100
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1027002,
+    "h2hMsgSizeTotal": 2868631,
+    "h2hMsgTotal": 3330,
+    "e2eMsgTotal": 1099
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1250,
+      2100,
+      2900,
+      3250,
+      3550,
+      4400,
+      4800,
+      5850,
+      6800,
+      7150
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 650
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1023948,
+    "h2hMsgSizeTotal": 2836532,
+    "h2hMsgTotal": 3322,
+    "e2eMsgTotal": 1098
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1600,
+      1900,
+      2200,
+      2650,
+      2950,
+      3300,
+      3700,
+      4650,
+      5050,
+      5950
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1039968,
+    "h2hMsgSizeTotal": 2838678,
+    "h2hMsgTotal": 3302,
+    "e2eMsgTotal": 1100
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2050,
+      2350,
+      2650,
+      3100,
+      3400,
+      4600,
+      5000,
+      5400,
+      5800,
+      6150
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1036446,
+    "h2hMsgSizeTotal": 2864822,
+    "h2hMsgTotal": 3297,
+    "e2eMsgTotal": 1097
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2200,
+      2500,
+      2800,
+      3150,
+      3450,
+      4550,
+      4950,
+      6000,
+      6400,
+      6750
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1003536,
+    "h2hMsgSizeTotal": 2789514,
+    "h2hMsgTotal": 3270,
+    "e2eMsgTotal": 1080
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2200,
+      2500,
+      2800,
+      3150,
+      3600,
+      3950,
+      5550,
+      5950,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1020204,
+    "h2hMsgSizeTotal": 2845748,
+    "h2hMsgTotal": 3322,
+    "e2eMsgTotal": 1098
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2000,
+      2300,
+      2600,
+      2950,
+      3250,
+      3600,
+      4000,
+      4400,
+      4800,
+      5150
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1023900,
+    "h2hMsgSizeTotal": 2858301,
+    "h2hMsgTotal": 3337,
+    "e2eMsgTotal": 1102
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2000,
+      2300,
+      2600,
+      2950,
+      3250,
+      3600,
+      4600,
+      5000,
+      5400,
+      5750
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1027302,
+    "h2hMsgSizeTotal": 2832551,
+    "h2hMsgTotal": 3336,
+    "e2eMsgTotal": 1109
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1700,
+      2000,
+      2300,
+      2650,
+      2950,
+      3300,
+      3700,
+      4100,
+      4500,
+      4850
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1014372,
+    "h2hMsgSizeTotal": 2802044,
+    "h2hMsgTotal": 3250,
+    "e2eMsgTotal": 1074
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1700,
+      2000,
+      2600,
+      2950,
+      3250,
+      3600,
+      4000,
+      4400,
+      4800,
+      5650
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1007976,
+    "h2hMsgSizeTotal": 2806096,
+    "h2hMsgTotal": 3268,
+    "e2eMsgTotal": 1076
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2650,
+      2950,
+      3250,
+      3600,
+      4450,
+      4800,
+      5200,
+      5600,
+      7100,
+      7450
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1019622,
+    "h2hMsgSizeTotal": 2848084,
+    "h2hMsgTotal": 3295,
+    "e2eMsgTotal": 1085
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1250,
+      1550,
+      2400,
+      2750,
+      3050,
+      3400,
+      4450,
+      4850,
+      5850,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1002546,
+    "h2hMsgSizeTotal": 2793537,
+    "h2hMsgTotal": 3284,
+    "e2eMsgTotal": 1079
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2350,
+      2650,
+      2950,
+      3950,
+      4800,
+      5150,
+      5550,
+      5950,
+      6350,
+      7250
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1005240,
+    "h2hMsgSizeTotal": 2784629,
+    "h2hMsgTotal": 3271,
+    "e2eMsgTotal": 1080
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2050,
+      2350,
+      2950,
+      3300,
+      4300,
+      4650,
+      5550,
+      5950,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1015098,
+    "h2hMsgSizeTotal": 2791349,
+    "h2hMsgTotal": 3240,
+    "e2eMsgTotal": 1079
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2100,
+      2400,
+      3150,
+      3500,
+      3800,
+      4700,
+      5100,
+      5500,
+      6500,
+      6850
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1027920,
+    "h2hMsgSizeTotal": 2846047,
+    "h2hMsgTotal": 3345,
+    "e2eMsgTotal": 1108
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2300,
+      2600,
+      2900,
+      3250,
+      3700,
+      4350,
+      5950,
+      6350,
+      6750,
+      7100
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1012350,
+    "h2hMsgSizeTotal": 2797132,
+    "h2hMsgTotal": 3279,
+    "e2eMsgTotal": 1093
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2050,
+      2500,
+      3650,
+      4000,
+      4800,
+      5150,
+      5550,
+      5950,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 250
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1028856,
+    "h2hMsgSizeTotal": 2869303,
+    "h2hMsgTotal": 3377,
+    "e2eMsgTotal": 1116
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1800,
+      2100,
+      2900,
+      3250,
+      3550,
+      4500,
+      4900,
+      6450,
+      6850,
+      7200
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1026444,
+    "h2hMsgSizeTotal": 2840446,
+    "h2hMsgTotal": 3296,
+    "e2eMsgTotal": 1098
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1350,
+      1750,
+      3000,
+      3350,
+      3650,
+      4000,
+      4400,
+      4800,
+      5200,
+      5550
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 200
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1008444,
+    "h2hMsgSizeTotal": 2819097,
+    "h2hMsgTotal": 3269,
+    "e2eMsgTotal": 1070
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      3400,
+      3700,
+      4000,
+      4350,
+      5200,
+      5550,
+      6550,
+      7550,
+      7950,
+      8850
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1033572,
+    "h2hMsgSizeTotal": 2869497,
+    "h2hMsgTotal": 3289,
+    "e2eMsgTotal": 1090
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1650,
+      1950,
+      2250,
+      2600,
+      2900,
+      4250,
+      4650,
+      5050,
+      5450,
+      5800
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1020900,
+    "h2hMsgSizeTotal": 2826694,
+    "h2hMsgTotal": 3316,
+    "e2eMsgTotal": 1094
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1500,
+      1800,
+      2100,
+      3000,
+      3300,
+      3650,
+      4050,
+      4450,
+      4850,
+      5200
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1039728,
+    "h2hMsgSizeTotal": 2889455,
+    "h2hMsgTotal": 3361,
+    "e2eMsgTotal": 1116
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2200,
+      3400,
+      3700,
+      4050,
+      4350,
+      5100,
+      5500,
+      6550,
+      6950,
+      7300
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 1000
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1045938,
+    "h2hMsgSizeTotal": 2884722,
+    "h2hMsgTotal": 3343,
+    "e2eMsgTotal": 1111
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2600,
+      2900,
+      3200,
+      3550,
+      3850,
+      4200,
+      4600,
+      5550,
+      5950,
+      6300
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1057500,
+    "h2hMsgSizeTotal": 2885976,
+    "h2hMsgTotal": 3378,
+    "e2eMsgTotal": 1134
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2300,
+      2600,
+      2900,
+      3250,
+      4650,
+      5000,
+      5400,
+      6200,
+      6600,
+      6950
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1008672,
+    "h2hMsgSizeTotal": 2808723,
+    "h2hMsgTotal": 3305,
+    "e2eMsgTotal": 1088
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1550,
+      1850,
+      2450,
+      2800,
+      3250,
+      3850,
+      4250,
+      4650,
+      5050,
+      5400
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1024284,
+    "h2hMsgSizeTotal": 2816274,
+    "h2hMsgTotal": 3264,
+    "e2eMsgTotal": 1086
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1450,
+      1750,
+      2050,
+      2400,
+      2700,
+      3650,
+      5600,
+      6000,
+      6400,
+      7800
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1006656,
+    "h2hMsgSizeTotal": 2810659,
+    "h2hMsgTotal": 3285,
+    "e2eMsgTotal": 1084
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1800,
+      2100,
+      2950,
+      3300,
+      3600,
+      3950,
+      4350,
+      4750,
+      5150,
+      5500
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1024530,
+    "h2hMsgSizeTotal": 2833448,
+    "h2hMsgTotal": 3309,
+    "e2eMsgTotal": 1091
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2450,
+      2750,
+      3050,
+      3400,
+      3700,
+      4050,
+      4950,
+      5950,
+      6350,
+      6700
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1027512,
+    "h2hMsgSizeTotal": 2843356,
+    "h2hMsgTotal": 3324,
+    "e2eMsgTotal": 1096
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2850,
+      3150,
+      4450,
+      4800,
+      5100,
+      5750,
+      6150,
+      6550,
+      6950,
+      7550
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1037466,
+    "h2hMsgSizeTotal": 2858124,
+    "h2hMsgTotal": 3309,
+    "e2eMsgTotal": 1095
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2250,
+      2550,
+      2850,
+      3200,
+      3500,
+      3850,
+      4250,
+      4650,
+      7400,
+      7750
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1040826,
+    "h2hMsgSizeTotal": 2862988,
+    "h2hMsgTotal": 3325,
+    "e2eMsgTotal": 1103
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2350,
+      2650,
+      3500,
+      3850,
+      4150,
+      4500,
+      5550,
+      6450,
+      6850,
+      7200
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1026654,
+    "h2hMsgSizeTotal": 2823516,
+    "h2hMsgTotal": 3303,
+    "e2eMsgTotal": 1101
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1700,
+      2000,
+      2300,
+      2650,
+      2950,
+      3800,
+      4200,
+      5200,
+      5600,
+      5950
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1006632,
+    "h2hMsgSizeTotal": 2800712,
+    "h2hMsgTotal": 3280,
+    "e2eMsgTotal": 1080
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1700,
+      2000,
+      2300,
+      2650,
+      2950,
+      3300,
+      3700,
+      4150,
+      4550,
+      4900
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 986832,
+    "h2hMsgSizeTotal": 2751379,
+    "h2hMsgTotal": 3209,
+    "e2eMsgTotal": 1056
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1900,
+      2750,
+      3050,
+      4000,
+      4300,
+      4650,
+      5050,
+      5450,
+      5850,
+      6200
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 650
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1035366,
+    "h2hMsgSizeTotal": 2858410,
+    "h2hMsgTotal": 3293,
+    "e2eMsgTotal": 1089
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      3650,
+      3950,
+      5100,
+      5450,
+      5750,
+      6700,
+      7750,
+      8150,
+      9100,
+      9450
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1015644,
+    "h2hMsgSizeTotal": 2823528,
+    "h2hMsgTotal": 3274,
+    "e2eMsgTotal": 1078
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2250,
+      2550,
+      2850,
+      3200,
+      3500,
+      3850,
+      4250,
+      4650,
+      5050,
+      5400
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1015746,
+    "h2hMsgSizeTotal": 2829081,
+    "h2hMsgTotal": 3316,
+    "e2eMsgTotal": 1087
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      3250,
+      3550,
+      3850,
+      4200,
+      4500,
+      4850,
+      5250,
+      5650,
+      6050,
+      6400
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1032774,
+    "h2hMsgSizeTotal": 2864472,
+    "h2hMsgTotal": 3343,
+    "e2eMsgTotal": 1105
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2900,
+      3200,
+      3500,
+      3850,
+      4150,
+      4900,
+      5300,
+      5700,
+      6100,
+      6450
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1030566,
+    "h2hMsgSizeTotal": 2837789,
+    "h2hMsgTotal": 3326,
+    "e2eMsgTotal": 1105
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2100,
+      2400,
+      2700,
+      3050,
+      3350,
+      4100,
+      4500,
+      4900,
+      5300,
+      5650
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1042776,
+    "h2hMsgSizeTotal": 2897987,
+    "h2hMsgTotal": 3337,
+    "e2eMsgTotal": 1104
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2050,
+      2350,
+      3050,
+      3400,
+      3700,
+      4400,
+      5400,
+      5800,
+      6200,
+      7050
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1037304,
+    "h2hMsgSizeTotal": 2860473,
+    "h2hMsgTotal": 3343,
+    "e2eMsgTotal": 1108
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2200,
+      3000,
+      3300,
+      3650,
+      4150,
+      4500,
+      4900,
+      5300,
+      5700,
+      6050
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 600
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1032036,
+    "h2hMsgSizeTotal": 2864669,
+    "h2hMsgTotal": 3325,
+    "e2eMsgTotal": 1098
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1650,
+      1950,
+      2250,
+      2600,
+      2900,
+      3800,
+      4200,
+      4600,
+      6200,
+      6550
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 32
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1584474,
+    "h2hMsgSizeTotal": 4820037,
+    "h2hMsgTotal": 5596,
+    "e2eMsgTotal": 1699
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1600,
+      1900,
+      3500,
+      3900,
+      4300,
+      4750,
+      5050,
+      5400,
+      5650,
+      6000
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1617564,
+    "h2hMsgSizeTotal": 4948008,
+    "h2hMsgTotal": 5738,
+    "e2eMsgTotal": 1742
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2850,
+      3150,
+      3500,
+      3900,
+      4500,
+      4950,
+      5250,
+      5600,
+      6100,
+      6450
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1641084,
+    "h2hMsgSizeTotal": 4994044,
+    "h2hMsgTotal": 5770,
+    "e2eMsgTotal": 1754
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1600,
+      1900,
+      2250,
+      2650,
+      3750,
+      5550,
+      5850,
+      6900,
+      7150,
+      7500
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1631598,
+    "h2hMsgSizeTotal": 4964558,
+    "h2hMsgTotal": 5745,
+    "e2eMsgTotal": 1745
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1200,
+      1600,
+      2150,
+      2850,
+      3250,
+      3700,
+      4000,
+      4850,
+      5100,
+      5450
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 200
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1610736,
+    "h2hMsgSizeTotal": 4906499,
+    "h2hMsgTotal": 5649,
+    "e2eMsgTotal": 1712
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1550,
+      1850,
+      2200,
+      3100,
+      4150,
+      4600,
+      4900,
+      5950,
+      6700,
+      7600
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1582656,
+    "h2hMsgSizeTotal": 4816064,
+    "h2hMsgTotal": 5576,
+    "e2eMsgTotal": 1696
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1600,
+      2150,
+      2500,
+      2900,
+      3650,
+      4100,
+      4400,
+      5250,
+      5500,
+      5850
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 350
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1606932,
+    "h2hMsgSizeTotal": 4846266,
+    "h2hMsgTotal": 5620,
+    "e2eMsgTotal": 1714
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      3650,
+      3950,
+      4300,
+      4700,
+      5100,
+      6050,
+      7050,
+      7400,
+      7650,
+      8000
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1619856,
+    "h2hMsgSizeTotal": 4952984,
+    "h2hMsgTotal": 5692,
+    "e2eMsgTotal": 1716
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1150,
+      1950,
+      2300,
+      2700,
+      4150,
+      4600,
+      5050,
+      5950,
+      6200,
+      6550
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 600
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1625448,
+    "h2hMsgSizeTotal": 4970980,
+    "h2hMsgTotal": 5740,
+    "e2eMsgTotal": 1736
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      2150,
+      2450,
+      3500,
+      3900,
+      4300,
+      4750,
+      5600,
+      5950,
+      6200,
+      7600
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}{
+  "networkMetric": {
+    "e2eMsgSizeTotal": 1623288,
+    "h2hMsgSizeTotal": 4936062,
+    "h2hMsgTotal": 5678,
+    "e2eMsgTotal": 1724
+  },
+  "algorithmMetric": {
+    "waitTimes": [
+      1750,
+      3050,
+      3900,
+      4300,
+      4700,
+      5250,
+      5550,
+      5900,
+      6150,
+      6500
+    ],
+    "slows": 0,
+    "arrivals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "clientDelay": 1100
+  },
+  "ir_ratio": 1.0,
+  "churn_ratio": 0.5,
+  "conc_requesters": 10,
+  "msg_drop_rate": 0.05,
+  "N": 49
+}

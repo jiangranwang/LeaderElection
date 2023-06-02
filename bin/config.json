@@ -1,9 +1,9 @@
 {
   "membership_file": "../../Inconsistency-on-Medley/bin/membership/",
-  "topology_file": "topo/random256.txt",
+  "topology_file": "topo/random1024.txt",
   "stats_file": "stats.json",
-  "num_servers": "256",
-  "one_hop_delay": "50",
+  "num_servers": "1024",
+  "one_hop_delay": "5",
   "one_hop_radius": "4.0",
   "msg_drop_rate": "0.05",
   "granularity": "200",
@@ -16,5 +16,7 @@
   "trace_file": "../../YCSB/analyze/traces/W.txt",
   "spatial_distro": "uniform",
   "ir_ratio": "1.0",
-  "batched": "true"
+  "batched": "false",
+  "churn_ratio": "0.5",
+  "use_churn": "false"
 }

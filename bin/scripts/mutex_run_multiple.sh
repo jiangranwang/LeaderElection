@@ -3,8 +3,7 @@ if [ ! -f 'run.sh' ]; then
   exit
 fi
 
-num_run=100
-# num_run=100
+num_run=50
 medley_run=10 #every medley_run runs, we want to rerun medley for a new trace
 conc_step_size=30
 num_server=256
@@ -13,11 +12,9 @@ config_name="config.json"
 # drop_rates=(0.45)
 topologies=("grid" "random" "cluster")
 
-
 # echo "Starting"
 
 # drop rate 0.05 hardcoded
-# num runs 49 hardcoded
 # 30 concurrent requests hardcoded
 # for topology in ${topologies[@]}; do
 #     coordinate_path="topo/${topology}${num_server}.txt"
@@ -44,11 +41,12 @@ topologies=("grid" "random" "cluster")
 #     done
 # done
 
-# drop rate 0.05 hardcoded
-# sliding through number of concurrent requests
-# random256 topo
-# for (( conc_reqs=6; conc_reqs<=30; conc_reqs+=1)); do 
-# for (( conc_reqs=1; conc_reqs<=$num_server/2; conc_reqs+=$conc_step_size)); do 
+# # drop rate 0.05 hardcoded
+# # sliding through number of concurrent requests
+# # random256 topo
+# # echo "" > "outfile.txt"
+# # for (( conc_reqs=1; conc_reqs<30; conc_reqs+=1)); do 
+# for (( conc_reqs=30; conc_reqs<=$num_server/2; conc_reqs+=$conc_step_size)); do 
 #     # modify the number of concurrent requests
 #     tmp="$(mktemp)"
 #     jq --arg conc_reqs "$conc_reqs" '.conc_requesters = $conc_reqs' $config_name > "$tmp"
@@ -56,16 +54,17 @@ topologies=("grid" "random" "cluster")
 #     for (( i=1; i<=$num_run; i++ )); do
 #         # echo "conc_reqs: ${conc_reqs}, run_num: ${i}"
 #         ./run.sh $config_name
-#         cat stats.json
+#         cat stats.json >> "outfile.txt"
 #     done
 # done 
 
-# drop rate sliding
-# num servers 256
-# conc hardcoded 64 (quarter of system)
-# random256 topo
-# drop_rates=(0.1 0.2)
-# # drop_rates=(0.05 0.15 0.25 0.35 0.45)
+# # drop rate sliding
+# # num servers 256
+# # conc hardcoded 30
+# # random256 topo
+# # drop_rates=(0.1 0.2)
+# echo "" > "outfile.txt"
+# drop_rates=(0.05 0.1 0.15 0.2 0.35)
 # for drop_rate in ${drop_rates[@]}; do
 #     # modify the drop rate
 #     tmp="$(mktemp)"
@@ -77,21 +76,25 @@ topologies=("grid" "random" "cluster")
 #           tmp="$(mktemp)"
 #           jq --arg drop_rate "$drop_rate" '.msg_drop_rate = $drop_rate' $config_name > "$tmp"
 #           mv "$tmp" $config_name
-#           ./run.sh $config_name # run medley for about 30 secs (end time 60k)
+#           # ./run.sh $config_name # run medley for about 30 secs (end time 60k)
+#           nice -n 3 bash -c "./run.sh ${config_name}" # run churn traces through medley
 #           cd ../../LeaderElection/bin/
 #           # echo "drop_rate: ${drop_rate}, run_num: ${i}"
 #         fi
-#         ./run.sh $config_name
-#         cat stats.json
+#         nice -n 3 bash -c "./run.sh ${config_name}" # run camera sim
+#         # ./run.sh $config_name
+#         cat stats.json >> "outfile.txt"
 #     done
 # done 
 
 
 
-# N sliding
-# drop rate 0.05
-# conc requests (hardcoded at 10, 30)
+# # N sliding
+# # drop rate 0.05
+# # conc requests (hardcoded at 30)
 num_servers=(32 49 64 128 256 512 1024)
+# num_servers=(1024)
+echo "" > "outfile.txt"
 for num_serv in ${num_servers[@]}; do
     # modify N
     tmp="$(mktemp)"
@@ -110,12 +113,11 @@ for num_serv in ${num_servers[@]}; do
           rp="random${num_serv}_route.txt"
           jq --arg rp "$rp" '.routing_path = $rp' $config_name > "$tmp"
           mv "$tmp" $config_name
-
-          ./run.sh $config_name # run medley for about 30 secs (end time 60k)
+          nice -n 3 bash -c "./run.sh ${config_name}" # run churn traces through medley
           cd ../../LeaderElection/bin/
           echo "num_serv: ${num_serv}, run_num: ${i}"
         fi
-        ./run.sh $config_name
-        cat stats.json
+        nice -n 3 bash -c "./run.sh ${config_name}" # run sim
+        cat stats.json >> "outfile.txt"
     done
 done 

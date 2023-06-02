@@ -1,12 +1,16 @@
 package simulator;
 
 import java.io.BufferedReader;  
+import java.io.File;
 import java.io.FileReader;  
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.lang.Runtime;
+import java.lang.Thread;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,6 +53,45 @@ public class Simulator {
         NetworkMetric.initialize(addresses);
     }
 
+
+    private static void loadTrace(int num_nodes) {
+        String line = "";  
+        // String splitBy = ",";
+        long time;
+        int requester=0;
+        //parsing a CSV file into BufferedReader class constructor
+        Random rand = new Random();
+        ZipfDistribution zipfDistribution = new ZipfDistribution(num_nodes, 2.0);
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(Config.traceFile));  
+            while ((line = br.readLine()) != null) {   //returns a Boolean value  
+                // String[] ln = line.split(splitBy);    // use comma as separator
+                // time = Long.parseLong(ln[0]);
+                time = Long.valueOf((long) (Long.parseLong(line)*Config.irRatio));
+                if (Config.spatialDistro.equals("zipfian")) {
+                    requester = zipfDistribution.sample();
+                    while (requester >= num_nodes) {
+                        System.out.println("Decrementing from requester="+String.valueOf(requester));
+                        requester-=1;
+                    }
+                } else if (Config.spatialDistro.equals("uniform")) {
+                    requester = rand.nextInt(num_nodes);
+                } else {
+                    System.out.println("UNKNOWN DISTRIBUTION");
+                    System.exit(1);
+                }
+                Address ip = new Address(requester);
+                servers.get(ip).loadRequest(LogicalTime.time + time);
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Tracefile access failed");
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
     private static void run() {
         LogicalTime.time = 0;
         // pick a server as the coordinator
@@ -67,59 +110,136 @@ public class Simulator {
             }
         } else {
             // going to read in from the tracefile
+            loadTrace(num_nodes);
+        }
 
-            String line = "";  
-            // String splitBy = ",";
-            long time;
-            int requester=0;
-            //parsing a CSV file into BufferedReader class constructor
-            Random rand = new Random();
-            ZipfDistribution zipfDistribution = new ZipfDistribution(num_nodes, 2.0);
+        if (Config.useChurn) {
 
-            try {
-                BufferedReader br = new BufferedReader(new FileReader(Config.traceFile));  
-                while ((line = br.readLine()) != null) {   //returns a Boolean value  
-                    // String[] ln = line.split(splitBy);    // use comma as separator
-                    // time = Long.parseLong(ln[0]);
-                    time = Long.valueOf((long) (Long.parseLong(line)*Config.irRatio));
-                    if (Config.spatialDistro.equals("zipfian")) {
-                        requester = zipfDistribution.sample();
-                        while (requester >= num_nodes) {
-                            System.out.println("Decrementing from requester="+String.valueOf(requester));
-                            requester-=1;
-                        }
-                    } else if (Config.spatialDistro.equals("uniform")) {
-                        requester = rand.nextInt(num_nodes);
-                    } else {
-                        System.out.println("UNKNOWN DISTRIBUTION");
-                        System.exit(1);
-                    }
-                    Address ip = new Address(requester);
-                    servers.get(ip).loadRequest(time);
+            File flag = new File(Config.membershipFile+"flag");
+            while (!flag.exists()) {
+                // loadTrace(num_nodes);
+                // System.out.println("Running more requests");
+                // EventService.processAll();
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                    ;
                 }
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.exit(1);
+                flag = new File(Config.membershipFile+"flag");
+            }
+
+            System.out.println("flag hit");
+            try {
+                Runtime.getRuntime().exec("rm "+Config.membershipFile+"flag");
+            } catch (Exception e) {
+                ;
             }
         }
 
-        // int num_nodes = Math.min(Config.numServers, Config.f + Config.k + 1);
-        // AlgorithmMetric.setElectionStartTime(LogicalTime.time);
-        // servers.get(coordinator).sendQuery(num_nodes, null);
-
-        // TimerTask updateMembership = new TimerTask() {
-        //     public void run() {
-        //         for (Map.Entry<Address, Server> entry : servers.entrySet()) {
-        //             entry.getValue().updateMembership();
-        //         }
+        // System.out.println("Entering flag checker");
+        // int i = 0;
+        // while (i++ < 10000) {
+        //     try {
+        //         String[] commands = {"ls output.log"};
+        //         Process proc = Runtime.getRuntime().exec(commands);
+        //         BufferedReader stdInput = new BufferedReader(new 
+        //             InputStreamReader(proc.getInputStream()));
+        //             String s = null;
+        //             while ((s = stdInput.readLine()) != null) {
+        //                 System.out.println(s);
+        //                 break;
+        //             }
+        //     } catch (Exception e) {
+        //         // System.out.println(e.getMessage());
+        //         continue;
         //     }
-        // };
+        // }
 
-        // Timer timer = new Timer();
-        // timer.scheduleAtFixedRate(updateMembership, 0, Config.granularity);
+
+        // File flag = new File("output.log","r");
+        // while (!flag.exists());
+
+
+        // File flag = null;
+        // do {
+        //     flag = new File("output.log","r");
+        // } while (!flag.exists());
+
+        // System.out.println("out of loop with i ="+String.valueOf(i));
+        // try {
+        //     Runtime.getRuntime().exec("rm "+Config.membershipFile+"flag");
+        // } catch (Exception e) {
+        //     ;
+        // }
+
+        // File flag = null;
+        // if (Config.useChurn) {
+        //     try {
+        //         System.out.println(System.getProperty("user.home"));
+        //         String[] commands = {"ls "+ System.getProperty("user.home")};
+        //         Process proc = Runtime.getRuntime().exec(commands);
+        //         BufferedReader stdInput = new BufferedReader(new 
+        //          InputStreamReader(proc.getInputStream()));
+        //          String s = null;
+        //          while ((s = stdInput.readLine()) != null) {
+        //              System.out.println(s);
+        //          }
+        //     } catch (Exception e) {
+        //         System.out.println(e.getMessage());
+        //     }
+
+        //     System.out.println("Checking for flag at " + Config.membershipFile+"flag");
+        //     do {
+        //         flag = new File(Config.membershipFile+"flag","r");
+        //     } while (!flag.exists());
+    
+        //     System.out.println("flag hit");
+        //     try {
+        //         Runtime.getRuntime().exec("rm "+Config.membershipFile+"flag");
+        //     } catch (Exception e) {
+        //         ;
+        //     }
+        // }
+
 
         EventService.processAll();
+
+
+        if (Config.useChurn) {
+            File flag = new File(Config.membershipFile+"done");
+            while (!flag.exists()) {
+                loadTrace(num_nodes);
+                System.out.println("Running more requests");
+                EventService.processAll();
+                flag = new File(Config.membershipFile+"done");
+            }
+
+            System.out.println("done flag hit");
+            try {
+                Runtime.getRuntime().exec("rm "+Config.membershipFile+"done");
+            } catch (Exception e) {
+                ;
+            }
+        }
+        // if (Config.useChurn) {
+        //     flag = new File(Config.membershipFile+"done");
+        //     while (!flag.exists()) {
+        //         loadTrace(num_nodes);
+        //         System.out.println("Running more requests");
+        //         EventService.processAll();
+        //         flag = new File(Config.membershipFile+"done");
+        //     }
+    
+        //     System.out.println("done flag hit");
+        //     try {
+        //         Runtime.getRuntime().exec("rm "+Config.membershipFile+"done");
+        //     } catch (Exception e) {
+        //         ;
+        //     }
+        // }
+        
+
+        
 
         // timer.cancel();
     }
@@ -142,6 +262,7 @@ public class Simulator {
         obj.put("msg_drop_rate",Config.msgDropRate);
         obj.put("N", Config.numServers);
         obj.put("ir_ratio", Config.irRatio);
+        obj.put("churn_ratio",Config.churnRatio);
         // obj.put("qualityMetric", QualityMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

@@ -16,8 +16,8 @@ public class Config {
     //         numSuspectCount, suspectCountThreshold, verbose;
     public static int numServers, oneHopDelay, granularity, eventCheckTimeout, critDuration, concRequesters, verbose;
     public static long endTime;
-    public static double oneHopRadius, msgDropRate, irRatio;
-    public static boolean fromTrace, batched;
+    public static double oneHopRadius, msgDropRate, irRatio, churnRatio;
+    public static boolean fromTrace, batched, useChurn;
 
     public static int reqInitProcessedCt = 0;
 
@@ -41,6 +41,7 @@ public class Config {
 
             fromTrace = ((String) config.get("from_trace")).equals("true");
             batched = ((String) config.get("batched")).equals("true");
+            useChurn = ((String) config.get("use_churn")).equals("true");
 
             numServers = Integer.parseInt((String) config.get("num_servers"));
             oneHopDelay = Integer.parseInt((String) config.get("one_hop_delay"));
@@ -63,6 +64,7 @@ public class Config {
             oneHopRadius = Double.parseDouble((String) config.get("one_hop_radius"));
             msgDropRate = Double.parseDouble((String) config.get("msg_drop_rate"));
             irRatio = Double.parseDouble((String) config.get("ir_ratio"));
+            churnRatio = Double.parseDouble((String) config.get("churn_ratio"));
         } catch (Exception e) {
             e.printStackTrace();
             LOG.log(Level.SEVERE, "Failed to parse configuration file");

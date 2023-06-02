@@ -172,16 +172,19 @@ public class Network {
         if (Config.random.nextDouble() < Config.msgDropRate) {
             LOG.log(Level.FINE, "Message " + msg + " dropped.");
             // msg.setCurr(msg.getSrc());
-            Event event = new ResendEvent(LogicalTime.time + Config.random.nextInt(Config.eventCheckTimeout), msg.getSrc(), msg);
+            Event event = new ResendEvent(LogicalTime.time + Config.eventCheckTimeout, msg.getSrc(), msg);
+            // Event event = new ResendEvent(LogicalTime.time + Config.random.nextInt(Config.eventCheckTimeout), msg.getSrc(), msg);
             // System.out.println("Message dropped from " + msg.getSrc() + " to " + msg.getDst());
             EventService.addEvent(event);
             return;
         }
         Event event;
         if (msg.getDst() == nextHop)
-            event = new ReceiveMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
+            event = new ReceiveMsgEvent(LogicalTime.time + Config.oneHopDelay, nextHop, msg);
+            // event = new ReceiveMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
         else
-            event = new RouteMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
+            event = new RouteMsgEvent(LogicalTime.time + Config.oneHopDelay, nextHop, msg);
+            // event = new RouteMsgEvent(LogicalTime.time + Config.random.nextInt(Config.oneHopDelay), nextHop, msg);
         EventService.addEvent(event);
     }
 
