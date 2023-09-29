@@ -15,6 +15,7 @@ public class AlgorithmMetric {
     // private static List<Long> waitTimes;
     private static List<Long> waitTimes = new ArrayList<Long>();
     private static List<Long> arrivals = new ArrayList<Long>();
+    private static List<Integer> max_rec_OK_sizes = new ArrayList<Integer>();
     private static boolean firstExitSet = false;
     private static boolean secondEnterSet = false;
     private static int slows = 0;
@@ -37,6 +38,10 @@ public class AlgorithmMetric {
             secondEnterTime = time;
             secondEnterSet = true;
         }
+    }
+
+    public static void reportMaxRecOK(Integer i) {
+        max_rec_OK_sizes.add(i);
     }
 
     public static void incrementSlows() {
@@ -66,18 +71,7 @@ public class AlgorithmMetric {
         obj.put("waitTimes",waitTimes);
         obj.put("slows",slows);
         obj.put("arrivals",arrivals);
+        obj.put("max_rec_OK_sizes",max_rec_OK_sizes);
         return obj;
-
-        // obj.put("totalLatency", electionEndTime - electionStartTime);
-        // obj.put("trueSuspects", trueSuspects);
-        // obj.put("excludedSuspects", excludedSuspects == null ? "[]" : excludedSuspects.toString().trim());
-        // obj.put("leaderChanges", (float) leaderChanges / (float) Config.numServers);
-
-        // List<Map.Entry<Address, Integer>> sortedTrueSuspects = trueSuspects.entrySet().stream()
-        //         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
-        // HashSet<Address> topSuspects = sortedTrueSuspects.subList(0, Math.min(5, sortedTrueSuspects.size()))
-        //         .stream().map(Map.Entry::getKey).collect(Collectors.toCollection(HashSet::new));
-        // obj.put("leaderIsTopSuspect", topSuspects.contains(leaderIp) ? 1 : 0);
-        // obj.put("zeroIsTopSuspect", topSuspects.contains(new Address(0)) ? 1 : 0);
     }
 }

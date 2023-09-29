@@ -10,7 +10,7 @@ CUT_FIRST = False
 # NORMALIZE = True
 # NORMALIZE = False
 
-MODE = "waitTimes"
+# MODE = "waitTimes"
 # MODE = "e2eMsgTotal"
 # MODE = "e2eMsgSizeTotal"
 # MODE = "h2hMsgTotal"

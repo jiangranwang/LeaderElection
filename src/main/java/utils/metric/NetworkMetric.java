@@ -1,12 +1,15 @@
 package utils.metric;
 
 import network.Address;
+import network.message.Message;
+
 import org.json.simple.JSONObject;
 import utils.Config;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class NetworkMetric {
@@ -15,18 +18,32 @@ public class NetworkMetric {
     private static final ConcurrentHashMap<Address, HashMap<Address, Integer>> e2eMsgSizes = new ConcurrentHashMap<>();
     private static final ConcurrentHashMap<Address, HashMap<Address, Integer>> h2hMsgSizes = new ConcurrentHashMap<>();
 
+    private static final ConcurrentHashMap<Address, HashMap<Address, Integer>> RAe2eSizeAdjustments = new ConcurrentHashMap<>();
+    
+
     public static void initialize(List<Address> addresses) {
         for (Address ip: addresses) {
             e2eMsgs.put(ip, new HashMap<>());
             h2hMsgs.put(ip, new HashMap<>());
             e2eMsgSizes.put(ip, new HashMap<>());
             h2hMsgSizes.put(ip, new HashMap<>());
+            RAe2eSizeAdjustments.put(ip, new HashMap<>());
         }
     }
+
 
     public static void e2eRecord(Address src, Address dst, int size) {
         e2eMsgs.get(src).put(dst, e2eMsgs.get(src).getOrDefault(dst, 0) + 1);
         e2eMsgSizes.get(src).put(dst, e2eMsgSizes.get(src).getOrDefault(dst, 0) + size);
+    }
+
+    public static void RAe2eAdjust(Address src, Address dst, Set<Address> recentlyOKed) {
+        int size = Message.getByteSize(recentlyOKed);
+        if (size < 0) {
+            System.out.println("Size was negative!");
+        } else {
+            RAe2eSizeAdjustments.get(src).put(dst, RAe2eSizeAdjustments.get(src).getOrDefault(dst, 0) - size);
+        }
     }
 
     public static void h2hRecord(Address src, Address dst, int size) {
@@ -45,17 +62,29 @@ public class NetworkMetric {
         HashMap<Address, Integer> e2eMsgSizesTotal = new HashMap<>();
         HashMap<Address, Integer> h2hMsgSizesTotal = new HashMap<>();
 
+        Integer RAe2eMsgSizeTotal = 0;
+        HashMap<Address, Integer> RAe2eSizeAdjustmentsTotal = new HashMap<>();
+
+
         for (Address src: e2eMsgs.keySet()) {
             Integer curr = 0;
             Integer currSize = 0;
+            Integer RAcurrSize = 0;
             for (Address dst: e2eMsgs.get(src).keySet()) {
                 e2eMsgTotal += e2eMsgs.get(src).get(dst);
                 curr += e2eMsgs.get(src).get(dst);
                 e2eMsgSizeTotal += e2eMsgSizes.get(src).get(dst);
                 currSize += e2eMsgSizes.get(src).get(dst);
+                try {
+                    RAe2eMsgSizeTotal += RAe2eSizeAdjustments.get(src).get(dst);
+                    RAcurrSize += RAe2eSizeAdjustments.get(src).get(dst);
+                } catch (NullPointerException n) {
+                    ;
+                }
             }
             e2eMsgsTotal.put(src, curr);
             e2eMsgSizesTotal.put(src, currSize);
+            RAe2eSizeAdjustmentsTotal.put(src,RAcurrSize);
         }
         for (Address src: h2hMsgs.keySet()) {
             Integer curr = 0;
@@ -76,6 +105,7 @@ public class NetworkMetric {
         obj.put("h2hMsgTotal", h2hMsgTotal);
         obj.put("e2eMsgSizeTotal", e2eMsgSizeTotal);
         obj.put("h2hMsgSizeTotal", h2hMsgSizeTotal);
+        obj.put("RAe2eMsgSizeTotal", e2eMsgSizeTotal + RAe2eMsgSizeTotal);
 
         if (Config.verbose > 0) {
             JSONObject e2eMsgsTotalObj = new JSONObject();

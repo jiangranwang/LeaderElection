@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;  
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
+// import java.io.InputStreamReader;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +23,8 @@ import utils.Config;
 import utils.metric.*;
 
 import org.apache.commons.math3.distribution.ZipfDistribution;
-
+import org.apache.commons.math3.distribution.WeibullDistribution;
+import org.apache.commons.math3.random.RandomDataGenerator;
 
 public class Simulator {
     private static final Logger LOG = Logger.getLogger(Simulator.class.getName());
@@ -57,49 +58,50 @@ public class Simulator {
     private static void loadTrace(int num_nodes) {
         String line = "";  
         // String splitBy = ",";
-        long time;
+        // long time;
+        Long running_time = Long.valueOf(0);
+        Long interarrival = running_time;
         int requester=0;
         //parsing a CSV file into BufferedReader class constructor
         Random rand = new Random();
+        double lambda = Config.critDuration; 
+    
+        RandomDataGenerator randomData = new RandomDataGenerator(); // for weibull
+        double shape = 2.0; // Weibull param
+        double scale = 2*lambda / Math.sqrt(Math.PI); // THIS DEPENDS ON the shape
+        // https://en.wikipedia.org/wiki/Particular_values_of_the_gamma_function
+
         ZipfDistribution zipfDistribution = new ZipfDistribution(num_nodes, 2.0);
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(Config.traceFile));  
-            while ((line = br.readLine()) != null) {   //returns a Boolean value  
-                // String[] ln = line.split(splitBy);    // use comma as separator
-                // time = Long.parseLong(ln[0]);
-                time = Long.valueOf((long) (Long.parseLong(line)*Config.irRatio));
-                if (Config.spatialDistro.equals("zipfian")) {
-                    requester = zipfDistribution.sample();
-                    while (requester >= num_nodes) {
-                        System.out.println("Decrementing from requester="+String.valueOf(requester));
-                        requester-=1;
-                    }
-                } else if (Config.spatialDistro.equals("uniform")) {
-                    requester = rand.nextInt(num_nodes);
-                } else {
-                    System.out.println("UNKNOWN DISTRIBUTION");
-                    System.exit(1);
-                }
-                Address ip = new Address(requester);
-                servers.get(ip).loadRequest(LogicalTime.time + time);
+        for (int i = 0; i < Config.concRequesters; ++i) {
+            if (Config.timeDistro.equals("exponential")) {
+                // exponential distribution
+                interarrival = (long)(-Math.log(1 - rand.nextDouble()) * lambda);
+            } else if (Config.timeDistro.equals("weibull")) {
+                interarrival = (long)(randomData.nextWeibull(shape, scale));
+            } else {
+                System.out.println("UNKNOWN time DISTRIBUTION");
+                System.exit(1);
             }
-            br.close();
-        } catch (IOException e) {
-            System.out.println("Tracefile access failed");
-            e.printStackTrace();
-            System.exit(1);
+            running_time += (long)(interarrival*Config.irRatio); 
+
+            if (Config.spatialDistro.equals("zipfian")) {
+                requester = zipfDistribution.sample();
+                requester--;
+            } else if (Config.spatialDistro.equals("uniform")) {
+                requester = rand.nextInt(num_nodes);
+            } else {
+                System.out.println("UNKNOWN spatial DISTRIBUTION");
+                System.exit(1);
+            }
+            Address ip = new Address(requester);
+            servers.get(ip).loadRequest(LogicalTime.time + running_time);
         }
     }
 
     private static void run() {
         LogicalTime.time = 0;
-        // pick a server as the coordinator
-        // Address coordinator = addresses.get(Config.random.nextInt(Config.numServers));
-        // LOG.log(Level.INFO, "Coordinator is: " + coordinator);
-        // get k + f + 1 random servers to send query message
-        int num_nodes = Config.numServers;
-        
+        int num_nodes = Config.numServers;        
 
         if (!Config.fromTrace) {
             int i = 0;
@@ -117,9 +119,6 @@ public class Simulator {
 
             File flag = new File(Config.membershipFile+"flag");
             while (!flag.exists()) {
-                // loadTrace(num_nodes);
-                // System.out.println("Running more requests");
-                // EventService.processAll();
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {
@@ -136,74 +135,7 @@ public class Simulator {
             }
         }
 
-        // System.out.println("Entering flag checker");
-        // int i = 0;
-        // while (i++ < 10000) {
-        //     try {
-        //         String[] commands = {"ls output.log"};
-        //         Process proc = Runtime.getRuntime().exec(commands);
-        //         BufferedReader stdInput = new BufferedReader(new 
-        //             InputStreamReader(proc.getInputStream()));
-        //             String s = null;
-        //             while ((s = stdInput.readLine()) != null) {
-        //                 System.out.println(s);
-        //                 break;
-        //             }
-        //     } catch (Exception e) {
-        //         // System.out.println(e.getMessage());
-        //         continue;
-        //     }
-        // }
-
-
-        // File flag = new File("output.log","r");
-        // while (!flag.exists());
-
-
-        // File flag = null;
-        // do {
-        //     flag = new File("output.log","r");
-        // } while (!flag.exists());
-
-        // System.out.println("out of loop with i ="+String.valueOf(i));
-        // try {
-        //     Runtime.getRuntime().exec("rm "+Config.membershipFile+"flag");
-        // } catch (Exception e) {
-        //     ;
-        // }
-
-        // File flag = null;
-        // if (Config.useChurn) {
-        //     try {
-        //         System.out.println(System.getProperty("user.home"));
-        //         String[] commands = {"ls "+ System.getProperty("user.home")};
-        //         Process proc = Runtime.getRuntime().exec(commands);
-        //         BufferedReader stdInput = new BufferedReader(new 
-        //          InputStreamReader(proc.getInputStream()));
-        //          String s = null;
-        //          while ((s = stdInput.readLine()) != null) {
-        //              System.out.println(s);
-        //          }
-        //     } catch (Exception e) {
-        //         System.out.println(e.getMessage());
-        //     }
-
-        //     System.out.println("Checking for flag at " + Config.membershipFile+"flag");
-        //     do {
-        //         flag = new File(Config.membershipFile+"flag","r");
-        //     } while (!flag.exists());
-    
-        //     System.out.println("flag hit");
-        //     try {
-        //         Runtime.getRuntime().exec("rm "+Config.membershipFile+"flag");
-        //     } catch (Exception e) {
-        //         ;
-        //     }
-        // }
-
-
         EventService.processAll();
-
 
         if (Config.useChurn) {
             File flag = new File(Config.membershipFile+"done");
@@ -221,39 +153,14 @@ public class Simulator {
                 ;
             }
         }
-        // if (Config.useChurn) {
-        //     flag = new File(Config.membershipFile+"done");
-        //     while (!flag.exists()) {
-        //         loadTrace(num_nodes);
-        //         System.out.println("Running more requests");
-        //         EventService.processAll();
-        //         flag = new File(Config.membershipFile+"done");
-        //     }
-    
-        //     System.out.println("done flag hit");
-        //     try {
-        //         Runtime.getRuntime().exec("rm "+Config.membershipFile+"done");
-        //     } catch (Exception e) {
-        //         ;
-        //     }
-        // }
         
-
-        
-
-        // timer.cancel();
     }
 
     @SuppressWarnings("unchecked")
     private static void conclude() {
-        // for (Map.Entry<Address, Server> entry: servers.entrySet()) {
-        //     LOG.log(Level.INFO, "Node " + entry.getKey() + " has leader: " + entry.getValue().getLeaderId());
-        //     if (entry.getValue().getLeaderId() == null) {
-        //         String msg = "Node " + entry.getKey() + " does not have correct leader! It has "
-        //                 + entry.getValue().getLeaderId() + " instead";
-        //         LOG.log(Level.SEVERE, msg);
-        //     }
-        // }
+        for (Map.Entry<Address, Server> entry: servers.entrySet()) {
+            AlgorithmMetric.reportMaxRecOK(entry.getValue().max_rec_OK);
+        }
 
         JSONObject obj = new JSONObject();
         obj.put("networkMetric", NetworkMetric.getStat());
@@ -263,7 +170,6 @@ public class Simulator {
         obj.put("N", Config.numServers);
         obj.put("ir_ratio", Config.irRatio);
         obj.put("churn_ratio",Config.churnRatio);
-        // obj.put("qualityMetric", QualityMetric.getStat());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonElement je = JsonParser.parseString(obj.toJSONString());
@@ -281,7 +187,6 @@ public class Simulator {
 
     public static void main(String[] args) {
         initialize(args);
-        // System.out.println("Printing works ");
         run();
         conclude();
     }

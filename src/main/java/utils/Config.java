@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class Config {
     private static final Logger LOG = Logger.getLogger(Config.class.getName());
 
-    public static String membershipFile, topologyFile, statsFile, traceFile, spatialDistro;
+    public static String membershipFile, topologyFile, statsFile, traceFile, spatialDistro, timeDistro;
     // public static int numServers, oneHopDelay, granularity, k, f, eventCheckTimeout, algorithm, numLowNode,
     //         numSuspectCount, suspectCountThreshold, verbose;
     public static int numServers, oneHopDelay, granularity, eventCheckTimeout, critDuration, concRequesters, verbose;
@@ -38,6 +38,7 @@ public class Config {
             statsFile = (String) config.get("stats_file");
             traceFile = (String) config.get("trace_file");
             spatialDistro = (String) config.get("spatial_distro");
+            timeDistro = (String) config.get("time_distro");
 
             fromTrace = ((String) config.get("from_trace")).equals("true");
             batched = ((String) config.get("batched")).equals("true");
